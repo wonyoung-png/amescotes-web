@@ -210,9 +210,9 @@ footer .links a{cursor:pointer}
 .rows{display:grid;gap:10px;cursor:grab;touch-action:pan-y;user-select:none}
 .rows.drag{cursor:grabbing}
 .row{overflow:hidden}
-.track{display:flex;gap:10px;width:max-content;will-change:transform}
-.track .cell{position:relative;flex:none;width:clamp(150px,17vw,240px);aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.track{display:flex;gap:0;width:max-content;will-change:transform}
+.track .cell{position:relative;flex:none;width:clamp(150px,17vw,240px);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;transition:background .3s}
 .track img{max-width:60%;max-height:40%;object-fit:contain;filter:invert(1);pointer-events:none;transition:transform .4s,filter .3s}
 .track .txt{font:500 18px 'Instrument Sans';letter-spacing:.12em;transition:color .3s}
 .track .nm{position:absolute;left:10px;bottom:8px;opacity:0;transition:opacity .3s;color:#fff;font-size:10px}
-.track .cell:hover{background:var(--accent)}.track .cell:hover img{filter:none;transform:scale(1.08)}.track .cell:hover .txt{color:#fff}.track .cell:hover .nm{opacity:1}
+.track .cell:hover img{transform:scale(1.08)}.track .nm{display:none}
