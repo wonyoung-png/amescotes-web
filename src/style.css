@@ -118,13 +118,6 @@ body.drawer-closed .hero{padding-right:var(--gap)}
 .clients{padding:18vh 0 14vh;overflow:hidden}
 .clients .head{padding:0 28px 7vh;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
 .clients h2,.range h2,.journal h2{font-size:clamp(48px,6.4vw,108px)}
-.marquee{display:flex;width:max-content;animation:mq 50s linear infinite}
-.marquee img{height:50px;margin:0 3vw;filter:invert(1);opacity:.85}
-.marquee.rev{animation-direction:reverse;margin-top:4vh}
-@keyframes mq{to{transform:translateX(-50%)}}
-.brands{display:flex;flex-wrap:wrap;gap:8px;padding:8vh 28px 0}
-.brands span{font:500 clamp(16px,1.6vw,22px) 'Instrument Sans';border:1px solid var(--line);border-radius:8px;padding:9px 16px;background:#fff;transition:transform .45s cubic-bezier(.3,1.6,.5,1),background .3s,color .3s}
-.brands span:hover{background:var(--accent);color:#fff;transform:rotate(-5deg)}
 
 /* 7 range */
 .range{padding:14vh 28px}
@@ -210,3 +203,14 @@ footer .links a{cursor:pointer}
 #lb .x{top:18px;right:18px}#lb .pv{left:18px;top:50%}#lb .nx{right:18px;top:50%}
 #lb .n{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#cfe0d6}
 @media(max-width:640px){.ggrid{columns:2 140px}#lb .pv,#lb .nx{top:auto;bottom:14px}}
+
+/* client logo wall */
+.clients{padding:18vh 28px 14vh}
+.clients .head{padding:0 0 7vh}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.wall .cell{position:relative;aspect-ratio:16/9;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.wall img{max-width:58%;max-height:38%;object-fit:contain;filter:invert(1);transition:transform .4s,filter .3s}
+.wall .txt{font:500 20px 'Instrument Sans';letter-spacing:.12em;transition:color .3s}
+.wall .nm{position:absolute;left:12px;bottom:10px;opacity:0;transition:opacity .3s;color:#fff;font-size:10px}
+.wall .cell:hover{background:var(--accent)}.wall .cell:hover img{filter:none;transform:scale(1.08)}.wall .cell:hover .txt{color:#fff}.wall .cell:hover .nm{opacity:1}
+@media(max-width:640px){.wall{grid-template-columns:repeat(2,1fr)}.wall img{max-width:66%;max-height:44%}.wall .txt{font-size:16px}}

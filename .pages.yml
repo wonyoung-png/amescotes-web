@@ -29,7 +29,13 @@ content:
           - { name: image, label: 가방 누끼 사진(PNG), type: image }
           - { name: bg, label: 배경(건드리지 마세요), type: string }
           - { name: dark, label: 어두운 배경, type: boolean }
-      - { name: brands, label: 포트폴리오 브랜드명, type: string, list: true }
+      - name: clients
+        label: 포트폴리오 고객사 (로고 없으면 이름만 표시)
+        type: object
+        list: true
+        fields:
+          - { name: name, label: 브랜드명, type: string }
+          - { name: logo, label: 로고 파일명(assets/logo, 흰색 PNG), type: string }
       - name: journal
         label: 저널 글 (첫 번째가 큰 카드)
         type: object

@@ -80,8 +80,7 @@
 
 <section class="clients" id="clients">
   <div class="head"><h2 class="disp">{{ t.portfolio.title|safe }}</h2><p style="max-width:380px;font-size:15px;line-height:1.7;color:var(--stone)">{{ t.portfolio.text }}</p></div>
-  {% for rev in ['', ' rev'] %}<div class="marquee{{ rev }}">{% for k in range(2) %}{% for lg in site.logos %}<img src="logo/{{ lg }}" alt="" loading="lazy">{% endfor %}{% endfor %}</div>
-  {% endfor %}<div class="brands">{% for b in site.brands %}<span>{{ b }}</span>{% endfor %}</div>
+  <div class="wall">{% for c in site.clients %}<div class="cell">{% if c.logo %}<img src="logo/{{ c.logo }}" alt="{{ c.name }}" loading="lazy">{% else %}<span class="txt">{{ c.name }}</span>{% endif %}<span class="nm mono">{{ c.name }}</span></div>{% endfor %}</div>
 </section>
 
 <section class="range" id="range">

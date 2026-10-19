@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "extreme-negative-tracking",
+        "value": "*",
+        "files": [
+          "tools/clients_board.tpl.html"
+        ],
+        "createdAt": "2026-10-19T07:04:52.785Z",
+        "reason": "Claude: -0.05em display tracking matches the site's approved Instrument Sans headline style; one-off comparison board"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "tools/clients_board.tpl.html"
+        ],
+        "createdAt": "2026-10-19T07:04:53.417Z",
+        "reason": "Claude: index list rows are rule-line rows (border-bottom only), padding intentional; one-off comparison board"
+      }
+    ]
+  }
+}

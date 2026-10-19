@@ -94,8 +94,8 @@ const PLACES=C.site.places.map((p,i)=>({...p,...C.global.places[i]}));
 })();
 
 // reveals + marquee speed
+gsap.from('.wall .cell',{opacity:0,y:20,duration:.6,stagger:.03,ease:'power2.out',scrollTrigger:{trigger:'.wall',start:'top 85%'}});
 gsap.utils.toArray('.clients h2,.range h2,.journal h2,.rg>div,.journal a,form').forEach(el=>gsap.from(el,{y:50,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
-lenis.on('scroll',e=>{const v=Math.min(8,Math.abs(e.velocity)*.4);$$('.marquee').forEach(m=>m.style.animationDuration=(50-v*4)+'s')});
 
 // footer odometer: CSS px -> metres (96px = 1 inch), stitches at 9 per inch
 let travelled=0,last=scrollY;

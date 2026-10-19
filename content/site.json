@@ -195,7 +195,6 @@
     "logo_3a5476.png",
     "logo_55378f.png",
     "logo_588320.png",
-    "logo_5d6ff1.png",
     "logo_6a8312.png",
     "logo_6eb0b6.png",
     "logo_7a3d0e.png",
@@ -207,17 +206,6 @@
     "logo_ede0a8.png",
     "logo_f2ca4f.png",
     "logo_ribbonbit.png"
-  ],
-  "brands": [
-    "NOTHING WRITTEN",
-    "LOW CLASSIC",
-    "SUSAN FANG",
-    "HESS",
-    "SAGEMENT",
-    "RRACE",
-    "RIBBONBIT",
-    "DEINET",
-    "ATELIER DE LUMEN"
   ],
   "journal": [
     {
@@ -273,10 +261,6 @@
     {
       "name": "OSOI",
       "logo": "logo_588320.png"
-    },
-    {
-      "name": "CLORE",
-      "logo": "logo_5d6ff1.png"
     },
     {
       "name": "IDANG",
