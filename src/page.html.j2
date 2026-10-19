@@ -103,7 +103,7 @@
   {% else %}<figure class="it" data-t="video" data-i="{{ loop.index0 }}"><span class="mono">Film</span><video muted loop playsinline preload="none" poster="gallery/{{ it.id }}_s.jpg" data-src="gallery/{{ it.id }}.mp4" width="{{ it.w }}" height="{{ it.h_px }}"></video></figure>
   {% endif %}{% endfor %}
   </div>
-  <div class="gmore"><button id="gmore" class="mono">More <i>↓</i></button><span class="mono" id="gcount"></span></div>
+  <div class="gmore"><button id="gmore" class="mono">More <i><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v9M2 6.5 6 10.5 10 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></button><span class="mono" id="gcount"></span></div>
   <div id="lb"><button class="x" aria-label="close">✕</button><button class="pv" aria-label="prev">←</button><button class="nx" aria-label="next">→</button><div id="lbm"></div><div class="n mono" id="lbn"></div></div>
 </section>
 
