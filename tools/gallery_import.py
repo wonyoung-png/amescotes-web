@@ -31,10 +31,11 @@ def main(src):
     items = json.loads(LIST.read_text(encoding='utf-8')) if LIST.exists() else []
     seen_ids = {it['id'] for it in items}
     hashes = [it['h'] for it in items if 'h' in it]
+    removed = set(json.loads((ROOT / 'content' / 'gallery_removed.json').read_text(encoding='utf-8'))) if (ROOT / 'content' / 'gallery_removed.json').exists() else set()
     files = sorted(p for p in Path(src).rglob('*') if p.suffix.lower() in PHOTO | VIDEO)
     added = 0
     for p in files:
-        if p.stem in SKIP or p.stem in SKIP_PHOTO or p.name in SKIP_NAMES:
+        if p.stem in SKIP or p.stem in SKIP_PHOTO or p.name in SKIP_NAMES or p.name in removed:
             continue
         fid = hashlib.md5(p.name.encode()).hexdigest()[:10]  # same file name in copied folders = same item
         if fid in seen_ids:
