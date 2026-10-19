@@ -186,3 +186,4 @@ footer .links a{cursor:pointer}
   form{grid-template-columns:1fr} form .full,form button{grid-column:1}
   footer .bag{width:60vw;top:34%} footer .links{left:28px;right:auto;bottom:28vh}
 }
+.hero .frame:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(0,0,0,.45),transparent 35%);pointer-events:none}.hero h1,.hero .sub,.hero .btn{z-index:2}
