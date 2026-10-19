@@ -25,20 +25,7 @@
 <body class="drawer-closed">
 <div id="loader"><img src="amescotes_logo.png" alt="AMESCOTES"></div>
 <div class="logo-fixed"><img src="amescotes_logo.png" alt="AMESCOTES"></div>
-<aside id="drawer">
-  <div class="lang mono">{% for l, p in langs %}<a href="{{ p }}" class="{{ 'on' if l == lang else '' }}" hreflang="{{ l }}">{{ l|upper }}</a>{% endfor %}</div>
-  <a class="g1" data-go="hero"><b>{{ t.nav.home }}</b></a>
-  <a class="g2" data-go="story"><span class="mono">01</span>{{ t.nav.about }}</a>
-  <a class="g2" data-go="history"><span class="mono">02</span>{{ t.nav.history }}</a>
-  <a class="g3" data-go="works"><span class="mono">03</span>{{ t.nav.services }}</a>
-  <a class="g3" data-go="map"><span class="mono">04</span>{{ t.nav.global }}</a>
-  <a class="g4" data-go="range"><b>{{ t.nav.range }}</b></a>
-  <a class="g4" data-go="clients">{{ t.nav.portfolio }}</a>
-  <a class="g4" data-go="journal">{{ t.nav.journal }}</a>
-  <a class="g4" data-go="gallery">{{ t.nav.gallery }}</a>
-  <a class="g5" data-go="contact"><b>{{ t.nav.contact }}</b></a>
-</aside>
-<div id="handle" title="{{ t.nav.menu }}">◀</div>
+{% include "_drawer.j2" %}
 
 <section class="hero" id="hero">
   <div class="frame"><div class="bg"></div>
@@ -92,8 +79,8 @@
 <section class="journal" id="journal">
   <h2 class="disp">{{ t.journal.title|safe }}</h2>
   {% set j = site.journal %}{% set p = t.journal.posts %}
-  <a class="big" href="{{ j[0].url }}" target="_blank" rel="noopener"><img src="{{ j[0].image }}" alt="" loading="lazy"><div><span class="tag mono">{{ p[0].tag }}</span> <span class="mono" style="opacity:.55">· {{ j[0].date }}</span><h4>{{ p[0].title }}</h4></div></a>
-  <div class="list">{% for i in range(1, j|length) %}<a href="{{ j[i].url }}" target="_blank" rel="noopener"><div><span class="tag mono">{{ p[i].tag }}</span><h4>{{ p[i].title }}</h4><span class="mono" style="opacity:.55">{{ j[i].date }}</span></div><img src="{{ j[i].image }}" alt="" loading="lazy"></a>{% endfor %}</div>
+  <a class="big" href="journal/{{ j[0].slug }}.html"><img src="{{ j[0].image }}" alt="" loading="lazy"><div><span class="tag mono">{{ p[0].tag }}</span> <span class="mono" style="opacity:.55">· {{ j[0].date }}</span><h4>{{ p[0].title }}</h4></div></a>
+  <div class="list">{% for i in range(1, j|length) %}<a href="journal/{{ j[i].slug }}.html"><div><span class="tag mono">{{ p[i].tag }}</span><h4>{{ p[i].title }}</h4><span class="mono" style="opacity:.55">{{ j[i].date }}</span></div><img src="{{ j[i].image }}" alt="" loading="lazy"></a>{% endfor %}</div>
 </section>
 
 <section class="gallery" id="gallery">

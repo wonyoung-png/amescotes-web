@@ -27,7 +27,7 @@ gsap.timeline()
 // drawer: open on the hero, folds into the right-edge handle after
 ScrollTrigger.create({trigger:'.hero',start:'top top',end:'bottom 70%',onLeave:()=>body.classList.add('drawer-closed'),onEnterBack:()=>{if(wide())body.classList.remove('drawer-closed')}});
 $('#handle').onclick=()=>body.classList.remove('drawer-closed');
-$$('[data-go]').forEach(a=>a.onclick=e=>{e.preventDefault();lenis.scrollTo('#'+a.dataset.go,{duration:1.4});if(a.dataset.go!=='hero')setTimeout(()=>body.classList.add('drawer-closed'),300)});
+$$('[data-go]').forEach(a=>a.onclick=e=>{if(!document.getElementById(a.dataset.go))return;e.preventDefault();lenis.scrollTo('#'+a.dataset.go,{duration:1.4});if(a.dataset.go!=='hero')setTimeout(()=>body.classList.add('drawer-closed'),300)});
 document.addEventListener('click',e=>{if(!e.target.closest('#drawer,#handle')&&scrollY>innerHeight*.5)body.classList.add('drawer-closed')});
 
 // story: camera pushes in, one sentence at a time, its cards pop in
@@ -165,3 +165,5 @@ lenis.on('scroll',logoTone);addEventListener('load',logoTone);logoTone();
 // logo is large on the hero and shrinks into the corner as you scroll; big size scales with screen width
 gsap.fromTo('.logo-fixed',{scale:()=>wide()?2.6:1.8},{scale:1,ease:'none',immediateRender:true,
   scrollTrigger:{trigger:'.hero',start:'top top',end:()=>'+='+innerHeight*.45,scrub:.4,invalidateOnRefresh:true}});
+
+if(location.hash&&document.querySelector(location.hash))addEventListener('load',()=>setTimeout(()=>lenis.scrollTo(location.hash,{immediate:true}),300));

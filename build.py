@@ -50,6 +50,16 @@ def build():
             visible = re.sub(r'<script type="application/ld\+json">.*?</script>', '', page, flags=re.S)
             left = sorted(set(HANGUL.findall(visible)))
             assert not left, f'{lang}: untranslated Korean left: {"".join(left)[:40]}'
+    # journal articles (Korean source text), drawer + footer shared with the home page
+    posts = load('journal_posts'); ko = load('ko'); (DIST / 'journal').mkdir(exist_ok=True)
+    order = [j['slug'] for j in site['journal']]
+    for k, slug in enumerate(order):
+        meta = site['journal'][k]; head = ko['journal']['posts'][k]
+        nxt = order[(k + 1) % len(order)]
+        html = env.get_template('article.html.j2').render(lang='ko', t=ko, site=site, ver=ver, langs=links, base='../',
+            home_path='./', privacy_path='privacy.html', post=posts[slug], meta=meta, head=head,
+            next_slug=nxt, next_head=ko['journal']['posts'][order.index(nxt)])
+        (DIST / 'journal' / f'{slug}.html').write_text(html, encoding='utf-8')
     # chapters/places in site.json must line up with every language file
     for lang in LANGS:
         t = load(lang)

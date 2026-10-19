@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="{{ base }}">
+<title>{{ head.title }} — AMESCOTES Journal</title>
+{% if site.noindex %}<meta name="robots" content="noindex">{% endif %}
+<meta name="description" content="{{ (post.blocks|selectattr('t','equalto','p')|first).v|join(' ')|truncate(150) }}">
+<link rel="canonical" href="{{ site.url }}/journal/{{ meta.slug }}.html">
+<meta property="og:title" content="{{ head.title }}">
+<meta property="og:image" content="{{ site.url }}/{{ meta.image }}">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v={{ ver }}">
+<style>
+.art{max-width:760px;margin:0 auto;padding:16vh 24px 10vh}
+.art .crumb{display:flex;gap:10px;align-items:center;margin-bottom:5vh}
+.art .crumb a{color:var(--stone)}
+.art h1{font:300 clamp(36px,4.6vw,64px)/1.15 'Pretendard Variable',Pretendard,sans-serif;letter-spacing:-.035em;margin:18px 0 5vh}
+.art .lead{width:calc(100% + 0px);border-radius:10px;overflow:hidden;margin-bottom:6vh}
+.art .lead img{width:100%}
+.art p{font-size:17px;line-height:1.9;color:#22332c;margin:0 0 1.1em}
+.art p.k{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:4.5vh 0 1.2em;padding-top:18px;border-top:1px solid var(--line)}
+.art figure{margin:3vh 0 4vh}
+.art figure .g{display:grid;gap:6px}
+.art figure .g.n2{grid-template-columns:1fr 1fr}.art figure .g.n3,.art figure .g.n6{grid-template-columns:repeat(3,1fr)}
+.art figure img{width:100%;border-radius:6px;background:#dfe8e2}
+.art figure .g.n1 img{width:auto;max-width:100%;max-height:78vh;margin:0 auto;display:block}
+.art figure .g.n1+figcaption{text-align:center}
+.art figure .g.n3 img,.art figure .g.n6 img{aspect-ratio:1;object-fit:cover}
+.art figcaption{font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.04em;color:var(--stone);margin-top:10px}
+.art .src{display:flex;justify-content:space-between;gap:16px;align-items:center;border-top:1px solid var(--line);margin-top:8vh;padding-top:22px}
+.art .src a.mono{color:var(--stone)}
+.next{display:block;background:var(--ink);color:#fff;padding:9vh 24px}
+.next .in{max-width:760px;margin:0 auto}
+.next h3{font:300 clamp(28px,3.6vw,48px)/1.2 'Pretendard Variable',Pretendard,sans-serif;letter-spacing:-.03em;margin-top:12px}
+.next:hover h3{text-decoration:underline;text-underline-offset:6px}
+.mini-foot{padding:5vh 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--stone)}
+@media(max-width:640px){.art figure .g.n3,.art figure .g.n6{grid-template-columns:1fr 1fr}.art p{font-size:16px}}
+</style>
+</head>
+<body class="drawer-closed">
+<a class="logo-fixed on-light" href="./" style="pointer-events:auto"><img src="amescotes_logo.png" alt="AMESCOTES"></a>
+{% include "_drawer.j2" %}
+
+<article class="art">
+  <div class="crumb mono"><a href="./#journal">← Journal</a><span class="tag">{{ head.tag }}</span><span style="opacity:.55">{{ meta.date }}</span></div>
+  <h1 class="disp">{{ head.title }}</h1>
+  <div class="lead"><img src="{{ meta.image }}" alt=""></div>
+  {% for b in post.blocks %}
+    {% if b.t == 'p' %}
+      {% for line in b.v %}{% if line %}
+        {% if line|length < 40 and ((line == line|upper and line != line|lower) or line.startswith('TIP') or line.startswith('<')) %}<p class="k">{{ line }}</p>
+        {% else %}<p>{{ line }}</p>{% endif %}
+      {% endif %}{% endfor %}
+    {% else %}
+      <figure><div class="g n{{ b.v|length if b.v|length in [2,3,6] else 1 }}">{% for im in b.v %}<img src="{{ im.src }}" width="{{ im.w }}" height="{{ im.h }}" alt="{{ b.cap }}" loading="lazy">{% endfor %}</div>{% if b.cap %}<figcaption>{{ b.cap }}</figcaption>{% endif %}</figure>
+    {% endif %}
+  {% endfor %}
+  <div class="src"><span class="mono" style="color:var(--stone)">AMESCOTES Journal</span><a class="mono" href="{{ post.url }}" target="_blank" rel="noopener">Naver blog 원문 ↗</a></div>
+</article>
+
+<a class="next" href="journal/{{ next_slug }}.html"><div class="in"><span class="mono" style="opacity:.6">Next · {{ next_head.tag }}</span><h3>{{ next_head.title }}</h3></div></a>
+<div class="mini-foot"><span>ⓒ AMESCOTES, INC · {{ site.email }}</span><a href="./#contact">{{ t.nav.contact }} →</a></div>
+
+<script>
+const b=document.body;
+document.getElementById('handle').onclick=()=>b.classList.remove('drawer-closed');
+document.addEventListener('click',e=>{if(!e.target.closest('#drawer,#handle'))b.classList.add('drawer-closed')});
+</script>
+</body>
+</html>

@@ -211,17 +211,20 @@
     {
       "url": "https://blog.naver.com/amescotesofficial/224445659104",
       "image": "img/runway.jpg",
-      "date": "2026.10"
+      "date": "2026.10",
+      "slug": "burgundy-suede-fw26"
     },
     {
       "url": "https://blog.naver.com/amescotesofficial/223238746315",
       "image": "img/leather.jpg",
-      "date": "2023.10"
+      "date": "2023.10",
+      "slug": "lambskin"
     },
     {
       "url": "https://blog.naver.com/amescotesofficial/222007690109",
       "image": "img/pattern.jpg",
-      "date": "2020.06"
+      "date": "2020.06",
+      "slug": "bag-making-process"
     }
   ],
   "footer_image": "cut/b8.png",
