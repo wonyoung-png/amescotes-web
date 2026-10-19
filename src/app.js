@@ -113,3 +113,21 @@ form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.query
   btn.disabled=true;btn.textContent=C.contact.sending;
   try{const r=await fetch(C.site.form_endpoint,{method:'POST',headers:{Accept:'application/json'},body:fd});if(!r.ok)throw 0;btn.textContent=C.contact.sent;form.reset()}
   catch(_){btn.disabled=false;btn.textContent=C.contact.error}});
+
+// gallery: films play only on screen, filter, lightbox (arrows / keys / swipe)
+const gItems=$$('#gg .it');
+const gio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{rootMargin:'200px'});
+$$('#gg video').forEach(v=>gio.observe(v));
+$$('#gf button').forEach(b=>b.onclick=()=>{$$('#gf button').forEach(x=>x.classList.toggle('on',x===b));gItems.forEach(it=>it.classList.toggle('hide',b.dataset.t!=='all'&&it.dataset.t!==b.dataset.t));ScrollTrigger.refresh()});
+const lb=$('#lb'),lbm=$('#lbm');let cur=-1;
+document.body.appendChild(lb);
+const gvis=()=>gItems.filter(it=>!it.classList.contains('hide')).map(it=>+it.dataset.i);
+function gshow(i){cur=i;const g=G[i];lbm.innerHTML=g.type==='photo'?`<img src="gallery/${g.id}.jpg" alt="">`:`<video src="gallery/${g.id}.mp4" autoplay muted loop playsinline controls></video>`;
+  const v=gvis();$('#lbn').textContent=(v.indexOf(i)+1)+' / '+v.length;lb.classList.add('on');lenis.stop()}
+function gstep(d){const v=gvis();gshow(v[(v.indexOf(cur)+d+v.length)%v.length])}
+function gclose(){lb.classList.remove('on');lbm.innerHTML='';lenis.start()}
+gItems.forEach(it=>it.onclick=()=>gshow(+it.dataset.i));
+lb.querySelector('.x').onclick=gclose;lb.querySelector('.pv').onclick=()=>gstep(-1);lb.querySelector('.nx').onclick=()=>gstep(1);
+lb.onclick=e=>{if(e.target===lb||e.target===lbm)gclose()};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')gclose();if(e.key==='ArrowRight')gstep(1);if(e.key==='ArrowLeft')gstep(-1)});
+let gsx=0;lb.addEventListener('touchstart',e=>gsx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-gsx;if(Math.abs(dx)>50)gstep(dx<0?1:-1)});

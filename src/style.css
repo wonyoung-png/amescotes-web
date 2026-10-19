@@ -187,3 +187,26 @@ footer .links a{cursor:pointer}
   footer .bag{width:60vw;top:34%} footer .links{left:28px;right:auto;bottom:28vh}
 }
 .hero .frame:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(0,0,0,.45),transparent 35%);pointer-events:none}.hero h1,.hero .sub,.hero .btn{z-index:2}
+
+/* gallery section */
+.gallery{padding:16vh 6px 12vh}
+.ghead{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;padding:0 22px 6vh}
+.ghead h2{font-size:clamp(48px,6.4vw,108px)}
+.ghead p{max-width:420px;font-size:15px;line-height:1.7;color:var(--stone);margin-bottom:14px}
+.gpills{display:inline-flex;gap:4px;background:#fff;padding:4px;border-radius:9px;box-shadow:0 6px 20px rgba(15,26,22,.08)}
+.gpills button{font:inherit;text-transform:uppercase;letter-spacing:.08em;border:0;background:none;padding:8px 12px;border-radius:6px;cursor:pointer;color:var(--ink)}
+.gpills button.on{background:var(--ink);color:#fff}
+.ggrid{columns:4 280px;column-gap:6px}
+.ggrid .it{break-inside:avoid;margin:0 0 6px;position:relative;cursor:zoom-in;border-radius:6px;overflow:hidden;background:#dfe8e2}
+.ggrid .it img,.ggrid .it video{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.ggrid .it:hover img,.ggrid .it:hover video{transform:scale(1.04)}
+.ggrid .it .mono{position:absolute;left:8px;top:8px;z-index:1;background:#fff;padding:3px 7px;border-radius:4px;font-size:10px}
+.ggrid .it.hide{display:none}
+#lb{position:fixed;inset:0;z-index:120;background:rgba(10,18,15,.94);display:none;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img,#lb video{max-width:92vw;max-height:86vh;border-radius:4px}
+#lb button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:18px}
+#lb button:hover{background:rgba(255,255,255,.25)}
+#lb .x{top:18px;right:18px}#lb .pv{left:18px;top:50%}#lb .nx{right:18px;top:50%}
+#lb .n{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#cfe0d6}
+@media(max-width:640px){.ggrid{columns:2 140px}#lb .pv,#lb .nx{top:auto;bottom:14px}}

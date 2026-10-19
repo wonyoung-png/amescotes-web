@@ -40,12 +40,12 @@ def build():
                    data={**t, 'site': site})
         out = DIST / sub
         out.mkdir(parents=True, exist_ok=True)
-        page = env.get_template('page.html.j2').render(**ctx)
+        gctx = dict(gallery=gallery, gallery_js=[{'id': g['id'], 'type': g['type']} for g in gallery],
+                    photos=sum(g['type'] == 'photo' for g in gallery), videos=sum(g['type'] == 'video' for g in gallery))
+        page = env.get_template('page.html.j2').render(**ctx, **gctx)
         (out / 'index.html').write_text(page, encoding='utf-8')
         (out / 'privacy.html').write_text(env.get_template('privacy.html.j2').render(**ctx), encoding='utf-8')
-        (out / 'gallery.html').write_text(env.get_template('gallery.html.j2').render(**ctx, gallery=gallery,
-            gallery_js=[{'id': g['id'], 'type': g['type']} for g in gallery],
-            photos=sum(g['type'] == 'photo' for g in gallery), videos=sum(g['type'] == 'video' for g in gallery)), encoding='utf-8')
+        (out / 'gallery.html').write_text('<!doctype html><meta http-equiv="refresh" content="0;url=./#gallery">', encoding='utf-8')  # old links land on the section
         if lang != 'ko':  # every visible string must be translated
             visible = re.sub(r'<script type="application/ld\+json">.*?</script>', '', page, flags=re.S)
             left = sorted(set(HANGUL.findall(visible)))
@@ -57,7 +57,7 @@ def build():
         assert len(t['global']['places']) == len(site['places']), lang
         assert len(t['history']['items']) == len(site['history_years']), lang
         assert len(t['journal']['posts']) == len(site['journal']), lang
-    urls = ''.join(f'<url><loc>{site["url"]}/{p}</loc></url>' for p in ['', 'en/', 'ja/', 'gallery.html', 'en/gallery.html', 'ja/gallery.html'])
+    urls = ''.join(f'<url><loc>{site["url"]}/{p}</loc></url>' for p in ['', 'en/', 'ja/'])
     (DIST / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>', encoding='utf-8')
     (DIST / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {site["url"]}/sitemap.xml\n', encoding='utf-8')
     (DIST / '.nojekyll').write_text('')

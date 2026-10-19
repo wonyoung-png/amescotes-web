@@ -34,7 +34,7 @@
   <a class="g4" data-go="range"><b>{{ t.nav.range }}</b></a>
   <a class="g4" data-go="clients">{{ t.nav.portfolio }}</a>
   <a class="g4" data-go="journal">{{ t.nav.journal }}</a>
-  <a class="g4" href="{{ gallery_path }}">{{ t.nav.gallery }} ↗</a>
+  <a class="g4" data-go="gallery">{{ t.nav.gallery }}</a>
   <a class="g5" data-go="contact"><b>{{ t.nav.contact }}</b></a>
 </aside>
 <div id="handle" title="{{ t.nav.menu }}">◀</div>
@@ -96,6 +96,17 @@
   <div class="list">{% for i in range(1, j|length) %}<a href="{{ j[i].url }}" target="_blank" rel="noopener"><div><span class="tag mono">{{ p[i].tag }}</span><h4>{{ p[i].title }}</h4><span class="mono" style="opacity:.55">{{ j[i].date }}</span></div><img src="{{ j[i].image }}" alt="" loading="lazy"></a>{% endfor %}</div>
 </section>
 
+<section class="gallery" id="gallery">
+  <div class="ghead"><h2 class="disp">{{ t.gallery.title }}</h2><div><p>{{ t.gallery.sub }}</p>
+    <div class="gpills mono" id="gf"><button class="on" data-t="all">{{ t.gallery.all }}</button><button data-t="photo">{{ t.gallery.photos }} · {{ photos }}</button><button data-t="video">{{ t.gallery.films }} · {{ videos }}</button></div></div></div>
+  <div class="ggrid" id="gg">
+  {% for it in gallery %}{% if it.type == 'photo' %}<figure class="it" data-t="photo" data-i="{{ loop.index0 }}"><img src="gallery/{{ it.id }}_s.jpg" width="{{ it.w }}" height="{{ it.h_px }}" alt="" loading="lazy" decoding="async"></figure>
+  {% else %}<figure class="it" data-t="video" data-i="{{ loop.index0 }}"><span class="mono">Film</span><video muted loop playsinline preload="none" poster="gallery/{{ it.id }}_s.jpg" data-src="gallery/{{ it.id }}.mp4" width="{{ it.w }}" height="{{ it.h_px }}"></video></figure>
+  {% endif %}{% endfor %}
+  </div>
+  <div id="lb"><button class="x" aria-label="close">✕</button><button class="pv" aria-label="prev">←</button><button class="nx" aria-label="next">→</button><div id="lbm"></div><div class="n mono" id="lbn"></div></div>
+</section>
+
 <section class="contact" id="contact">
   {% set f = t.contact %}
   <div class="wrap">
@@ -119,10 +130,10 @@
 <footer>
   <img class="bag" src="{{ site.footer_image }}" alt="">
   <div class="odo mono"><div>{{ t.footer.scrolled }}<b id="odo-m">0.0 m</b></div><div>{{ t.footer.stitches }}<b id="odo-s">0 {{ t.footer.unit }}</b></div></div>
-  <div class="links"><div><div class="mono">{{ t.footer.explore }}</div><a data-go="hero">{{ t.nav.home }}</a><br><a data-go="works">{{ t.nav.services }}</a><br><a data-go="journal">{{ t.nav.journal }}</a><br><a href="{{ gallery_path }}">{{ t.nav.gallery }}</a><br><a href="{{ privacy_path }}">{{ t.footer.privacy }}</a></div><div><div class="mono">{{ t.footer.contact }}</div>{{ site.email }}<br>{{ t.footer.address }}<br>{{ t.footer.biz }}</div></div>
+  <div class="links"><div><div class="mono">{{ t.footer.explore }}</div><a data-go="hero">{{ t.nav.home }}</a><br><a data-go="works">{{ t.nav.services }}</a><br><a data-go="journal">{{ t.nav.journal }}</a><br><a data-go="gallery">{{ t.nav.gallery }}</a><br><a href="{{ privacy_path }}">{{ t.footer.privacy }}</a></div><div><div class="mono">{{ t.footer.contact }}</div>{{ site.email }}<br>{{ t.footer.address }}<br>{{ t.footer.biz }}</div></div>
 </footer>
 
-<script>const C={{ data|tojson }};</script>
+<script>const C={{ data|tojson }};const G={{ gallery_js|tojson }};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
