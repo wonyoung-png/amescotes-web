@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 {% if base %}<base href="{{ base }}">{% endif %}
 <title>{{ t.meta.title }}</title>
+{% if site.noindex %}<meta name="robots" content="noindex">{% endif %}
 <meta name="description" content="{{ t.meta.description }}">
 <link rel="canonical" href="{{ site.url }}/{{ path }}">
 {% for l, p in langs %}<link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}/{{ p }}">
