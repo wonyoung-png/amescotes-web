@@ -117,10 +117,17 @@ form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.query
 const gItems=$$('#gg .it');
 const gio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{rootMargin:'200px'});
 $$('#gg video').forEach(v=>gio.observe(v));
-$$('#gf button').forEach(b=>b.onclick=()=>{$$('#gf button').forEach(x=>x.classList.toggle('on',x===b));gItems.forEach(it=>it.classList.toggle('hide',b.dataset.t!=='all'&&it.dataset.t!==b.dataset.t));ScrollTrigger.refresh()});
+// show a first batch, MORE reveals the next one (desktop 16, mobile 10)
+const STEP=()=>innerWidth>820?16:10;let shown=STEP();
+function gpaint(){let n=0;gItems.forEach(it=>{const v=!it.classList.contains('hide');it.classList.toggle('cut',v&&++n>shown)});
+  const total=gItems.filter(it=>!it.classList.contains('hide')).length;$('#gcount').textContent=Math.min(shown,total)+' / '+total;
+  $('.gmore').classList.toggle('done',shown>=total);ScrollTrigger.refresh()}
+$('#gmore').onclick=()=>{shown+=STEP();gpaint()};
+$$('#gf button').forEach(b=>b.onclick=()=>{$$('#gf button').forEach(x=>x.classList.toggle('on',x===b));gItems.forEach(it=>it.classList.toggle('hide',b.dataset.t!=='all'&&it.dataset.t!==b.dataset.t));shown=STEP();gpaint()});
+gpaint();
 const lb=$('#lb'),lbm=$('#lbm');let cur=-1;
 document.body.appendChild(lb);
-const gvis=()=>gItems.filter(it=>!it.classList.contains('hide')).map(it=>+it.dataset.i);
+const gvis=()=>gItems.filter(it=>!it.classList.contains('hide')).map(it=>+it.dataset.i);  // lightbox browses the whole filtered set, not just the revealed batch
 function gshow(i){cur=i;const g=G[i];lbm.innerHTML=g.type==='photo'?`<img src="gallery/${g.id}.jpg" alt="">`:`<video src="gallery/${g.id}.mp4" autoplay muted loop playsinline controls></video>`;
   const v=gvis();$('#lbn').textContent=(v.indexOf(i)+1)+' / '+v.length;lb.classList.add('on');lenis.stop()}
 function gstep(d){const v=gvis();gshow(v[(v.indexOf(cur)+d+v.length)%v.length])}

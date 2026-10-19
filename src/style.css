@@ -216,3 +216,11 @@ footer .links a{cursor:pointer}
 .track .txt{font:500 18px 'Instrument Sans';letter-spacing:.12em;transition:color .3s}
 .track .nm{position:absolute;left:10px;bottom:8px;opacity:0;transition:opacity .3s;color:#fff;font-size:10px}
 .track .cell:hover img{transform:scale(1.08)}.track .nm{display:none}
+
+.ggrid .it.cut{display:none}
+.gmore{display:flex;flex-direction:column;align-items:center;gap:10px;padding:5vh 0 0}
+.gmore button{display:inline-flex;align-items:center;gap:10px;border:0;background:var(--ink);color:#fff;padding:12px 14px 12px 20px;border-radius:8px;cursor:pointer;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase}
+.gmore button i{font-style:normal;background:#fff;color:var(--ink);width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.gmore button:hover i{transform:translateY(3px)}
+.gmore span.mono{color:var(--stone)}
+.gmore.done button{display:none}
