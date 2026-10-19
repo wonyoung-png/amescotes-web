@@ -85,7 +85,7 @@ const PLACES=C.site.places.map((p,i)=>({...p,...C.global.places[i]}));
         s.attr('transform',`translate(${x},${y})`).style('display',d3.geoDistance(d.c,center)<Math.PI/2?null:'none');
         s.select('.halo').attr('r',a?18:12).attr('fill','none').attr('stroke',a?'#fff':'#FBEBD8').attr('stroke-dasharray','2 3');
         s.select('.dot').attr('r',5).attr('fill',a?'#fff':'#163A30').attr('stroke','#fff').attr('stroke-width',1.5);
-        s.select('text').text(d.n).attr('x',d.o[0]).attr('y',d.o[1]).attr('fill','#fff').attr('font-family','Instrument Sans').attr('font-size',13)})}
+        s.select('text').text(d.n).attr('x',d.o[0]).attr('y',d.o[1]).attr('fill','#fff').attr('font-family','IBM Plex Mono').attr('font-size',12).attr('font-size',13)})}
   function pick(i){active=i;const d=PLACES[i];$('#mc-k').textContent=d.k;$('#mc-h').textContent=d.n;$('#mc-p').textContent=d.p;
     const ip=d3.interpolate(proj.rotate(),[-d.c[0]+6,-d.c[1]+10]);d3.transition().duration(900).tween('r',()=>t=>{proj.rotate(ip(t));draw()})}
   svg.call(d3.drag().on('drag',e=>{const r=proj.rotate(),k=70/proj.scale();proj.rotate([r[0]+e.dx*k,Math.max(-60,Math.min(60,r[1]-e.dy*k))]);draw()}));
