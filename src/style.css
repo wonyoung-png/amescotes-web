@@ -10,8 +10,9 @@ img{display:block}
 .sticky{position:sticky;top:0;height:100vh;overflow:hidden}
 
 /* logo + loader */
-.logo-fixed{position:fixed;top:22px;left:26px;z-index:70;mix-blend-mode:difference;pointer-events:none}
-.logo-fixed img{height:13px;filter:invert(1)}
+.logo-fixed{position:fixed;top:22px;left:26px;z-index:70;pointer-events:none}
+.logo-fixed img{height:14px;filter:invert(1) drop-shadow(0 1px 6px rgba(0,0,0,.35));transition:filter .3s}
+.logo-fixed.on-light img{filter:none}
 #loader{position:fixed;inset:0;z-index:100;background:var(--paper);display:flex;align-items:center;justify-content:center}
 #loader img{height:16px}
 

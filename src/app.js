@@ -44,7 +44,9 @@ ScrollTrigger.create({trigger:'#story',start:'top top',end:'bottom bottom',onUpd
 const imgs=$$('#unfold .win img'),tts=$$('#unfold .tt span');
 ScrollTrigger.create({trigger:'#unfold',start:'top top',end:'bottom bottom',onUpdate(st){
   const p=st.progress,g=clamp(p/.35),e=gsap.parseEase('power2.inOut')(g),c=clamp((p-.4)/.1),I=gsap.utils.interpolate;
-  gsap.set('#unfold .win',{width:I(innerWidth*(wide()?.34:.7),innerWidth,e),height:I(innerHeight*.34,innerHeight,e),top:I(innerHeight*.56,innerHeight*.5,e),borderRadius:6*(1-e),'--dim':e});
+  const SB=$('#unfold .sticky'),SW=SB.clientWidth,SH=SB.clientHeight;
+  gsap.set('#unfold .win',{width:I(SW*(wide()?.34:.7),SW,e),height:I(SH*.34,SH,e),top:I(SH*.56,SH*.5,e),borderRadius:6*(1-e),'--dim':e});
+  unfoldDark=g>.6;
   gsap.set('#unfold .t0',{opacity:1-g*2.2,y:-g*60});gsap.set('#unfold .tt',{opacity:g>.9?1:0});
   const k=p<.55?0:p<.78?1:2;tts.forEach((t,j)=>t.classList.toggle('on',j===k));imgs.forEach((m,j)=>m.classList.toggle('on',j===k));
   gsap.set('#unfold .cols',{opacity:c,y:30*(1-c)});
@@ -151,3 +153,11 @@ let gsx=0;lb.addEventListener('touchstart',e=>gsx=e.touches[0].clientX,{passive:
   const up=()=>{drag=false;box.classList.remove('drag')};box.addEventListener('pointerup',up);box.addEventListener('pointercancel',up);
   box.addEventListener('mouseenter',()=>hover=true);box.addEventListener('mouseleave',()=>{hover=false;up()});
 })();
+
+// logo colour follows what is behind it: white over photos / dark sections, ink over light ones
+let unfoldDark=false;
+const DARK=new Set(['hero','story','map','contact','ch2']);
+function logoTone(){const y=28;let dark=false;
+  for(const el of document.querySelectorAll('#works > .ch, body > section:not(#works), footer')){const r=el.getBoundingClientRect();if(r.top<=y&&r.bottom>y){dark=el.id==='unfold'?unfoldDark:DARK.has(el.id);break}}
+  document.querySelector('.logo-fixed').classList.toggle('on-light',!dark)}
+lenis.on('scroll',logoTone);addEventListener('load',logoTone);logoTone();
