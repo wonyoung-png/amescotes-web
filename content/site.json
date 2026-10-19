@@ -192,30 +192,21 @@
     "logo_1d47f6.png",
     "logo_1e2489.png",
     "logo_22c740.png",
-    "logo_33bd32.png",
     "logo_3a5476.png",
     "logo_55378f.png",
     "logo_588320.png",
-    "logo_5b22dc.png",
     "logo_5d6ff1.png",
     "logo_6a8312.png",
     "logo_6eb0b6.png",
     "logo_7a3d0e.png",
     "logo_7b6275.png",
-    "logo_861028.png",
     "logo_9c88a7.png",
-    "logo_a72cf9.png",
     "logo_b49a01.png",
-    "logo_b9010b.png",
     "logo_c44040.png",
-    "logo_d28d87.png",
     "logo_d7cfc1.png",
-    "logo_d87a97.png",
-    "logo_dfc1a7.png",
-    "logo_e72e1e.png",
     "logo_ede0a8.png",
     "logo_f2ca4f.png",
-    "logo_f3dece.png"
+    "logo_ribbonbit.png"
   ],
   "brands": [
     "NOTHING WRITTEN",
@@ -245,5 +236,95 @@
       "date": "2020.06"
     }
   ],
-  "footer_image": "cut/b8.png"
+  "footer_image": "cut/b8.png",
+  "clients": [
+    {
+      "name": "BROWNYARD",
+      "logo": "logo_039bda.png"
+    },
+    {
+      "name": "LOW CLASSIC",
+      "logo": "logo_04a1d9.png"
+    },
+    {
+      "name": "SUSAN FANG",
+      "logo": "logo_1a87ed.png"
+    },
+    {
+      "name": "SOLID HOMME",
+      "logo": "logo_1d47f6.png"
+    },
+    {
+      "name": "ATELIER DE LUMEN",
+      "logo": "logo_1e2489.png"
+    },
+    {
+      "name": "MINJUKIM",
+      "logo": "logo_22c740.png"
+    },
+    {
+      "name": "TU ET TOI",
+      "logo": "logo_3a5476.png"
+    },
+    {
+      "name": "DEINET",
+      "logo": "logo_55378f.png"
+    },
+    {
+      "name": "OSOI",
+      "logo": "logo_588320.png"
+    },
+    {
+      "name": "CLORE",
+      "logo": "logo_5d6ff1.png"
+    },
+    {
+      "name": "IDANG",
+      "logo": "logo_6a8312.png"
+    },
+    {
+      "name": "RRACE",
+      "logo": "logo_6eb0b6.png"
+    },
+    {
+      "name": "OVRL",
+      "logo": "logo_7a3d0e.png"
+    },
+    {
+      "name": "SIE",
+      "logo": "logo_7b6275.png"
+    },
+    {
+      "name": "NOTHING WRITTEN",
+      "logo": "logo_9c88a7.png"
+    },
+    {
+      "name": "HEHR",
+      "logo": "logo_b49a01.png"
+    },
+    {
+      "name": "THEILMA",
+      "logo": "logo_c44040.png"
+    },
+    {
+      "name": "SAGEMENT",
+      "logo": "logo_d7cfc1.png"
+    },
+    {
+      "name": "MEHEU",
+      "logo": "logo_ede0a8.png"
+    },
+    {
+      "name": "CLOR",
+      "logo": "logo_f2ca4f.png"
+    },
+    {
+      "name": "RIBBONBIT",
+      "logo": "logo_ribbonbit.png"
+    },
+    {
+      "name": "HESS",
+      "logo": null
+    }
+  ]
 }
