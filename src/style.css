@@ -176,7 +176,7 @@ footer .links a{cursor:pointer}
 @media(max-width:820px){
   :root{--dw:78vw}
   .hero{padding-right:var(--gap)} .hero .btn{bottom:17vh}
-  #drawer{box-shadow:0 0 0 100vmax rgba(0,0,0,.35),0 18px 50px rgba(15,26,22,.16)}
+  #drawer{box-shadow:0 0 0 100vmax rgba(0,0,0,.35),0 18px 50px rgba(15,26,22,.16)} body.drawer-closed #drawer{box-shadow:none}
   #story .card{width:38vw!important;height:26vw!important} #story .card.tall{display:none} #story .card[style*="left:5"],#story .card[style*="left:6"]{left:auto!important;right:5vw}
   #unfold .tt{font-size:30px} #unfold .cols{grid-template-columns:1fr 1fr;row-gap:14px}
   .ch .prod{width:44vw;top:38%} .ch .say{display:none} .ch .feat{width:auto;left:28px;right:28px;bottom:12vh} .ch .stats{display:none}
