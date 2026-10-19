@@ -17,7 +17,7 @@ def build():
     site = load('site')
     gallery = load('gallery')
     # display order: camera shots first (ATLM, R000…), phone shots after, a film every 7 tiles for rhythm
-    rank = lambda g: (0 if g['src'].startswith('ATLM') else 1 if g['src'].startswith('R0') else 2, g['src'])
+    rank = lambda g: (0 if 'ATLM' in g['src'] else 1 if 'R0' in g['src'] else 2, g['src'])
     photos = sorted((g for g in gallery if g['type'] == 'photo'), key=rank)
     films = sorted((g for g in gallery if g['type'] == 'video'), key=rank)
     gallery = []
