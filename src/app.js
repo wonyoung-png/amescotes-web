@@ -161,3 +161,7 @@ function logoTone(){const y=28;let dark=false;
   for(const el of document.querySelectorAll('#works > .ch, body > section:not(#works), footer')){const r=el.getBoundingClientRect();if(r.top<=y&&r.bottom>y){dark=el.id==='unfold'?unfoldDark:DARK.has(el.id);break}}
   document.querySelector('.logo-fixed').classList.toggle('on-light',!dark)}
 lenis.on('scroll',logoTone);addEventListener('load',logoTone);logoTone();
+
+// logo is large on the hero and shrinks into the corner as you scroll; big size scales with screen width
+gsap.fromTo('.logo-fixed',{scale:()=>wide()?2.6:1.8},{scale:1,ease:'none',immediateRender:true,
+  scrollTrigger:{trigger:'.hero',start:'top top',end:()=>'+='+innerHeight*.45,scrub:.4,invalidateOnRefresh:true}});

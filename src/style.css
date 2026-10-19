@@ -11,7 +11,8 @@ img{display:block}
 
 /* logo + loader */
 .logo-fixed{position:fixed;top:22px;left:26px;z-index:70;pointer-events:none}
-.logo-fixed img{height:14px;filter:invert(1) drop-shadow(0 1px 6px rgba(0,0,0,.35));transition:filter .3s}
+.logo-fixed{transform-origin:0 0}
+.logo-fixed img{height:clamp(13px,1vw,16px);filter:invert(1) drop-shadow(0 1px 6px rgba(0,0,0,.35));transition:filter .3s}
 .logo-fixed.on-light img{filter:none}
 #loader{position:fixed;inset:0;z-index:100;background:var(--paper);display:flex;align-items:center;justify-content:center}
 #loader img{height:16px}
