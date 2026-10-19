@@ -204,13 +204,15 @@ footer .links a{cursor:pointer}
 #lb .n{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#cfe0d6}
 @media(max-width:640px){.ggrid{columns:2 140px}#lb .pv,#lb .nx{top:auto;bottom:14px}}
 
-/* client logo wall */
-.clients{padding:18vh 28px 14vh}
-.clients .head{padding:0 0 7vh}
-.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.wall .cell{position:relative;aspect-ratio:16/9;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:background .3s}
-.wall img{max-width:58%;max-height:38%;object-fit:contain;filter:invert(1);transition:transform .4s,filter .3s}
-.wall .txt{font:500 20px 'Instrument Sans';letter-spacing:.12em;transition:color .3s}
-.wall .nm{position:absolute;left:12px;bottom:10px;opacity:0;transition:opacity .3s;color:#fff;font-size:10px}
-.wall .cell:hover{background:var(--accent)}.wall .cell:hover img{filter:none;transform:scale(1.08)}.wall .cell:hover .txt{color:#fff}.wall .cell:hover .nm{opacity:1}
-@media(max-width:640px){.wall{grid-template-columns:repeat(2,1fr)}.wall img{max-width:66%;max-height:44%}.wall .txt{font-size:16px}}
+/* client logos: two rows drifting in opposite directions, drag / swipe moves both */
+.clients{padding:18vh 0 14vh;overflow:hidden}
+.clients .head{padding:0 28px 7vh}
+.rows{display:grid;gap:10px;cursor:grab;touch-action:pan-y;user-select:none}
+.rows.drag{cursor:grabbing}
+.row{overflow:hidden}
+.track{display:flex;gap:10px;width:max-content;will-change:transform}
+.track .cell{position:relative;flex:none;width:clamp(150px,17vw,240px);aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.track img{max-width:60%;max-height:40%;object-fit:contain;filter:invert(1);pointer-events:none;transition:transform .4s,filter .3s}
+.track .txt{font:500 18px 'Instrument Sans';letter-spacing:.12em;transition:color .3s}
+.track .nm{position:absolute;left:10px;bottom:8px;opacity:0;transition:opacity .3s;color:#fff;font-size:10px}
+.track .cell:hover{background:var(--accent)}.track .cell:hover img{filter:none;transform:scale(1.08)}.track .cell:hover .txt{color:#fff}.track .cell:hover .nm{opacity:1}

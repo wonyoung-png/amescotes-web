@@ -94,7 +94,6 @@ const PLACES=C.site.places.map((p,i)=>({...p,...C.global.places[i]}));
 })();
 
 // reveals + marquee speed
-gsap.from('.wall .cell',{opacity:0,y:20,duration:.6,stagger:.03,ease:'power2.out',scrollTrigger:{trigger:'.wall',start:'top 85%'}});
 gsap.utils.toArray('.clients h2,.range h2,.journal h2,.rg>div,.journal a,form').forEach(el=>gsap.from(el,{y:50,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
 
 // footer odometer: CSS px -> metres (96px = 1 inch), stitches at 9 per inch
@@ -131,3 +130,17 @@ lb.querySelector('.x').onclick=gclose;lb.querySelector('.pv').onclick=()=>gstep(
 lb.onclick=e=>{if(e.target===lb||e.target===lbm)gclose()};
 addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')gclose();if(e.key==='ArrowRight')gstep(1);if(e.key==='ArrowLeft')gstep(-1)});
 let gsx=0;lb.addEventListener('touchstart',e=>gsx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-gsx;if(Math.abs(dx)>50)gstep(dx<0?1:-1)});
+
+// client rows: auto drift (row 1 → left, row 2 → right); dragging or swiping moves both rows with the finger
+(()=>{const box=$('#rows');if(!box)return;const tr=[...box.querySelectorAll('.track')];
+  const st=tr.map(t=>({el:t,x:0,dir:+t.dataset.dir,half:()=>t.scrollWidth/2}));
+  let drag=false,last=0,vel=0,hover=false;const SPEED=.45;
+  const wrap=s=>{const h=s.half();s.x=((s.x%h)+h)%h-h};
+  st[1].x=-st[1].half()/2;
+  gsap.ticker.add(()=>{const auto=drag?0:(hover?SPEED*.25:SPEED);
+    st.forEach(s=>{s.x+= -s.dir*auto+ (drag?0:vel);wrap(s);s.el.style.transform=`translate3d(${s.x}px,0,0)`});vel*=.92});
+  box.addEventListener('pointerdown',e=>{drag=true;last=e.clientX;vel=0;box.classList.add('drag');box.setPointerCapture(e.pointerId)});
+  box.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-last;last=e.clientX;vel=dx;st.forEach(s=>{s.x+=dx;wrap(s)})});
+  const up=()=>{drag=false;box.classList.remove('drag')};box.addEventListener('pointerup',up);box.addEventListener('pointercancel',up);
+  box.addEventListener('mouseenter',()=>hover=true);box.addEventListener('mouseleave',()=>{hover=false;up()});
+})();

@@ -80,7 +80,7 @@
 
 <section class="clients" id="clients">
   <div class="head"><h2 class="disp">{{ t.portfolio.title|safe }}</h2><p style="max-width:380px;font-size:15px;line-height:1.7;color:var(--stone)">{{ t.portfolio.text }}</p></div>
-  <div class="wall">{% for c in site.clients %}<div class="cell">{% if c.logo %}<img src="logo/{{ c.logo }}" alt="{{ c.name }}" loading="lazy">{% else %}<span class="txt">{{ c.name }}</span>{% endif %}<span class="nm mono">{{ c.name }}</span></div>{% endfor %}</div>
+  <div class="rows" id="rows">{% for r in range(2) %}<div class="row"><div class="track" data-dir="{{ 1 if r == 0 else -1 }}">{% for k in range(2) %}{% for c in site.clients[r::2] %}<div class="cell">{% if c.logo %}<img src="logo/{{ c.logo }}" alt="{{ c.name }}" draggable="false" loading="lazy">{% else %}<span class="txt">{{ c.name }}</span>{% endif %}<span class="nm mono">{{ c.name }}</span></div>{% endfor %}{% endfor %}</div></div>{% endfor %}</div>
 </section>
 
 <section class="range" id="range">
