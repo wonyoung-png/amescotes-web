@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% if base %}<base href="{{ base }}">{% endif %}
+<title>{{ t.gallery.title }} — AMESCOTES</title>
+{% if site.noindex %}<meta name="robots" content="noindex">{% endif %}
+<meta name="description" content="{{ t.gallery.sub }}">
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#EEF4EF;--ink:#0F1A16;--stone:#4F6F64;--accent:#1F4A3D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans KR',sans-serif}
+a{color:inherit;text-decoration:none}
+.mono{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 24px;background:rgba(238,244,239,.88);backdrop-filter:blur(10px)}
+header img{height:13px;display:block}
+.pills{display:flex;gap:4px;background:#fff;padding:4px;border-radius:9px;box-shadow:0 6px 20px rgba(15,26,22,.08)}
+.pills button{font:inherit;text-transform:uppercase;letter-spacing:.08em;border:0;background:none;padding:8px 12px;border-radius:6px;cursor:pointer;color:var(--ink)}
+.pills button.on{background:var(--ink);color:#fff}
+.right{display:flex;gap:6px;align-items:center}
+.right a.on{background:var(--ink);color:#fff}.right a{padding:5px 8px;border-radius:6px}
+.intro{padding:9vh 24px 6vh;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+h1{font:400 clamp(56px,8vw,140px)/.9 'Instrument Sans';letter-spacing:-.05em}
+.intro p{max-width:420px;font-size:15px;line-height:1.7;color:var(--stone)}
+.grid{columns:4 280px;column-gap:6px;padding:0 6px 10vh}
+.it{break-inside:avoid;margin-bottom:6px;position:relative;cursor:zoom-in;border-radius:6px;overflow:hidden;background:#dfe8e2}
+.it img,.it video{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s}
+.it:hover img,.it:hover video{transform:scale(1.04)}
+.it .mono{position:absolute;left:8px;top:8px;background:#fff;padding:3px 7px;border-radius:4px;font-size:10px}
+.it.hide{display:none}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,18,15,.94);display:none;align-items:center;justify-content:center}
+#lb.on{display:flex}
+#lb img,#lb video{max-width:92vw;max-height:86vh;border-radius:4px}
+#lb button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:18px}
+#lb button:hover{background:rgba(255,255,255,.25)}
+#lb .x{top:18px;right:18px}#lb .pv{left:18px;top:50%}#lb .nx{right:18px;top:50%}
+#lb .n{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#cfe0d6}
+footer{padding:6vh 24px 8vh;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--stone)}
+@media(max-width:640px){header{padding:12px 14px}.right .langs{display:none}.grid{columns:2 140px}#lb .pv,#lb .nx{top:auto;bottom:14px}}
+</style>
+</head>
+<body>
+<header>
+  <a href="{{ home_path }}"><img src="amescotes_logo.png" alt="AMESCOTES"></a>
+  <div class="pills mono" id="f"><button class="on" data-t="all">{{ t.gallery.all }}</button><button data-t="photo">{{ t.gallery.photos }}</button><button data-t="video">{{ t.gallery.films }}</button></div>
+  <div class="right mono"><span class="langs">{% for l, p in langs %}<a href="{{ p }}gallery.html" class="{{ 'on' if l == lang else '' }}">{{ l|upper }}</a>{% endfor %}</span><a href="{{ home_path }}">{{ t.gallery.back }}</a></div>
+</header>
+<section class="intro"><h1>{{ t.gallery.title }}</h1><p>{{ t.gallery.sub }}<br><span class="mono">{{ photos }} photos · {{ videos }} films</span></p></section>
+<div class="grid" id="g">
+{% for it in gallery %}{% if it.type == 'photo' %}<figure class="it" data-t="photo" data-i="{{ loop.index0 }}"><img src="gallery/{{ it.id }}_s.jpg" width="{{ it.w }}" height="{{ it.h_px }}" alt="" loading="lazy" decoding="async"></figure>
+{% else %}<figure class="it" data-t="video" data-i="{{ loop.index0 }}"><span class="mono">Film</span><video muted loop playsinline preload="none" poster="gallery/{{ it.id }}_s.jpg" data-src="gallery/{{ it.id }}.mp4" width="{{ it.w }}" height="{{ it.h_px }}"></video></figure>
+{% endif %}{% endfor %}
+</div>
+<footer><span>ⓒ AMESCOTES, INC · {{ site.email }}</span><a href="{{ home_path }}">{{ t.gallery.back }}</a></footer>
+<div id="lb"><button class="x" aria-label="close">✕</button><button class="pv" aria-label="prev">←</button><button class="nx" aria-label="next">→</button><div id="lbm"></div><div class="n mono" id="lbn"></div></div>
+<script>
+const G={{ gallery_js|tojson }};
+const items=[...document.querySelectorAll('.it')];
+// films play only while on screen
+const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{rootMargin:'200px'});
+document.querySelectorAll('.it video').forEach(v=>io.observe(v));
+// filter
+document.querySelectorAll('#f button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#f button').forEach(x=>x.classList.toggle('on',x===b));
+  items.forEach(it=>it.classList.toggle('hide',b.dataset.t!=='all'&&it.dataset.t!==b.dataset.t))});
+// lightbox: arrows, keyboard, swipe
+const lb=document.getElementById('lb'),m=document.getElementById('lbm');let cur=-1;
+const vis=()=>items.filter(it=>!it.classList.contains('hide')).map(it=>+it.dataset.i);
+function show(i){cur=i;const g=G[i];m.innerHTML=g.type==='photo'?`<img src="gallery/${g.id}.jpg" alt="">`:`<video src="gallery/${g.id}.mp4" autoplay muted loop playsinline controls></video>`;
+  const v=vis();document.getElementById('lbn').textContent=(v.indexOf(i)+1)+' / '+v.length;lb.classList.add('on');document.body.style.overflow='hidden'}
+function step(d){const v=vis();show(v[(v.indexOf(cur)+d+v.length)%v.length])}
+function close(){lb.classList.remove('on');m.innerHTML='';document.body.style.overflow=''}
+items.forEach(it=>it.onclick=()=>show(+it.dataset.i));
+lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=()=>step(-1);lb.querySelector('.nx').onclick=()=>step(1);
+lb.onclick=e=>{if(e.target===lb||e.target===m)close()};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+let sx=0;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50)step(dx<0?1:-1)});
+</script>
+</body>
+</html>

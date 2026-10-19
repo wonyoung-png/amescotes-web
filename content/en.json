@@ -3,80 +3,345 @@
     "title": "AMESCOTES — Handbag & Leather Goods OEM / ODM",
     "description": "A handbag and leather goods OEM/ODM partner managing every step from materials sourcing to pattern, sample and production. Seoul studio, Qingdao factory. From 50 pieces in Korea, 200 in China."
   },
-  "nav": {"home": "Home", "about": "About us", "history": "History", "services": "Services", "global": "Global", "range": "Business range", "portfolio": "Portfolio", "journal": "Journal", "contact": "Contact", "menu": "Menu"},
-  "hero": {"title": ["Heritage meets", "innovation."], "sub": "The easiest way to make leather goods.<br>AMESCOTES · since 2017", "button": "Our services"},
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "history": "History",
+    "services": "Services",
+    "global": "Global",
+    "range": "Business range",
+    "portfolio": "Portfolio",
+    "journal": "Journal",
+    "contact": "Contact",
+    "menu": "Menu",
+    "gallery": "Gallery"
+  },
+  "hero": {
+    "title": [
+      "Heritage meets",
+      "innovation."
+    ],
+    "sub": "The easiest way to make leather goods.<br>AMESCOTES · since 2017",
+    "button": "Our services"
+  },
   "about": {
-    "lines": ["From sourcing materials", "to drawing the pattern,", "making the sample,", "and final production.", "We run every step ourselves.", "One-to-one consulting sets the direction with you."],
+    "lines": [
+      "From sourcing materials",
+      "to drawing the pattern,",
+      "making the sample,",
+      "and final production.",
+      "We run every step ourselves.",
+      "One-to-one consulting sets the direction with you."
+    ],
     "end": "Easy, fast, honest."
   },
   "business": {
     "intro": "Our business.",
-    "slides": ["Global sourcing &amp; R&amp;D.", "Prototyping &amp; sampling.", "Global manufacturing."],
+    "slides": [
+      "Global sourcing &amp; R&amp;D.",
+      "Prototyping &amp; sampling.",
+      "Global manufacturing."
+    ],
     "values": [
-      {"tag": "Value 01", "title": "Competitive cost", "text": "Efficient sourcing through a global materials network and our in-house development team."},
-      {"tag": "Value 02", "title": "Rigorous quality control", "text": "Our own ASQ (Amescotes Standard Quality) plus ISO 9001 · 14001."},
-      {"tag": "Value 03", "title": "One-stop solution", "text": "We lead every process, from sourcing to delivery."},
-      {"tag": "Since 2017", "title": "115 brands · 1,080 projects", "text": "Around 15 production partners in Korea and abroad, over 100,000 pieces a year."}
+      {
+        "tag": "Value 01",
+        "title": "Competitive cost",
+        "text": "Efficient sourcing through a global materials network and our in-house development team."
+      },
+      {
+        "tag": "Value 02",
+        "title": "Rigorous quality control",
+        "text": "Our own ASQ (Amescotes Standard Quality) plus ISO 9001 · 14001."
+      },
+      {
+        "tag": "Value 03",
+        "title": "One-stop solution",
+        "text": "We lead every process, from sourcing to delivery."
+      },
+      {
+        "tag": "Since 2017",
+        "title": "115 brands · 1,080 projects",
+        "text": "Around 15 production partners in Korea and abroad, over 100,000 pieces a year."
+      }
     ]
   },
   "history": {
     "title": "Our history.",
-    "items": ["AMESCOTES founded", "Incorporated as AMESCOTES, Inc.", "Corporate R&amp;D center opened<br>ISO 9001 · ISO 14001 certified", "Selected as a technology-rated excellent company", "Wholesale contracts in China and Japan", "Japanese subsidiary founded<br>Factory established in China", "Distribution contract in Indonesia<br>INNOBIZ certified"]
+    "items": [
+      "AMESCOTES founded",
+      "Incorporated as AMESCOTES, Inc.",
+      "Corporate R&amp;D center opened<br>ISO 9001 · ISO 14001 certified",
+      "Selected as a technology-rated excellent company",
+      "Wholesale contracts in China and Japan",
+      "Japanese subsidiary founded<br>Factory established in China",
+      "Distribution contract in Indonesia<br>INNOBIZ certified"
+    ]
   },
   "services": [
-    {"tab": "OEM", "name": "OEM", "say": "Built on a global production network, we make your designs on time and to a consistent standard.",
-     "features": [["International-standard process control", "Production is managed to ISO 9001 · ISO 14001."], ["In-house, all-in-one", "High productivity and full accountability from start to finish."], ["Small runs to large volumes", "Production capacity across Korea and China lets us flex to your order."]],
-     "stats": [["Network", "~15 partners"], ["Annual", "100,000+ pcs"], ["MOQ · Korea", "50 pcs~"], ["MOQ · China", "200 pcs~ / 2 col."]]},
-    {"tab": "ODM", "name": "ODM", "say": "Market insight from running our own brand team, combined with OEM capability — from concept to production.",
-     "features": [["Trend- and material-led planning", "We propose products and designs based on trend analysis and material research."], ["Flexible pattern &amp; sample", "Patterns and samples are made in close work with our in-house team."], ["One-to-one consulting", "Materials, colours and details proposed to fit your brand."]],
-     "stats": [["Planning", "Trend · Material"], ["Design", "Included"], ["Sample", "≈ 2 weeks"], ["Production", "Linked to OEM"]]},
-    {"tab": "Process", "name": "Process", "say": "From idea to finished piece. No tech pack or reference product needed to get started.",
-     "features": [["01 · Request", "We discuss design, quality, price, colour and size together and propose the best production terms."], ["02 · Sample", "Made by our in-house team, never outsourced, so feedback goes in at any time. Designed with production efficiency in mind."], ["03 · Production", "Made in Korea or abroad, whichever fits best, backed by ASQ standards and active after-service."]],
-     "stats": [["Request", "Open to all"], ["Sample", "≈ 2 weeks"], ["Production", "Timeline on request"], ["After", "ASQ · A/S"]]}
+    {
+      "tab": "OEM",
+      "name": "OEM",
+      "say": "Built on a global production network, we make your designs on time and to a consistent standard.",
+      "features": [
+        [
+          "International-standard process control",
+          "Production is managed to ISO 9001 · ISO 14001."
+        ],
+        [
+          "In-house, all-in-one",
+          "High productivity and full accountability from start to finish."
+        ],
+        [
+          "Small runs to large volumes",
+          "Production capacity across Korea and China lets us flex to your order."
+        ]
+      ],
+      "stats": [
+        [
+          "Network",
+          "~15 partners"
+        ],
+        [
+          "Annual",
+          "100,000+ pcs"
+        ],
+        [
+          "MOQ · Korea",
+          "50 pcs~"
+        ],
+        [
+          "MOQ · China",
+          "200 pcs~ / 2 col."
+        ]
+      ]
+    },
+    {
+      "tab": "ODM",
+      "name": "ODM",
+      "say": "Market insight from running our own brand team, combined with OEM capability — from concept to production.",
+      "features": [
+        [
+          "Trend- and material-led planning",
+          "We propose products and designs based on trend analysis and material research."
+        ],
+        [
+          "Flexible pattern &amp; sample",
+          "Patterns and samples are made in close work with our in-house team."
+        ],
+        [
+          "One-to-one consulting",
+          "Materials, colours and details proposed to fit your brand."
+        ]
+      ],
+      "stats": [
+        [
+          "Planning",
+          "Trend · Material"
+        ],
+        [
+          "Design",
+          "Included"
+        ],
+        [
+          "Sample",
+          "≈ 2 weeks"
+        ],
+        [
+          "Production",
+          "Linked to OEM"
+        ]
+      ]
+    },
+    {
+      "tab": "Process",
+      "name": "Process",
+      "say": "From idea to finished piece. No tech pack or reference product needed to get started.",
+      "features": [
+        [
+          "01 · Request",
+          "We discuss design, quality, price, colour and size together and propose the best production terms."
+        ],
+        [
+          "02 · Sample",
+          "Made by our in-house team, never outsourced, so feedback goes in at any time. Designed with production efficiency in mind."
+        ],
+        [
+          "03 · Production",
+          "Made in Korea or abroad, whichever fits best, backed by ASQ standards and active after-service."
+        ]
+      ],
+      "stats": [
+        [
+          "Request",
+          "Open to all"
+        ],
+        [
+          "Sample",
+          "≈ 2 weeks"
+        ],
+        [
+          "Production",
+          "Timeline on request"
+        ],
+        [
+          "After",
+          "ASQ · A/S"
+        ]
+      ]
+    }
   ],
   "global": {
     "title": "Made here,<br>sent there.",
     "text": "Developed in Seoul, produced in Qingdao, shipped to Japan and Southeast Asia. Drag the globe to spin it.",
-    "filters": ["All", "Make", "Office", "Trade"],
+    "filters": [
+      "All",
+      "Make",
+      "Office",
+      "Trade"
+    ],
     "places": [
-      {"n": "Seoul", "k": "HQ · Studio", "p": "Headquarters and in-house development: patterns, samples and materials. Korean production from 50 pieces."},
-      {"n": "Qingdao", "k": "Factory · 2025", "p": "Our factory in China, established 2025. Volume production from 200 pieces in 2 colours."},
-      {"n": "Japan", "k": "Subsidiary · 2025", "p": "Japanese subsidiary founded in 2025, our point of contact for Japanese brands."},
-      {"n": "China", "k": "Wholesale · 2024", "p": "Wholesale contract signed in China, 2024."},
-      {"n": "Indonesia", "k": "Distribution · 2026", "p": "Distribution contract signed in Indonesia, 2026."}
+      {
+        "n": "Seoul",
+        "k": "HQ · Studio",
+        "p": "Headquarters and in-house development: patterns, samples and materials. Korean production from 50 pieces."
+      },
+      {
+        "n": "Qingdao",
+        "k": "Factory · 2025",
+        "p": "Our factory in China, established 2025. Volume production from 200 pieces in 2 colours."
+      },
+      {
+        "n": "Japan",
+        "k": "Subsidiary · 2025",
+        "p": "Japanese subsidiary founded in 2025, our point of contact for Japanese brands."
+      },
+      {
+        "n": "China",
+        "k": "Wholesale · 2024",
+        "p": "Wholesale contract signed in China, 2024."
+      },
+      {
+        "n": "Indonesia",
+        "k": "Distribution · 2026",
+        "p": "Distribution contract signed in Indonesia, 2026."
+      }
     ]
   },
-  "portfolio": {"title": "Brands that grew<br>alongside us.", "text": "We have worked with around 115 brands in Korea and abroad across 1,080 projects."},
+  "portfolio": {
+    "title": "Brands that grew<br>alongside us.",
+    "text": "We have worked with around 115 brands in Korea and abroad across 1,080 projects."
+  },
   "range": {
     "title": "Business range.",
     "groups": [
-      {"label": "Items", "items": ["Bags", "Belts", "Wallets", "Keyrings", "Shoes", "Small leather goods", "Living: trays, coasters"]},
-      {"label": "Lines", "items": ["Luxury", "Premium", "Contemporary", "Wholesale", "Merchandise · artist goods"]},
-      {"label": "Materials", "items": ["Genuine leather", "Vegan leather", "Cotton", "Nylon", "Polyester", "PVC and special materials"]}
+      {
+        "label": "Items",
+        "items": [
+          "Bags",
+          "Belts",
+          "Wallets",
+          "Keyrings",
+          "Shoes",
+          "Small leather goods",
+          "Living: trays, coasters"
+        ]
+      },
+      {
+        "label": "Lines",
+        "items": [
+          "Luxury",
+          "Premium",
+          "Contemporary",
+          "Wholesale",
+          "Merchandise · artist goods"
+        ]
+      },
+      {
+        "label": "Materials",
+        "items": [
+          "Genuine leather",
+          "Vegan leather",
+          "Cotton",
+          "Nylon",
+          "Polyester",
+          "PVC and special materials"
+        ]
+      }
     ]
   },
   "journal": {
     "title": "Notes on leather<br>&amp; trend.",
-    "posts": [{"tag": "Trend", "title": "Burgundy and suede — FW26"}, {"tag": "Material", "title": "The lambskin you can't find in Korea"}, {"tag": "Process", "title": "How a bag is made, and what to watch for"}]
+    "posts": [
+      {
+        "tag": "Trend",
+        "title": "Burgundy and suede — FW26"
+      },
+      {
+        "tag": "Material",
+        "title": "The lambskin you can't find in Korea"
+      },
+      {
+        "tag": "Process",
+        "title": "How a bag is made, and what to watch for"
+      }
+    ]
   },
   "contact": {
     "title": "Contact us.",
     "note": "A reliable partner for your brand's growth.<br>Tell us your quantity and preferred production site, and we'll share the timeline and next steps.",
-    "company": "Company", "company_ph": "Brand / company",
-    "name": "Name", "name_ph": "Your name",
-    "phone": "Phone", "phone_ph": "+82 10-0000-0000",
-    "email": "Email", "email_ph": "you@brand.com",
-    "site": "Production site", "site_options": ["Not sure yet", "Korea (50 pcs~)", "China (200 pcs~)"],
-    "qty": "Expected quantity", "qty_ph": "e.g. 100 pcs per style",
-    "type": "Inquiry type", "type_options": ["Production", "Material sourcing", "Collaboration", "Other"],
-    "message": "Message", "message_ph": "The product you want to make, references, timing",
-    "consent": "I agree to the collection and use of my personal data.", "privacy": "Details",
-    "submit": "Send →", "sending": "Sending…", "sent": "Received. We'll be in touch soon.", "error": "Sending failed. Please email contact@amescotes.co.kr."
+    "company": "Company",
+    "company_ph": "Brand / company",
+    "name": "Name",
+    "name_ph": "Your name",
+    "phone": "Phone",
+    "phone_ph": "+82 10-0000-0000",
+    "email": "Email",
+    "email_ph": "you@brand.com",
+    "site": "Production site",
+    "site_options": [
+      "Not sure yet",
+      "Korea (50 pcs~)",
+      "China (200 pcs~)"
+    ],
+    "qty": "Expected quantity",
+    "qty_ph": "e.g. 100 pcs per style",
+    "type": "Inquiry type",
+    "type_options": [
+      "Production",
+      "Material sourcing",
+      "Collaboration",
+      "Other"
+    ],
+    "message": "Message",
+    "message_ph": "The product you want to make, references, timing",
+    "consent": "I agree to the collection and use of my personal data.",
+    "privacy": "Details",
+    "submit": "Send →",
+    "sending": "Sending…",
+    "sent": "Received. We'll be in touch soon.",
+    "error": "Sending failed. Please email contact@amescotes.co.kr."
   },
-  "footer": {"scrolled": "Distance scrolled", "stitches": "At 9 stitches / inch, that's", "unit": "stitches", "explore": "Explore", "contact": "Contact", "address": "27, Bomun-ro 13na-gil, Seongbuk-gu, Seoul", "biz": "AMESCOTES, Inc. · CEO Wonyoung Lee · Business reg. 343-88-01791", "privacy": "Privacy policy"},
+  "footer": {
+    "scrolled": "Distance scrolled",
+    "stitches": "At 9 stitches / inch, that's",
+    "unit": "stitches",
+    "explore": "Explore",
+    "contact": "Contact",
+    "address": "27, Bomun-ro 13na-gil, Seongbuk-gu, Seoul",
+    "biz": "AMESCOTES, Inc. · CEO Wonyoung Lee · Business reg. 343-88-01791",
+    "privacy": "Privacy policy"
+  },
   "privacy": {
     "title": "Privacy policy",
     "body": "<p>AMESCOTES, Inc. (the 'Company') protects users' personal data under the Personal Information Protection Act of Korea.</p><h3>1. What we collect and why</h3><p>To receive and answer inquiries, we collect company name, name, phone, email, preferred production site, expected quantity, inquiry type and message. We use them for no other purpose.</p><h3>2. Retention</h3><p>Kept for 3 years after the inquiry is closed, then deleted without delay, unless the law requires longer.</p><h3>3. Third parties</h3><p>We do not share personal data with third parties without consent.</p><h3>4. Processors</h3><p>Email delivery of inquiries: FormSubmit · Website hosting: GitHub Pages (GitHub, Inc.)</p><h3>5. Your rights</h3><p>You may request access, correction, deletion or suspension at any time at contact@amescotes.co.kr.</p><h3>6. Contact</h3><p>AMESCOTES, Inc. · contact@amescotes.co.kr</p><p>Effective 19 October 2026</p>",
+    "back": "← Home"
+  },
+  "gallery": {
+    "title": "Gallery.",
+    "sub": "Photos and films shot in our factories and studio — from raw hide to finished bag.",
+    "all": "All",
+    "photos": "Photos",
+    "films": "Films",
     "back": "← Home"
   }
 }

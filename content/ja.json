@@ -3,80 +3,345 @@
     "title": "AMESCOTES — バッグ・レザーグッズ OEM / ODM",
     "description": "素材調達からパターン、サンプル、量産まで自社で管理するバッグ・レザーグッズのOEM/ODMパートナー。ソウルの開発室と青島の工場。韓国50個・中国200個から。"
   },
-  "nav": {"home": "Home", "about": "About us", "history": "History", "services": "Services", "global": "Global", "range": "Business range", "portfolio": "Portfolio", "journal": "Journal", "contact": "Contact", "menu": "メニュー"},
-  "hero": {"title": ["Heritage meets", "innovation."], "sub": "雑貨づくりを、いちばん簡単に。<br>AMESCOTES · since 2017", "button": "Our services"},
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "history": "History",
+    "services": "Services",
+    "global": "Global",
+    "range": "Business range",
+    "portfolio": "Portfolio",
+    "journal": "Journal",
+    "contact": "Contact",
+    "menu": "メニュー",
+    "gallery": "Gallery"
+  },
+  "hero": {
+    "title": [
+      "Heritage meets",
+      "innovation."
+    ],
+    "sub": "雑貨づくりを、いちばん簡単に。<br>AMESCOTES · since 2017",
+    "button": "Our services"
+  },
   "about": {
-    "lines": ["素材の調達から、", "パターン設計、", "サンプル製作、", "そして量産まで。", "すべての工程をAMESCOTESが自ら管理します。", "パートナーごとの1:1コンサルティングで方向性を一緒に決めます。"],
+    "lines": [
+      "素材の調達から、",
+      "パターン設計、",
+      "サンプル製作、",
+      "そして量産まで。",
+      "すべての工程をAMESCOTESが自ら管理します。",
+      "パートナーごとの1:1コンサルティングで方向性を一緒に決めます。"
+    ],
     "end": "簡単に、速く、誠実に。"
   },
   "business": {
     "intro": "Our business.",
-    "slides": ["Global sourcing &amp; R&amp;D.", "Prototyping &amp; sampling.", "Global manufacturing."],
+    "slides": [
+      "Global sourcing &amp; R&amp;D.",
+      "Prototyping &amp; sampling.",
+      "Global manufacturing."
+    ],
     "values": [
-      {"tag": "Value 01", "title": "コスト競争力", "text": "グローバルな素材ネットワークと社内開発チームによる効率的な調達。"},
-      {"tag": "Value 02", "title": "徹底した品質管理", "text": "自社基準ASQ(Amescotes Standard Quality)とISO 9001・14001。"},
-      {"tag": "Value 03", "title": "ワンストップソリューション", "text": "調達から納品まで、すべてのプロセスをAMESCOTESが主導します。"},
-      {"tag": "Since 2017", "title": "115ブランド・1,080プロジェクト", "text": "国内外約15の生産ネットワーク、年間10万個以上を生産。"}
+      {
+        "tag": "Value 01",
+        "title": "コスト競争力",
+        "text": "グローバルな素材ネットワークと社内開発チームによる効率的な調達。"
+      },
+      {
+        "tag": "Value 02",
+        "title": "徹底した品質管理",
+        "text": "自社基準ASQ(Amescotes Standard Quality)とISO 9001・14001。"
+      },
+      {
+        "tag": "Value 03",
+        "title": "ワンストップソリューション",
+        "text": "調達から納品まで、すべてのプロセスをAMESCOTESが主導します。"
+      },
+      {
+        "tag": "Since 2017",
+        "title": "115ブランド・1,080プロジェクト",
+        "text": "国内外約15の生産ネットワーク、年間10万個以上を生産。"
+      }
     ]
   },
   "history": {
     "title": "Our history.",
-    "items": ["AMESCOTES 創業", "株式会社AMESCOTES 設立", "企業附設研究所 設立<br>ISO 9001・ISO 14001 認証取得", "技術評価優秀企業に選定", "中国・日本でホールセール契約を締結", "日本法人(子会社)設立<br>中国工場 設立", "インドネシアの販売代理店と契約<br>INNOBIZ 認証取得"]
+    "items": [
+      "AMESCOTES 創業",
+      "株式会社AMESCOTES 設立",
+      "企業附設研究所 設立<br>ISO 9001・ISO 14001 認証取得",
+      "技術評価優秀企業に選定",
+      "中国・日本でホールセール契約を締結",
+      "日本法人(子会社)設立<br>中国工場 設立",
+      "インドネシアの販売代理店と契約<br>INNOBIZ 認証取得"
+    ]
   },
   "services": [
-    {"tab": "OEM", "name": "OEM", "say": "グローバルな生産ネットワークを基盤に、ブランドのデザインを正確な納期と安定した品質で生産します。",
-     "features": [["国際基準の工程管理", "ISO 9001・ISO 14001に基づき生産工程を体系的に管理します。"], ["社内一貫のオールインワン体制", "高い生産性と効率、最後まで責任を持つ体制。"], ["小ロットから大ロットまで", "韓国と中国にまたがる生産体制で柔軟に対応します。"]],
-     "stats": [["Network", "約15拠点"], ["Annual", "100,000+ pcs"], ["MOQ · Korea", "50 pcs~"], ["MOQ · China", "200 pcs~ / 2 col."]]},
-    {"tab": "ODM", "name": "ODM", "say": "自社ブランド運営で得たマーケットインサイトとOEMの力を組み合わせ、企画から生産まで担います。",
-     "features": [["トレンド・素材に基づく企画", "トレンド分析と素材研究をもとに、商品企画とデザインを提案します。"], ["柔軟なパターン・サンプル", "社内開発チームと密に連携し、パターン設計とサンプル製作を行います。"], ["1:1コンサルティング", "ブランドのコンセプトに合う素材・カラー・ディテールを提案します。"]],
-     "stats": [["Planning", "Trend · Material"], ["Design", "提案込み"], ["Sample", "≈ 2 weeks"], ["Production", "OEMと連携"]]},
-    {"tab": "Process", "name": "Process", "say": "アイデアから完成まで。指示書や参考商品がなくても、どなたでもご依頼いただけます。",
-     "features": [["01 · ご依頼", "デザイン、品質、価格はもちろん、カラー・サイズまで一緒に検討し、最適な生産条件を提案します。"], ["02 · サンプル製作", "外注せず社内開発チームが製作するため、いつでもご意見を反映できます。量産効率まで考えた設計。"], ["03 · 量産", "国内・海外から最適な方法で生産し、ASQ基準と充実したアフターサービスで納品後まで責任を持ちます。"]],
-     "stats": [["Request", "どなたでも"], ["Sample", "≈ 2 weeks"], ["Production", "日程はお問い合わせ時に"], ["After", "ASQ · A/S"]]}
+    {
+      "tab": "OEM",
+      "name": "OEM",
+      "say": "グローバルな生産ネットワークを基盤に、ブランドのデザインを正確な納期と安定した品質で生産します。",
+      "features": [
+        [
+          "国際基準の工程管理",
+          "ISO 9001・ISO 14001に基づき生産工程を体系的に管理します。"
+        ],
+        [
+          "社内一貫のオールインワン体制",
+          "高い生産性と効率、最後まで責任を持つ体制。"
+        ],
+        [
+          "小ロットから大ロットまで",
+          "韓国と中国にまたがる生産体制で柔軟に対応します。"
+        ]
+      ],
+      "stats": [
+        [
+          "Network",
+          "約15拠点"
+        ],
+        [
+          "Annual",
+          "100,000+ pcs"
+        ],
+        [
+          "MOQ · Korea",
+          "50 pcs~"
+        ],
+        [
+          "MOQ · China",
+          "200 pcs~ / 2 col."
+        ]
+      ]
+    },
+    {
+      "tab": "ODM",
+      "name": "ODM",
+      "say": "自社ブランド運営で得たマーケットインサイトとOEMの力を組み合わせ、企画から生産まで担います。",
+      "features": [
+        [
+          "トレンド・素材に基づく企画",
+          "トレンド分析と素材研究をもとに、商品企画とデザインを提案します。"
+        ],
+        [
+          "柔軟なパターン・サンプル",
+          "社内開発チームと密に連携し、パターン設計とサンプル製作を行います。"
+        ],
+        [
+          "1:1コンサルティング",
+          "ブランドのコンセプトに合う素材・カラー・ディテールを提案します。"
+        ]
+      ],
+      "stats": [
+        [
+          "Planning",
+          "Trend · Material"
+        ],
+        [
+          "Design",
+          "提案込み"
+        ],
+        [
+          "Sample",
+          "≈ 2 weeks"
+        ],
+        [
+          "Production",
+          "OEMと連携"
+        ]
+      ]
+    },
+    {
+      "tab": "Process",
+      "name": "Process",
+      "say": "アイデアから完成まで。指示書や参考商品がなくても、どなたでもご依頼いただけます。",
+      "features": [
+        [
+          "01 · ご依頼",
+          "デザイン、品質、価格はもちろん、カラー・サイズまで一緒に検討し、最適な生産条件を提案します。"
+        ],
+        [
+          "02 · サンプル製作",
+          "外注せず社内開発チームが製作するため、いつでもご意見を反映できます。量産効率まで考えた設計。"
+        ],
+        [
+          "03 · 量産",
+          "国内・海外から最適な方法で生産し、ASQ基準と充実したアフターサービスで納品後まで責任を持ちます。"
+        ]
+      ],
+      "stats": [
+        [
+          "Request",
+          "どなたでも"
+        ],
+        [
+          "Sample",
+          "≈ 2 weeks"
+        ],
+        [
+          "Production",
+          "日程はお問い合わせ時に"
+        ],
+        [
+          "After",
+          "ASQ · A/S"
+        ]
+      ]
+    }
   ],
   "global": {
     "title": "Made here,<br>sent there.",
     "text": "ソウルで開発し、青島で生産し、日本と東南アジアへ届けます。地球儀をドラッグして回してみてください。",
-    "filters": ["All", "Make", "Office", "Trade"],
+    "filters": [
+      "All",
+      "Make",
+      "Office",
+      "Trade"
+    ],
     "places": [
-      {"n": "Seoul", "k": "HQ · 開発室", "p": "本社と社内開発チーム。パターン、サンプル、素材開発を自社で行います。韓国生産は50個から。"},
-      {"n": "Qingdao", "k": "工場 · 2025", "p": "2025年に設立した中国工場。2色200個から量産。"},
-      {"n": "Japan", "k": "日本法人 · 2025", "p": "2025年設立の日本子会社。日本ブランドとの窓口です。"},
-      {"n": "China", "k": "ホールセール · 2024", "p": "2024年、中国でホールセール契約を締結。"},
-      {"n": "Indonesia", "k": "販売代理 · 2026", "p": "2026年、インドネシアの販売代理店と契約。"}
+      {
+        "n": "Seoul",
+        "k": "HQ · 開発室",
+        "p": "本社と社内開発チーム。パターン、サンプル、素材開発を自社で行います。韓国生産は50個から。"
+      },
+      {
+        "n": "Qingdao",
+        "k": "工場 · 2025",
+        "p": "2025年に設立した中国工場。2色200個から量産。"
+      },
+      {
+        "n": "Japan",
+        "k": "日本法人 · 2025",
+        "p": "2025年設立の日本子会社。日本ブランドとの窓口です。"
+      },
+      {
+        "n": "China",
+        "k": "ホールセール · 2024",
+        "p": "2024年、中国でホールセール契約を締結。"
+      },
+      {
+        "n": "Indonesia",
+        "k": "販売代理 · 2026",
+        "p": "2026年、インドネシアの販売代理店と契約。"
+      }
     ]
   },
-  "portfolio": {"title": "Brands that grew<br>alongside us.", "text": "国内外約115のブランドと、1,080件のプロジェクトをご一緒してきました。"},
+  "portfolio": {
+    "title": "Brands that grew<br>alongside us.",
+    "text": "国内外約115のブランドと、1,080件のプロジェクトをご一緒してきました。"
+  },
   "range": {
     "title": "Business range.",
     "groups": [
-      {"label": "Items", "items": ["Bags", "Belts", "Wallets", "Keyrings", "Shoes", "Small leather goods", "トレー・コースターなどリビング"]},
-      {"label": "Lines", "items": ["Luxury", "Premium", "Contemporary", "Wholesale", "Merchandise・アーティストグッズ"]},
-      {"label": "Materials", "items": ["Genuine leather", "Vegan leather", "Cotton", "Nylon", "Polyester", "PVCなど特殊素材"]}
+      {
+        "label": "Items",
+        "items": [
+          "Bags",
+          "Belts",
+          "Wallets",
+          "Keyrings",
+          "Shoes",
+          "Small leather goods",
+          "トレー・コースターなどリビング"
+        ]
+      },
+      {
+        "label": "Lines",
+        "items": [
+          "Luxury",
+          "Premium",
+          "Contemporary",
+          "Wholesale",
+          "Merchandise・アーティストグッズ"
+        ]
+      },
+      {
+        "label": "Materials",
+        "items": [
+          "Genuine leather",
+          "Vegan leather",
+          "Cotton",
+          "Nylon",
+          "Polyester",
+          "PVCなど特殊素材"
+        ]
+      }
     ]
   },
   "journal": {
     "title": "Notes on leather<br>&amp; trend.",
-    "posts": [{"tag": "Trend", "title": "バーガンディとスエード — FW26"}, {"tag": "Material", "title": "韓国では手に入らないラムスキン"}, {"tag": "Process", "title": "バッグづくりの全工程と注意点"}]
+    "posts": [
+      {
+        "tag": "Trend",
+        "title": "バーガンディとスエード — FW26"
+      },
+      {
+        "tag": "Material",
+        "title": "韓国では手に入らないラムスキン"
+      },
+      {
+        "tag": "Process",
+        "title": "バッグづくりの全工程と注意点"
+      }
+    ]
   },
   "contact": {
     "title": "Contact us.",
     "note": "ブランドの成長を支える、頼れるパートナー。<br>数量とご希望の生産地をお知らせいただければ、日程と進め方をご案内します。",
-    "company": "会社名", "company_ph": "ブランド / 会社名",
-    "name": "お名前", "name_ph": "ご担当者",
-    "phone": "電話番号", "phone_ph": "+81 90-0000-0000",
-    "email": "メール", "email_ph": "you@brand.com",
-    "site": "ご希望の生産地", "site_options": ["未定", "韓国(50個~)", "中国(200個~)"],
-    "qty": "予定数量", "qty_ph": "例:1型あたり100個",
-    "type": "お問い合わせ種別", "type_options": ["生産", "素材調達", "コラボレーション", "その他"],
-    "message": "お問い合わせ内容", "message_ph": "作りたい商品、参考イメージ、ご希望の時期",
-    "consent": "個人情報の収集・利用に同意します。", "privacy": "詳細",
-    "submit": "送信する →", "sending": "送信中…", "sent": "受け付けました。追ってご連絡いたします。", "error": "送信に失敗しました。contact@amescotes.co.kr までメールでご連絡ください。"
+    "company": "会社名",
+    "company_ph": "ブランド / 会社名",
+    "name": "お名前",
+    "name_ph": "ご担当者",
+    "phone": "電話番号",
+    "phone_ph": "+81 90-0000-0000",
+    "email": "メール",
+    "email_ph": "you@brand.com",
+    "site": "ご希望の生産地",
+    "site_options": [
+      "未定",
+      "韓国(50個~)",
+      "中国(200個~)"
+    ],
+    "qty": "予定数量",
+    "qty_ph": "例:1型あたり100個",
+    "type": "お問い合わせ種別",
+    "type_options": [
+      "生産",
+      "素材調達",
+      "コラボレーション",
+      "その他"
+    ],
+    "message": "お問い合わせ内容",
+    "message_ph": "作りたい商品、参考イメージ、ご希望の時期",
+    "consent": "個人情報の収集・利用に同意します。",
+    "privacy": "詳細",
+    "submit": "送信する →",
+    "sending": "送信中…",
+    "sent": "受け付けました。追ってご連絡いたします。",
+    "error": "送信に失敗しました。contact@amescotes.co.kr までメールでご連絡ください。"
   },
-  "footer": {"scrolled": "Distance scrolled", "stitches": "At 9 stitches / inch, that's", "unit": "stitches", "explore": "Explore", "contact": "Contact", "address": "ソウル特別市 城北区 普門路13ナ街 27", "biz": "株式会社AMESCOTES · 代表理事 イ・ウォニョン · 事業者登録番号 343-88-01791", "privacy": "個人情報保護方針"},
+  "footer": {
+    "scrolled": "Distance scrolled",
+    "stitches": "At 9 stitches / inch, that's",
+    "unit": "stitches",
+    "explore": "Explore",
+    "contact": "Contact",
+    "address": "ソウル特別市 城北区 普門路13ナ街 27",
+    "biz": "株式会社AMESCOTES · 代表理事 イ・ウォニョン · 事業者登録番号 343-88-01791",
+    "privacy": "個人情報保護方針"
+  },
   "privacy": {
     "title": "個人情報保護方針",
     "body": "<p>株式会社AMESCOTES(以下「当社」)は、韓国「個人情報保護法」に基づき、利用者の個人情報を保護します。</p><h3>1. 収集項目と目的</h3><p>お問い合わせの受付と回答のため、会社名、お名前、電話番号、メール、ご希望の生産地、予定数量、お問い合わせ種別、お問い合わせ内容を収集します。それ以外の目的には利用しません。</p><h3>2. 保管期間</h3><p>お問い合わせ対応完了後3年間保管し、遅滞なく破棄します。法令で保存が必要な場合はその期間保管します。</p><h3>3. 第三者提供</h3><p>同意なく第三者に提供することはありません。</p><h3>4. 委託</h3><p>お問い合わせのメール転送:FormSubmit · ウェブサイトのホスティング:GitHub Pages(GitHub, Inc.)</p><h3>5. 利用者の権利</h3><p>閲覧、訂正、削除、処理停止をいつでも contact@amescotes.co.kr にご請求いただけます。</p><h3>6. お問い合わせ先</h3><p>株式会社AMESCOTES · contact@amescotes.co.kr</p><p>施行日:2026年10月19日</p>",
     "back": "← ホーム"
+  },
+  "gallery": {
+    "title": "Gallery.",
+    "sub": "工場と開発室で撮影した写真と映像。革が届いてから、バッグになって出ていくまで。",
+    "all": "All",
+    "photos": "Photos",
+    "films": "Films",
+    "back": "← Home"
   }
 }

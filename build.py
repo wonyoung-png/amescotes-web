@@ -15,6 +15,15 @@ def load(name):
 
 def build():
     site = load('site')
+    gallery = load('gallery')
+    # display order: camera shots first (ATLM, R000…), phone shots after, a film every 7 tiles for rhythm
+    rank = lambda g: (0 if g['src'].startswith('ATLM') else 1 if g['src'].startswith('R0') else 2, g['src'])
+    photos = sorted((g for g in gallery if g['type'] == 'photo'), key=rank)
+    films = sorted((g for g in gallery if g['type'] == 'video'), key=rank)
+    gallery = []
+    while photos or films:
+        gallery += photos[:6]; photos = photos[6:]
+        if films: gallery.append(films.pop(0))
     env = Environment(loader=FileSystemLoader(ROOT / 'src'), undefined=StrictUndefined, autoescape=True)
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -27,13 +36,16 @@ def build():
         t = load(lang)
         sub = '' if lang == 'ko' else f'{lang}/'
         ctx = dict(lang=lang, t=t, site=site, ver=ver, langs=links, base='../' if sub else '',
-                   path=sub, home_path=sub or './', privacy_path=f'{sub}privacy.html',
+                   path=sub, home_path=sub or './', privacy_path=f'{sub}privacy.html', gallery_path=f'{sub}gallery.html',
                    data={**t, 'site': site})
         out = DIST / sub
         out.mkdir(parents=True, exist_ok=True)
         page = env.get_template('page.html.j2').render(**ctx)
         (out / 'index.html').write_text(page, encoding='utf-8')
         (out / 'privacy.html').write_text(env.get_template('privacy.html.j2').render(**ctx), encoding='utf-8')
+        (out / 'gallery.html').write_text(env.get_template('gallery.html.j2').render(**ctx, gallery=gallery,
+            gallery_js=[{'id': g['id'], 'type': g['type']} for g in gallery],
+            photos=sum(g['type'] == 'photo' for g in gallery), videos=sum(g['type'] == 'video' for g in gallery)), encoding='utf-8')
         if lang != 'ko':  # every visible string must be translated
             visible = re.sub(r'<script type="application/ld\+json">.*?</script>', '', page, flags=re.S)
             left = sorted(set(HANGUL.findall(visible)))
@@ -45,7 +57,7 @@ def build():
         assert len(t['global']['places']) == len(site['places']), lang
         assert len(t['history']['items']) == len(site['history_years']), lang
         assert len(t['journal']['posts']) == len(site['journal']), lang
-    urls = ''.join(f'<url><loc>{site["url"]}/{p}</loc></url>' for p in ['', 'en/', 'ja/'])
+    urls = ''.join(f'<url><loc>{site["url"]}/{p}</loc></url>' for p in ['', 'en/', 'ja/', 'gallery.html', 'en/gallery.html', 'ja/gallery.html'])
     (DIST / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>', encoding='utf-8')
     (DIST / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {site["url"]}/sitemap.xml\n', encoding='utf-8')
     (DIST / '.nojekyll').write_text('')

@@ -34,6 +34,7 @@
   <a class="g4" data-go="range"><b>{{ t.nav.range }}</b></a>
   <a class="g4" data-go="clients">{{ t.nav.portfolio }}</a>
   <a class="g4" data-go="journal">{{ t.nav.journal }}</a>
+  <a class="g4" href="{{ gallery_path }}">{{ t.nav.gallery }} ↗</a>
   <a class="g5" data-go="contact"><b>{{ t.nav.contact }}</b></a>
 </aside>
 <div id="handle" title="{{ t.nav.menu }}">◀</div>
@@ -118,7 +119,7 @@
 <footer>
   <img class="bag" src="{{ site.footer_image }}" alt="">
   <div class="odo mono"><div>{{ t.footer.scrolled }}<b id="odo-m">0.0 m</b></div><div>{{ t.footer.stitches }}<b id="odo-s">0 {{ t.footer.unit }}</b></div></div>
-  <div class="links"><div><div class="mono">{{ t.footer.explore }}</div><a data-go="hero">{{ t.nav.home }}</a><br><a data-go="works">{{ t.nav.services }}</a><br><a data-go="journal">{{ t.nav.journal }}</a><br><a href="{{ privacy_path }}">{{ t.footer.privacy }}</a></div><div><div class="mono">{{ t.footer.contact }}</div>{{ site.email }}<br>{{ t.footer.address }}<br>{{ t.footer.biz }}</div></div>
+  <div class="links"><div><div class="mono">{{ t.footer.explore }}</div><a data-go="hero">{{ t.nav.home }}</a><br><a data-go="works">{{ t.nav.services }}</a><br><a data-go="journal">{{ t.nav.journal }}</a><br><a href="{{ gallery_path }}">{{ t.nav.gallery }}</a><br><a href="{{ privacy_path }}">{{ t.footer.privacy }}</a></div><div><div class="mono">{{ t.footer.contact }}</div>{{ site.email }}<br>{{ t.footer.address }}<br>{{ t.footer.biz }}</div></div>
 </footer>
 
 <script>const C={{ data|tojson }};</script>
