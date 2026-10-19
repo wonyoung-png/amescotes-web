@@ -1,0 +1,41 @@
+{
+  "url": "https://www.amescotes.co.kr",
+  "email": "contact@amescotes.co.kr",
+  "form_endpoint": "https://formsubmit.co/ajax/contact@amescotes.co.kr",
+  "hero_image": "img/hero.jpg",
+  "about_image": "img/cut.jpg",
+  "about_cards": [
+    {"line": 0, "label": "Leather", "image": "img/leather.jpg", "pos": "left:20vw;top:40vh;width:13vw;height:9vw"},
+    {"line": 0, "label": "Thread", "image": "img/thread.jpg", "pos": "left:58vw;top:44vh;width:10vw;height:7vw"},
+    {"line": 1, "label": "Pattern", "image": "img/pattern.jpg", "pos": "left:16vw;top:46vh;width:12vw;height:8vw"},
+    {"line": 1, "label": "Cutting", "image": "img/cut.jpg", "tall": true},
+    {"line": 2, "label": "Sample", "image": "img/b1.jpg", "pos": "left:22vw;top:42vh;width:11vw;height:15vw"},
+    {"line": 2, "label": "Sample", "image": "img/b5.jpg", "pos": "left:60vw;top:48vh;width:10vw;height:14vw"},
+    {"line": 3, "label": "Manufacturing", "image": "img/mach.jpg", "pos": "left:56vw;top:40vh;width:14vw;height:9vw"},
+    {"line": 3, "label": "Line", "image": "img/line.jpg", "tall": true},
+    {"line": 4, "label": "In-house", "image": "img/b7.jpg", "pos": "left:18vw;top:44vh;width:12vw;height:12vw"},
+    {"line": 5, "label": "1:1 Consulting", "image": "img/b6.jpg", "pos": "left:58vw;top:46vh;width:12vw;height:8vw"}
+  ],
+  "business_images": ["img/leather.jpg", "img/pattern.jpg", "img/line.jpg"],
+  "history_years": ["2017", "2020", "2021", "2023", "2024", "2025", "2026"],
+  "chapters": [
+    {"image": "cut/b8.png", "bg": "var(--dawn)", "dark": false, "hotspots": [[86, 50], [50, 12]]},
+    {"image": "cut/b3.png", "bg": "linear-gradient(180deg,#FBEBD8,#EEF4EF)", "dark": false, "hotspots": [[48, 8], [20, 78]]},
+    {"image": "cut/b2.png", "bg": "linear-gradient(180deg,#3E7A68,#1F4A3D)", "dark": true, "hotspots": [[30, 22], [70, 60]]}
+  ],
+  "places": [
+    {"f": "make", "c": [127.0, 37.57], "o": [10, -10]},
+    {"f": "make", "c": [120.38, 36.07], "o": [-62, 20]},
+    {"f": "office", "c": [139.69, 35.69], "o": [12, 4]},
+    {"f": "trade", "c": [116.4, 39.9], "o": [-46, -12]},
+    {"f": "trade", "c": [106.85, -6.2], "o": [12, 4]}
+  ],
+  "logos": ["logo_039bda.png","logo_04a1d9.png","logo_1a87ed.png","logo_1d47f6.png","logo_1e2489.png","logo_22c740.png","logo_33bd32.png","logo_3a5476.png","logo_55378f.png","logo_588320.png","logo_5b22dc.png","logo_5d6ff1.png","logo_6a8312.png","logo_6eb0b6.png","logo_7a3d0e.png","logo_7b6275.png","logo_861028.png","logo_9c88a7.png","logo_a72cf9.png","logo_b49a01.png","logo_b9010b.png","logo_c44040.png","logo_d28d87.png","logo_d7cfc1.png","logo_d87a97.png","logo_dfc1a7.png","logo_e72e1e.png","logo_ede0a8.png","logo_f2ca4f.png","logo_f3dece.png"],
+  "brands": ["NOTHING WRITTEN", "LOW CLASSIC", "SUSAN FANG", "HESS", "SAGEMENT", "RRACE", "RIBBONBIT", "DEINET", "ATELIER DE LUMEN"],
+  "journal": [
+    {"url": "https://blog.naver.com/amescotesofficial/224445659104", "image": "img/runway.jpg", "date": "2026.10"},
+    {"url": "https://blog.naver.com/amescotesofficial/223238746315", "image": "img/leather.jpg", "date": "2023.10"},
+    {"url": "https://blog.naver.com/amescotesofficial/222007690109", "image": "img/pattern.jpg", "date": "2020.06"}
+  ],
+  "footer_image": "cut/b8.png"
+}

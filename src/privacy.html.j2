@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% if base %}<base href="{{ base }}">{% endif %}
+<title>{{ t.privacy.title }} — AMESCOTES</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#EEF4EF;color:#0F1A16;font-family:'IBM Plex Sans KR',sans-serif}
+main{max-width:760px;margin:0 auto;padding:12vh 24px 16vh}
+h1{font:400 clamp(40px,6vw,72px)/1 'Instrument Sans';letter-spacing:-.04em;margin:0 0 6vh}
+h3{font-size:16px;margin:36px 0 8px}p{font-size:15px;line-height:1.8;color:#2c3d36;margin:0 0 8px}
+a{color:#1F4A3D}
+</style>
+</head>
+<body><main>
+<p><a href="{{ home_path }}">{{ t.privacy.back }}</a></p>
+<h1>{{ t.privacy.title }}</h1>
+{{ t.privacy.body|safe }}
+</main></body>
+</html>

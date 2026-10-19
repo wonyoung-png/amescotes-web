@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% if base %}<base href="{{ base }}">{% endif %}
+<title>{{ t.meta.title }}</title>
+<meta name="description" content="{{ t.meta.description }}">
+<link rel="canonical" href="{{ site.url }}/{{ path }}">
+{% for l, p in langs %}<link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}/{{ p }}">
+{% endfor %}<link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ t.meta.title }}">
+<meta property="og:description" content="{{ t.meta.description }}">
+<meta property="og:image" content="{{ site.url }}/{{ site.hero_image }}">
+<link rel="icon" href="favicon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AMESCOTES, Inc.","alternateName":"(주)아메스코테스","url":"{{ site.url }}","logo":"{{ site.url }}/amescotes_logo.png","email":"{{ site.email }}","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"보문로13나길 27","addressLocality":"성북구","addressRegion":"서울","addressCountry":"KR"},"sameAs":["https://blog.naver.com/amescotesofficial"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v={{ ver }}">
+<style>.hero .bg{background-image:url({{ site.hero_image }})}#story .bg{background-image:url({{ site.about_image }})}</style>
+</head>
+<body class="drawer-closed">
+<div id="loader"><img src="amescotes_logo.png" alt="AMESCOTES"></div>
+<div class="logo-fixed"><img src="amescotes_logo.png" alt="AMESCOTES"></div>
+<aside id="drawer">
+  <div class="lang mono">{% for l, p in langs %}<a href="{{ p }}" class="{{ 'on' if l == lang else '' }}" hreflang="{{ l }}">{{ l|upper }}</a>{% endfor %}</div>
+  <a class="g1" data-go="hero"><b>{{ t.nav.home }}</b></a>
+  <a class="g2" data-go="story"><span class="mono">01</span>{{ t.nav.about }}</a>
+  <a class="g2" data-go="history"><span class="mono">02</span>{{ t.nav.history }}</a>
+  <a class="g3" data-go="works"><span class="mono">03</span>{{ t.nav.services }}</a>
+  <a class="g3" data-go="map"><span class="mono">04</span>{{ t.nav.global }}</a>
+  <a class="g4" data-go="range"><b>{{ t.nav.range }}</b></a>
+  <a class="g4" data-go="clients">{{ t.nav.portfolio }}</a>
+  <a class="g4" data-go="journal">{{ t.nav.journal }}</a>
+  <a class="g5" data-go="contact"><b>{{ t.nav.contact }}</b></a>
+</aside>
+<div id="handle" title="{{ t.nav.menu }}">◀</div>
+
+<section class="hero" id="hero">
+  <div class="frame"><div class="bg"></div>
+    <h1 class="disp">{% for ln in t.hero.title %}<span class="ln"><span>{{ ln }}</span></span>{% endfor %}</h1>
+    <p class="sub">{{ t.hero.sub|safe }}</p>
+    <a class="btn mono" data-go="works">{{ t.hero.button }} <i>→</i></a>
+  </div>
+</section>
+
+<section id="story">
+  <div class="sticky"><div class="bg"></div>
+    <ul>{% for ln in t.about.lines %}<li>{{ ln }}</li>{% endfor %}</ul>
+    {% for c in site.about_cards %}<div class="card{{ ' tall' if c.get('tall') else '' }}" data-i="{{ c.line }}"{% if c.get('pos') %} style="{{ c.pos }}"{% endif %}><span class="mono">{{ c.label }}</span><img src="{{ c.image }}" alt="{{ c.label }}" loading="lazy"></div>
+    {% endfor %}<p class="end disp">{{ t.about.end }}</p>
+  </div>
+</section>
+
+<section id="unfold">
+  <div class="sticky">
+    <h2 class="t0 disp">{{ t.business.intro }}</h2>
+    <div class="win">{% for im in site.business_images %}<img class="{{ 'on' if loop.first else '' }}" src="{{ im }}" alt="" loading="lazy">{% endfor %}</div>
+    <h2 class="tt disp">{% for s in t.business.slides %}<span class="{{ 'on' if loop.first else '' }}">{{ s|safe }}</span>{% endfor %}</h2>
+    <div class="cols">{% for v in t.business['values'] %}<div><span class="mono">{{ v.tag }}</span><b>{{ v.title }}</b><p>{{ v.text }}</p></div>{% endfor %}</div>
+  </div>
+</section>
+
+<section class="history" id="history">
+  <h2 class="disp">{{ t.history.title }}</h2>
+  <div class="hl">{% for y in site.history_years %}<div><span class="mono">{{ y }}</span><p>{{ t.history['items'][loop.index0]|safe }}</p></div>{% endfor %}</div>
+</section>
+
+<section id="works"></section>
+
+<section class="map" id="map">
+  <div class="head"><h2 class="disp">{{ t.global.title|safe }}</h2><p>{{ t.global.text }}</p></div>
+  <svg id="globe" aria-label="map"></svg>
+  <div class="card"><div class="k mono" id="mc-k"></div><h4 id="mc-h"></h4><p id="mc-p"></p></div>
+  <div class="pills mono" id="map-tabs">{% for f in ['all','make','office','trade'] %}<button class="{{ 'on' if loop.first else '' }}" data-f="{{ f }}">{{ t.global.filters[loop.index0] }}</button>{% endfor %}</div>
+</section>
+
+<section class="clients" id="clients">
+  <div class="head"><h2 class="disp">{{ t.portfolio.title|safe }}</h2><p style="max-width:380px;font-size:15px;line-height:1.7;color:var(--stone)">{{ t.portfolio.text }}</p></div>
+  {% for rev in ['', ' rev'] %}<div class="marquee{{ rev }}">{% for k in range(2) %}{% for lg in site.logos %}<img src="logo/{{ lg }}" alt="" loading="lazy">{% endfor %}{% endfor %}</div>
+  {% endfor %}<div class="brands">{% for b in site.brands %}<span>{{ b }}</span>{% endfor %}</div>
+</section>
+
+<section class="range" id="range">
+  <h2 class="disp">{{ t.range.title }}</h2>
+  <div class="rg">{% for g in t.range.groups %}<div><h3 class="mono">{{ g.label }}</h3><div class="chips">{% for it in g['items'] %}<span>{{ it }}</span>{% endfor %}</div></div>{% endfor %}</div>
+</section>
+
+<section class="journal" id="journal">
+  <h2 class="disp">{{ t.journal.title|safe }}</h2>
+  {% set j = site.journal %}{% set p = t.journal.posts %}
+  <a class="big" href="{{ j[0].url }}" target="_blank" rel="noopener"><img src="{{ j[0].image }}" alt="" loading="lazy"><div><span class="tag mono">{{ p[0].tag }}</span> <span class="mono" style="opacity:.55">· {{ j[0].date }}</span><h4>{{ p[0].title }}</h4></div></a>
+  <div class="list">{% for i in range(1, j|length) %}<a href="{{ j[i].url }}" target="_blank" rel="noopener"><div><span class="tag mono">{{ p[i].tag }}</span><h4>{{ p[i].title }}</h4><span class="mono" style="opacity:.55">{{ j[i].date }}</span></div><img src="{{ j[i].image }}" alt="" loading="lazy"></a>{% endfor %}</div>
+</section>
+
+<section class="contact" id="contact">
+  {% set f = t.contact %}
+  <div class="wrap">
+    <div><h2 class="disp">{{ f.title }}</h2><p class="note">{{ f.note|safe }}</p><p class="note mono" style="font-size:13px"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p></div>
+    <form>
+      <label>{{ f.company }}<input name="company" placeholder="{{ f.company_ph }}" required></label>
+      <label>{{ f.name }}<input name="name" placeholder="{{ f.name_ph }}" required></label>
+      <label>{{ f.phone }}<input name="phone" type="tel" placeholder="{{ f.phone_ph }}"></label>
+      <label>{{ f.email }}<input name="email" type="email" placeholder="{{ f.email_ph }}" required></label>
+      <label class="full">{{ f.site }}<div class="seg">{% for o in f.site_options %}<span class="{{ 'on' if loop.first else '' }}">{{ o }}</span>{% endfor %}</div></label>
+      <label>{{ f.qty }}<input name="quantity" placeholder="{{ f.qty_ph }}"></label>
+      <label>{{ f.type }}<select name="type">{% for o in f.type_options %}<option>{{ o }}</option>{% endfor %}</select></label>
+      <label class="full">{{ f.message }}<textarea name="message" rows="4" placeholder="{{ f.message_ph }}" required></textarea></label>
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <label class="full" style="flex-direction:row;align-items:center;gap:8px"><input type="checkbox" required style="width:18px;height:18px">{{ f.consent }} <a href="{{ privacy_path }}" style="text-decoration:underline;opacity:.8">{{ f.privacy }}</a></label>
+      <button type="submit">{{ f.submit }}</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <img class="bag" src="{{ site.footer_image }}" alt="">
+  <div class="odo mono"><div>{{ t.footer.scrolled }}<b id="odo-m">0.0 m</b></div><div>{{ t.footer.stitches }}<b id="odo-s">0 {{ t.footer.unit }}</b></div></div>
+  <div class="links"><div><div class="mono">{{ t.footer.explore }}</div><a data-go="hero">{{ t.nav.home }}</a><br><a data-go="works">{{ t.nav.services }}</a><br><a data-go="journal">{{ t.nav.journal }}</a><br><a href="{{ privacy_path }}">{{ t.footer.privacy }}</a></div><div><div class="mono">{{ t.footer.contact }}</div>{{ site.email }}<br>{{ t.footer.address }}<br>{{ t.footer.biz }}</div></div>
+</footer>
+
+<script>const C={{ data|tojson }};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="app.js?v={{ ver }}"></script>
+</body>
+</html>

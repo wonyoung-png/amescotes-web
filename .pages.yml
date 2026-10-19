@@ -1,0 +1,44 @@
+# Pages CMS (https://pagescms.org) — 홈페이지 문구·사진 편집 화면 설정
+media:
+  input: assets/img
+  output: img
+content:
+  - name: images
+    label: 사진 · 브랜드 (공통)
+    type: file
+    path: content/site.json
+    fields:
+      - { name: hero_image, label: 히어로 사진, type: image }
+      - { name: about_image, label: ABOUT 배경 사진, type: image }
+      - name: about_cards
+        label: ABOUT 문장별 사진 카드
+        type: object
+        list: true
+        fields:
+          - { name: line, label: 몇 번째 문장(0부터), type: number }
+          - { name: label, label: 라벨, type: string }
+          - { name: image, label: 사진, type: image }
+          - { name: pos, label: 위치(건드리지 마세요), type: string }
+          - { name: tall, label: 오른쪽 세로 카드, type: boolean }
+      - { name: business_images, label: OUR BUSINESS 사진 3장, type: image, list: true }
+      - name: chapters
+        label: SERVICES 챕터 가방 사진 (OEM · ODM · Process 순)
+        type: object
+        list: true
+        fields:
+          - { name: image, label: 가방 누끼 사진(PNG), type: image }
+          - { name: bg, label: 배경(건드리지 마세요), type: string }
+          - { name: dark, label: 어두운 배경, type: boolean }
+      - { name: brands, label: 포트폴리오 브랜드명, type: string, list: true }
+      - name: journal
+        label: 저널 글 (첫 번째가 큰 카드)
+        type: object
+        list: true
+        fields:
+          - { name: url, label: 블로그 주소, type: string }
+          - { name: image, label: 사진, type: image }
+          - { name: date, label: 날짜, type: string }
+      - { name: footer_image, label: 푸터 가방 사진, type: image }
+  - { name: ko, label: 문구 · 한국어, type: file, path: content/ko.json, format: json }
+  - { name: en, label: 문구 · English, type: file, path: content/en.json, format: json }
+  - { name: ja, label: 문구 · 日本語, type: file, path: content/ja.json, format: json }
