@@ -13,6 +13,19 @@ def load(name):
     return json.loads((ROOT / 'content' / f'{name}.json').read_text(encoding='utf-8'))
 
 
+def merge_singles(blocks):
+    """Runs of single-photo blocks become one multi-photo set (each photo keeps its own caption)."""
+    out = []
+    for blk in blocks:
+        if blk['t'] == 'img' and len(blk['v']) == 1:
+            item = {**blk['v'][0], 'cap': blk.get('cap', '')}
+            if out and out[-1]['t'] == 'set': out[-1]['v'].append(item)
+            else: out.append({'t': 'set', 'v': [item]})
+        else:
+            out.append(blk)
+    return out
+
+
 def build():
     site = load('site')
     gallery = load('gallery')
@@ -57,7 +70,7 @@ def build():
         meta = site['journal'][k]; head = ko['journal']['posts'][k]
         nxt = order[(k + 1) % len(order)]
         html = env.get_template('article.html.j2').render(lang='ko', t=ko, site=site, ver=ver, langs=links, base='../',
-            home_path='./', privacy_path='privacy.html', post=posts[slug], meta=meta, head=head,
+            home_path='./', privacy_path='privacy.html', post={**posts[slug], 'blocks': merge_singles(posts[slug]['blocks'])}, meta=meta, head=head,
             next_slug=nxt, next_head=ko['journal']['posts'][order.index(nxt)])
         (DIST / 'journal' / f'{slug}.html').write_text(html, encoding='utf-8')
     # chapters/places in site.json must line up with every language file
