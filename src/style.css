@@ -185,8 +185,8 @@ footer .links a{cursor:pointer}
 .hero .frame:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(0,0,0,.45),transparent 35%);pointer-events:none}.hero h1,.hero .sub,.hero .btn{z-index:2}
 
 /* gallery section */
-.gallery{padding:16vh 6px 12vh}
-.ghead{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;padding:0 22px 6vh}
+.gallery{padding:16vh 28px 12vh}
+.ghead{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;padding:0 0 6vh}
 .ghead h2{font-size:clamp(48px,6.4vw,108px)}
 .ghead p{max-width:420px;font-size:15px;line-height:1.7;color:var(--stone);margin-bottom:14px}
 .gpills{display:inline-flex;gap:4px;background:#fff;padding:4px;border-radius:9px;box-shadow:0 6px 20px rgba(15,26,22,.08)}
@@ -221,7 +221,7 @@ footer .links a{cursor:pointer}
 .track .cell:hover img{transform:scale(1.08)}.track .nm{display:none}
 
 .ggrid .it.cut{display:none}
-.gmore{display:flex;align-items:center;gap:16px;padding:5vh 22px 0}
+.gmore{display:flex;align-items:center;gap:16px;padding:5vh 0 0}
 .gmore:before{content:'';flex:1;height:1px;background:var(--line);order:1}
 .gmore span.mono{color:var(--stone);order:0}
 .gmore button{order:2;display:inline-flex;align-items:center;gap:14px;border:0;background:#fff;color:var(--ink);padding:6px 6px 6px 16px;border-radius:8px;cursor:pointer;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 4px 14px rgba(15,26,22,.06)}
