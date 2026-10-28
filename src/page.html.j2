@@ -98,7 +98,7 @@
 
 <section class="products" id="products">
   <div class="head"><h2 class="disp">{{ t.products.title }}</h2><p>{{ t.products.text }}</p></div>
-  <div class="feat">{% for p in site.products_featured %}<a href="{{ p.url }}" target="_blank" rel="noopener"><div class="im"><img src="img/deck/{{ p.img }}.webp?v={{ ver }}" alt="{{ p.brand }} {{ p.name }}" loading="lazy"></div><span class="mono">{{ p.brand }}</span><b>{{ p.name }}</b></a>{% endfor %}</div>
+  <div class="pfeat">{% for p in site.products_featured %}<a href="{{ p.url }}" target="_blank" rel="noopener"><div class="im"><img src="img/deck/{{ p.img }}.webp?v={{ ver }}" alt="{{ p.brand }} {{ p.name }}" loading="lazy"></div><span class="mono">{{ p.brand }}</span><b>{{ p.name }}</b></a>{% endfor %}</div>
   <div class="pgd">{% for i in range(1, 37) %}<div><img src="img/deck/pf{{ '%02d'|format(i) }}.webp?v={{ ver }}" alt="" loading="lazy"></div>{% endfor %}</div>
 </section>
 
