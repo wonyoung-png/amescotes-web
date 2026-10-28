@@ -16,9 +16,7 @@
 <meta property="og:image" content="{{ site.url }}/{{ site.hero_image }}">
 <link rel="icon" href="favicon.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AMESCOTES, Inc.","alternateName":"(주)아메스코테스","url":"{{ site.url }}","logo":"{{ site.url }}/amescotes_logo.png","email":"{{ site.email }}","foundingDate":"2017","address":{"@type":"PostalAddress","streetAddress":"보문로13나길 27","addressLocality":"성북구","addressRegion":"서울","addressCountry":"KR"},"sameAs":["https://blog.naver.com/amescotesofficial"]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v={{ ver }}">
 <style>.hero .bg{background-image:url({{ site.hero_image }})}#story .bg{background-image:url({{ site.about_image }})}</style>
 </head>
@@ -57,7 +55,29 @@
   <div class="hl">{% for y in site.history_years %}<div><span class="mono">{{ y }}</span><p>{{ t.history['items'][loop.index0]|safe }}</p></div>{% endfor %}</div>
 </section>
 
+<section class="vision" id="vision">
+  <h2 class="disp">{{ t.vision.title|safe }}</h2>
+  <div class="vg"><img src="img/deck/vision.jpg" alt="" loading="lazy">
+    <div class="vt">
+      <div><span class="mono">Vision</span><p class="big">{{ t.vision.vision }}</p></div>
+      <div><span class="mono">Mission</span><p>{{ t.vision.mission }}</p></div>
+      <ol>{% for v in t.vision['values'] %}<li><span class="mono">{{ '%02d'|format(loop.index) }}</span><b>{{ v[0] }}</b><p>{{ v[1] }}</p></li>{% endfor %}</ol>
+    </div>
+  </div>
+</section>
+
 <section id="works"></section>
+
+<section class="pps" id="pps">
+  <div class="head"><h2 class="disp">{{ t.pps.title }}</h2><p>{{ t.pps.intro }}</p></div>
+  {% set dur = ['CAD', '3 days~', '1 week~', '2 weeks~'] %}
+  <div class="pg">{% for s in t.pps.steps %}<figure><img src="img/deck/pps{{ '%02d'|format(loop.index + 4) }}.jpg" alt="{{ s[0] }}" loading="lazy"><figcaption><span class="mono">{{ '%02d'|format(loop.index) }} · {{ dur[loop.index0] }}</span><b>{{ s[0] }}</b><p>{{ s[1] }}</p></figcaption></figure>{% endfor %}</div>
+  <div class="cmp">
+    {% set od = ['', '2 weeks', '1 week', '2 weeks'] %}{% set nd = ['', '3 days', '1 week', '2 weeks'] %}
+    <div class="row old"><span class="mono lab">{{ t.pps.old }}</span><div class="bar">{% for x in t.pps.old_steps %}<i style="flex:{{ [3, 14, 7, 14][loop.index0] }}"><em>{{ x }}</em><small class="mono">{{ od[loop.index0] }}</small></i>{% endfor %}</div><p>{{ t.pps.old_note }}</p></div>
+    <div class="row new"><span class="mono lab">{{ t.pps.new }}</span><div class="bar">{% for s in t.pps.steps %}<i style="flex:{{ [3, 3, 7, 14][loop.index0] }}"><em>{{ s[0] }}</em><small class="mono">{{ nd[loop.index0] }}</small></i>{% endfor %}<i class="gap" style="flex:11"></i></div><p>{{ t.pps.new_note }}</p></div>
+  </div>
+</section>
 
 <section class="map" id="map">
   <div class="head"><h2 class="disp">{{ t.global.title|safe }}</h2><p>{{ t.global.text }}</p></div>
@@ -66,9 +86,29 @@
   <div class="pills mono" id="map-tabs">{% for f in ['all','make','office','trade'] %}<button class="{{ 'on' if loop.first else '' }}" data-f="{{ f }}">{{ t.global.filters[loop.index0] }}</button>{% endfor %}</div>
 </section>
 
+<section class="net" id="network">
+  <div class="nt"><div><span class="mono">Domestic</span><p>{{ t.net.domestic }}</p></div><div><span class="mono">Global</span><p>{{ t.net.global }}</p></div></div>
+  <div class="ns">{% for i in range(1, 8) %}<img src="img/deck/net{{ '%02d'|format(i) }}.jpg" alt="" loading="lazy">{% endfor %}</div>
+</section>
+
 <section class="clients" id="clients">
   <div class="head"><h2 class="disp">{{ t.portfolio.title|safe }}</h2><p style="max-width:380px;font-size:15px;line-height:1.7;color:var(--stone)">{{ t.portfolio.text }}</p></div>
   <div class="rows" id="rows">{% for r in range(2) %}<div class="row"><div class="track" data-dir="{{ 1 if r == 0 else -1 }}">{% for k in range(2) %}{% for c in site.clients[r::2] %}<div class="cell">{% if c.logo %}<img src="logo/{{ c.logo }}" alt="{{ c.name }}" draggable="false" loading="lazy">{% else %}<span class="txt">{{ c.name }}</span>{% endif %}<span class="nm mono">{{ c.name }}</span></div>{% endfor %}{% endfor %}</div></div>{% endfor %}</div>
+</section>
+
+<section class="products" id="products">
+  <div class="head"><h2 class="disp">{{ t.products.title }}</h2><p>{{ t.products.text }}</p></div>
+  <div class="pgd">{% for i in range(1, 37) %}<div><img src="img/deck/pf{{ '%02d'|format(i) }}.jpg" alt="" loading="lazy"></div>{% endfor %}</div>
+</section>
+
+<section class="caps" id="caps">
+  <div class="head"><h2 class="disp">{{ t.caps.title|safe }}</h2><p>{{ t.caps.text }}</p></div>
+  {% set cn = ['Bags', 'Belts', 'SLGs', 'Shoes', 'Etc.'] %}{% set ck = ['Form & Structure', 'Construction & Hardware', 'Range & Details', 'Last & Soles', 'Promos & Packaging'] %}
+  <div class="cg">{% for n in cn %}<figure tabindex="0"><div class="im"><img src="img/deck/cat{{ '%02d'|format(loop.index) }}.jpg" alt="{{ n }}" loading="lazy"><img class="b" src="img/deck/cat{{ '%02d'|format(loop.index + 5) }}.jpg" alt="" loading="lazy"></div><figcaption><b>{{ n }}</b><span class="mono">{{ ck[loop.index0] }}</span><p>{{ t.caps.cats[loop.index0] }}</p></figcaption></figure>{% endfor %}</div>
+  <div class="head m"><h3 class="disp">{{ t.caps.mtitle|safe }}</h3><p>{{ t.caps.mtext }}</p></div>
+  {% set mn = ['Leather', 'Leather Alternatives', 'Fur Materials', 'Natural Fibers', 'Synthetic Fibers'] %}{% set mk = ['Development & Finishing', 'Weaving & Construction', 'Shearing & Crimping', 'Embroidery & Sequin Work', 'Coating & Bonding'] %}
+  <div class="cg">{% for n in mn %}<figure tabindex="0"><div class="im"><img src="img/deck/mat{{ '%02d'|format(loop.index) }}.jpg" alt="{{ n }}" loading="lazy"><img class="b" src="img/deck/mat{{ '%02d'|format(loop.index + 5) }}.jpg" alt="" loading="lazy"></div><figcaption><b>{{ n }}</b><span class="mono">{{ mk[loop.index0] }}</span></figcaption></figure>{% endfor %}</div>
+  <p class="hint mono">{{ t.caps.hint }}</p>
 </section>
 
 <section class="range" id="range">

@@ -73,7 +73,7 @@
       "Corporate R&amp;D center opened<br>ISO 9001 · ISO 14001 certified",
       "Selected as a technology-rated excellent company",
       "Wholesale contracts in China and Japan",
-      "Japanese subsidiary founded<br>Factory established in China",
+      "Japanese subsidiary founded<br>Factory established in China<br>Purchased and moved into our own HQ building",
       "Distribution contract in Indonesia<br>INNOBIZ certified"
     ]
   },
@@ -343,5 +343,82 @@
     "photos": "Photos",
     "films": "Films",
     "back": "← Home"
+  },
+  "vision": {
+    "title": "Vision &amp; mission.",
+    "vision": "Everyone at Amescotes shares one vision: “Growing together with our partners.” We aim to shape the future of global accessory manufacturing through shared growth.",
+    "mission": "Built on our process experience and expertise, we create distinctive value for clients, so that partners and employees grow together and that growth feeds back into industry and culture.",
+    "values": [
+      [
+        "All-in-One System",
+        "One integrated process, managed directly across the entire production flow."
+      ],
+      [
+        "Tailored Consulting",
+        "1:1 consulting for solutions that fit each brief and its conditions."
+      ],
+      [
+        "Quality Control",
+        "Run under our own Amescotes Standard Quality (ASQ)."
+      ],
+      [
+        "Trend Leadership",
+        "Moving design, technology and business culture forward."
+      ]
+    ]
+  },
+  "pps": {
+    "title": "PPS sampling.",
+    "intro": "Our stage-based PPS system checks design intent and structure at every step, cutting unnecessary sampling cost and time.",
+    "steps": [
+      [
+        "CAD pattern",
+        "Patterns are engineered in CAD, so revisions and grading move fast."
+      ],
+      [
+        "Paper mock-up",
+        "Size, proportion, silhouette and structure are checked in paper first."
+      ],
+      [
+        "Prototype",
+        "Made in a similar material to fix texture such as wrinkles and slouch, plus the key details."
+      ],
+      [
+        "Final sample",
+        "Made in the real material to confirm finish, material fit and production feasibility."
+      ]
+    ],
+    "old": "Industry standard",
+    "old_steps": [
+      "Hand pattern",
+      "1st sample",
+      "Pattern revision",
+      "Revised sample"
+    ],
+    "new": "PPS",
+    "old_note": "Every change means another sample, so time and cost keep growing.",
+    "new_note": "Decisions are locked in paper and prototype, so the final sample lands in one go."
+  },
+  "caps": {
+    "title": "Categories &amp; capabilities.",
+    "text": "We only call it our range when we have made it ourselves, through trial and error. For each category we design and develop the core processes and details in-house.",
+    "cats": [
+      "Form and structural design",
+      "Belt construction and hardware development",
+      "Detail design across all SLGs",
+      "Last and sole development",
+      "Custom goods, packaging and molded lifestyle items"
+    ],
+    "mtitle": "Materials &amp; techniques.",
+    "mtext": "We design the processing method around each material’s character and physical properties, and keep extending it through new briefs and joint development with partners.",
+    "hint": "Hover a photo to see the technique"
+  },
+  "net": {
+    "domestic": "A close, independent network of Korean partners, from cutting houses we insist on for quality to process specialists for brands that want Korean production.",
+    "global": "In 2025 we opened a 2,000 m² factory in Qingdao, China. It links production lines in Korea, China, Indonesia, Vietnam and Cambodia, with direct shipping to Japan, the US and Europe."
+  },
+  "products": {
+    "title": "Made by AMESCOTES.",
+    "text": "A selection of products we have made with brands in Korea and abroad."
   }
 }
