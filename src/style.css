@@ -293,3 +293,5 @@ footer .links a{cursor:pointer}
 .pfeat .im{aspect-ratio:3/2}.pfeat img{width:80%;height:80%}
 .pfeat{grid-template-columns:repeat(4,1fr)}@media(max-width:820px){.pfeat{grid-template-columns:1fr 1fr;gap:14px 6px}}
 button,input,select,textarea{font-family:inherit}
+.pgd{grid-template-columns:repeat(8,1fr);gap:18px 14px}@media(max-width:820px){.pgd{grid-template-columns:repeat(4,1fr);gap:10px 8px}}
+.pgd div:hover img{transform:scale(1.22)}
