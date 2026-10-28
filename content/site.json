@@ -113,17 +113,17 @@
       ]
     },
     {
-      "image": "cut/b2.png",
+      "image": "cut/p19.png",
       "bg": "linear-gradient(180deg,#3E7A68,#1F4A3D)",
       "dark": true,
       "hotspots": [
         [
-          30,
-          22
+          50,
+          10
         ],
         [
-          70,
-          60
+          72,
+          62
         ]
       ]
     }
