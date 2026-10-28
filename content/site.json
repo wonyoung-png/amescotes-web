@@ -313,5 +313,25 @@
       "name": "HESS",
       "logo": null
     }
+  ],
+  "products_featured": [
+    {
+      "img": "pf37",
+      "brand": "LFM",
+      "name": "Sling Tote Mini Bag",
+      "url": "https://lexxfingermarche.com/product/detail.html?product_no=2404"
+    },
+    {
+      "img": "pf38",
+      "brand": "LFM",
+      "name": "Tou Shoulder Bag",
+      "url": "https://lexxfingermarche.com/product/detail.html?product_no=2288"
+    },
+    {
+      "img": "pf39",
+      "brand": "R2W",
+      "name": "Montana Eel Square Bag",
+      "url": "https://r2w.co.kr/product/montana-eel-square-bag-black/12437/"
+    }
   ]
 }
