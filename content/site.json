@@ -265,6 +265,12 @@
   ],
   "journal": [
     {
+      "url": "",
+      "image": "journal/issue-00/cover.jpg",
+      "date": "2026.10",
+      "slug": "issue-00"
+    },
+    {
       "url": "https://blog.naver.com/amescotesofficial/224445659104",
       "image": "img/runway.jpg",
       "date": "2026.10",
