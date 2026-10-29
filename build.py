@@ -80,11 +80,37 @@ def build():
         assert len(t['global']['places']) == len(site['places']), lang
         assert len(t['history']['items']) == len(site['history_years']), lang
         assert len(t['journal']['posts']) == len(site['journal']), lang
-    urls = ''.join(f'<url><loc>{site["url"]}/{p}</loc></url>' for p in ['', 'en/', 'ja/'])
+    # old imweb paths (www.amescotes.co.kr/<page>) -> new sections; GitHub Pages has no 301, so meta refresh + canonical
+    for old, new in OLD_PATHS.items():
+        d = DIST / old; d.mkdir(exist_ok=True)
+        to = f'{site["url"]}/{new}'
+        (d / 'index.html').write_text(f'<!doctype html><meta charset="utf-8"><title>AMESCOTES</title><link rel="canonical" href="{to}"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=../{new}"><script>location.replace("../{new}")</script><a href="../{new}">AMESCOTES</a>', encoding='utf-8')
+    pages = ['', 'en/', 'ja/', 'gallery.html', 'en/gallery.html', 'ja/gallery.html'] + [f'journal/{j["slug"]}.html' for j in site['journal']]
+    urls = ''.join(f'<url><loc>{site["url"]}/{p}</loc></url>' for p in pages)
+    (DIST / 'llms.txt').write_text(LLMS.format(url=site['url'], email=site['email'], posts='\n'.join(f'- [{h["title"]}]({site["url"]}/journal/{j["slug"]}.html)' for j, h in zip(site['journal'], load('ko')['journal']['posts']))), encoding='utf-8')
     (DIST / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>', encoding='utf-8')
     (DIST / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {site["url"]}/sitemap.xml\n', encoding='utf-8')
     (DIST / '.nojekyll').write_text('')
     print('built', sorted(str(p.relative_to(DIST)) for p in DIST.rglob('*.html')))
+
+
+OLD_PATHS = {'home': '', 'aboutus': '#story', 'services': '#works', 'businessrange': '#range', 'portfolio': '#products', 'contacts': '#contact'}
+LLMS = '''# AMESCOTES, Inc. (주)아메스코테스
+
+> Seoul-based OEM/ODM manufacturer of leather handbags, small leather goods and shoes for designer and contemporary brands. In-house development studio in Seoul, offices in Shenzhen and Guangzhou, partner factories in Dongguan, Guangzhou and Yiwu.
+
+## Pages
+- [Home (KO)]({url}/)
+- [Home (EN)]({url}/en/)
+- [Home (JA)]({url}/ja/)
+- [Gallery]({url}/gallery.html)
+
+## Journal
+{posts}
+
+## Contact
+- {email}
+'''
 
 
 if __name__ == '__main__':
