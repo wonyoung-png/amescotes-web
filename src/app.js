@@ -32,6 +32,8 @@ document.addEventListener('click',e=>{if(!e.target.closest('#drawer,#handle')&&s
 
 // story: camera pushes in, one sentence at a time, its cards pop in
 const lis=$$('#story li'),cards=$$('#story .card');
+// big photo panels: two per sentence sit left/right, a lone one centers
+cards.forEach(c=>{const g=cards.filter(x=>x.dataset.i===c.dataset.i);c.removeAttribute('style');c.classList.remove('tall');c.classList.add(g.length===1?'solo':g[0]===c?'l':'r')});
 ScrollTrigger.create({trigger:'#story',start:'top top',end:'bottom bottom',onUpdate(st){
   const p=st.progress,n=lis.length,i=Math.min(n-1,Math.floor(p/.86*n)),end=p>.86;
   gsap.set('#story .bg',{scale:1+p*.35});
