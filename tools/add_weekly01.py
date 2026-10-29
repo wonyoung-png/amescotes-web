@@ -23,11 +23,11 @@ for r in IROWS: r.pop('m')
 B = [
  {'t': 'p', 'v': ['이번 주부터 매주 월요일, 가방·슈즈·SLG와 소재, 업계 소식을 다섯 가지로 정리합니다.']},
 
- {'t': 'h', 'n': '01', 'eyebrow': 'BAGS', 'title': '이스트웨스트(EAST-WEST) 숄더, 둥근 볼링백', 'sub': 'SS27 RUNWAY'},
+ {'t': 'h', 'n': '01', 'eyebrow': 'BAGS', 'title': '이스트웨스트(EAST‑WEST) 숄더, 둥근 볼링백', 'sub': 'SS27 RUNWAY'},
  {'t': 'img', 'v': [im('bag')], 'cap': 'Ferragamo SS27 런웨이, 가로로 늘린 Hug · 사진: Ferragamo'},
- {'t': 'slide', 'label': '이스트웨스트(EAST-WEST) 숄더백 레퍼런스', 'v': [im(f'ew{i}') for i in range(1, 9)]},
+ {'t': 'slide', 'label': '이스트웨스트(EAST‑WEST) 숄더백 레퍼런스', 'v': [im(f'ew{i}') for i in range(1, 9)]},
  {'t': 'slide', 'label': '둥근 볼링백 레퍼런스', 'v': [im(f'bw{i}') for i in range(1, 9)]},
- {'t': 'p', 'v': ['SS27 쇼에서 가장 자주 반복된 형태는 가로로 길고 높이가 낮은 이스트웨스트(EAST-WEST) 숄더백, 손잡이가 두 개인 소프트 볼링백, 몸에 붙는 유연한 대형 토트입니다. 페라가모는 대표 가방 Hug의 비례를 가로로 다시 잡았다고 공식 설명했고, 전문 리서치 기관도 볼링백을 이번 시즌 주요 형태로 꼽았습니다.']},
+ {'t': 'p', 'v': ['SS27 쇼에서 가장 자주 반복된 형태는 가로로 길고 높이가 낮은 이스트웨스트(EAST‑WEST) 숄더백, 손잡이가 두 개인 소프트 볼링백, 몸에 붙는 유연한 대형 토트입니다. 페라가모는 대표 가방 Hug의 비례를 가로로 다시 잡았다고 공식 설명했고, 전문 리서치 기관도 볼링백을 이번 시즌 주요 형태로 꼽았습니다.']},
  {'t': 'links', 'v': [['', 'Ferragamo SS27 쇼 공식 설명', 'https://www.ferragamo.com/shop/CoreMediaContentDisplay?catalogId=37054&externalSeoSegment=stories-ss27-show&langId=-1&storeId=31150&urlRequestType=Base'], ['', 'Future Snoops SS27 가방 공개 요약', 'https://www.futuresnoops.com/en/report/bags-seasonal-takeaways-women-accessories-ss-27-runway-key-items'], ['', 'Vogue Singapore SS27 가방 모음', 'https://vogue.sg/best-bags-spring-summer-2027/']]},
 
  {'t': 'h', 'n': '02', 'eyebrow': 'SHOES', 'title': '발레리나 플랫 다음은 더비와 브로그(BROGUE)', 'sub': 'SS27 RUNWAY'},
