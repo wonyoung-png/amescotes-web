@@ -8,6 +8,17 @@ def im(n):
     return {'src': f'{IMG}/{n}.jpg', 'w': w, 'h': h}
 vol = json.loads(next((ROOT.parent / 'incoming' / 'research').glob('searchad_*.json')).read_text(encoding='utf-8'))
 def row(k, label): return [label, k, f"{vol[k]['total']:,}"]
+bk = json.loads((ROOT.parent / 'incoming' / 'research' / 'blackkiwi_2026-10-29.json').read_text(encoding='utf-8')); bk.pop('_meta')
+def irow(k, v):
+    # 12 months (2025-10..2026-09) + last 30 days; season s[0..11] = Jan..Dec share; now≈Oct, compare to Jul (t[9]) and Oct 2025 (t[0])
+    t, n, s = v['t'], v['now'], v['s']; ser = t + [n]; hi = max(ser); lo = min(ser)
+    xy = [(round(i * 120 / 12, 1), round(28 - (x - lo) / ((hi - lo) or 1) * 26, 1)) for i, x in enumerate(ser)]
+    a = n / t[9] - 1; e = s[9] / s[6] - 1; x = (1 + a) / (1 + e) - 1
+    vs, cls = ('계절보다 강함', 'up') if x > .15 else (('계절보다 약함', 'dn') if x < -.15 else ('계절 수준', ''))
+    return {'k': k, 'cat': v['cat'], 'pts': ' '.join(f'{p},{q}' for p, q in xy), 'end': xy[-1], 'idx': round(n / hi * 100),
+            'chg': f'{a:+.0%}', 'vs': f'{vs} ({x:+.0%})', 'cls': cls, 'yoy': f'{n / t[0] - 1:+.0%}', 'x': x}
+IROWS = sorted((irow(k, v) for k, v in bk.items()), key=lambda r: -r['x'])
+for r in IROWS: r.pop('x')
 B = [
  {'t': 'p', 'v': ['이번 주부터 매주 월요일, 가방·슈즈·SLG와 소재, 업계 소식을 다섯 가지로 정리합니다. 항목마다 근거의 등급을 적었습니다. A는 공식 원문, B는 전문 매체, C는 일반 매체, D는 검색량 같은 수요 숫자입니다. C만 있는 내용은 "더 확인할 신호"로만 씁니다.']},
  {'t': 'note', 'v': '맨 위 사진: Celine · Prada · Chanel SS27 (Vogue Singapore, Hypebae). 이미지 저작권은 각 브랜드와 매체에 있습니다.'},
@@ -20,13 +31,13 @@ B = [
 
  {'t': 'h', 'n': '02', 'eyebrow': 'SHOES · 근거 C (확인 중)', 'title': '발레리나 플랫 다음은 더비와 브로그', 'sub': 'SS27 RUNWAY'},
  {'t': 'img', 'v': [im('shoes')], 'cap': 'Ferragamo Tramezza 레이스업 · 사진: Ferragamo'},
- {'t': 'p', 'v': ['SS27 런웨이를 정리한 매체들은 브로그·더비·옥스퍼드 같은 끈 있는 단화가 발레리나 플랫의 자리를 넘보고 있다고 봤습니다. 반대편에서는 장식과 조형미가 강한 힐도 함께 나왔습니다. 아직 일반 매체 정리뿐이라, 다음 주에 공식 룩과 전문 매체로 다시 확인합니다.', '국내에서는 로퍼 검색이 더비슈즈보다 많고, 발레리나플랫이라는 말은 거의 쓰이지 않습니다. 아래 수요 표를 같이 보세요.']},
+ {'t': 'p', 'v': ['SS27 런웨이를 정리한 매체들은 브로그·더비·옥스퍼드 같은 끈 있는 단화가 발레리나 플랫의 자리를 넘보고 있다고 봤습니다. 반대편에서는 장식과 조형미가 강한 힐도 함께 나왔습니다. 아직 일반 매체 정리뿐이라, 다음 주에 공식 룩과 전문 매체로 다시 확인합니다.', '국내에서는 로퍼 검색이 더비슈즈보다 많고, 발레리나플랫이라는 말은 거의 쓰이지 않습니다. 더비슈즈의 가을 상승은 아래 06에서 계절 수준으로 나왔습니다.']},
  {'t': 'check', 'v': ['끈 있는 단화는 라스트(발틀)에서 앞코 볼륨과 등 높이가 인상을 좌우합니다. 기존 로퍼 라스트를 그대로 쓰면 둔해 보이기 쉽습니다.']},
  {'t': 'links', 'v': [['C', 'Who What Wear · Spring 2027 shoe trends', 'https://www.whowhatwear.com/fashion/runway/spring-summer-shoe-trends-2027'], ['C', 'Hypebae · SS27 runway footwear', 'https://hypebae.com/2026/9/best-footwear-fashion-week-ss27-spring-summer-2027-runways-sandy-liang-ugg-knwls-prada-mm6-maison-margiela-onitsuka-tiger-saint-laurent-chanel-info']]},
 
  {'t': 'h', 'n': '03', 'eyebrow': 'SLG · 근거 A·C', 'title': '작은 지갑이 브랜드의 입구가 된다', 'sub': 'SMALL LEATHER GOODS'},
  {'t': 'img', 'v': [im('slg')], 'cap': 'Bottega Veneta 인트레치아토 지갑 · 사진: Bottega Veneta'},
- {'t': 'p', 'v': ['가방 가격이 해마다 오르면서 카드지갑 같은 작은 가죽 소품이 브랜드를 처음 사는 입구가 되고 있다는 분석이 나옵니다. 루이 비통도 이번 가을·겨울 남성 소품을 콤팩트 지갑, 카드홀더, 미니 백 중심으로 꾸렸습니다. 국내 검색량에서도 카드지갑이 이번 표의 가방·슈즈 단어 대부분보다 많았습니다.']},
+ {'t': 'p', 'v': ['가방 가격이 해마다 오르면서 카드지갑 같은 작은 가죽 소품이 브랜드를 처음 사는 입구가 되고 있다는 분석이 나옵니다. 루이 비통도 이번 가을·겨울 남성 소품을 콤팩트 지갑, 카드홀더, 미니 백 중심으로 꾸렸습니다. 국내에서 카드지갑은 한 달 약 6만 회 검색되는 큰 단어지만, 관심도는 작년 같은 때보다 낮습니다(아래 06).']},
  {'t': 'check', 'v': ['카드 슬롯은 가죽을 얇게 깎는 피할 두께가 완성도를 정합니다. 겹치는 부분이 두꺼우면 카드가 빡빡해집니다.', '작은 제품일수록 엣지 마감이 눈에 잘 띕니다. 엣지 코트 횟수를 샘플 단계에서 정해 둡니다.']},
  {'t': 'links', 'v': [['A', 'Louis Vuitton · New in small leather goods', 'https://uk.louisvuitton.com/eng-gb/men/wallets-and-small-leather-goods/new-in-small-leather-goods/_/N-t1ko2dbb'], ['C', 'Vogue Hong Kong · SLG 기사', 'https://voguehk.com/?p=185799']]},
 
@@ -40,13 +51,9 @@ B = [
  {'t': 'p', 'v': ['유럽연합의 산림파괴방지 규정(EUDR)은 대부분의 기업에 2026년 12월 30일부터 적용됩니다. 소가죽도 원래 대상 품목이었는데, 유럽연합 집행위원회가 올해 5월 가죽을 대상에서 빼는 안을 내놓았습니다. 아직 확정 전이며, 유럽 의회와 회원국이 막을 수 있습니다.', '유럽에 가죽 제품을 수출하는 브랜드라면 원피가 어느 나라, 어느 농장에서 왔는지 추적 자료를 미리 준비해 두는 편이 안전합니다.']},
  {'t': 'links', 'v': [['B', 'Fern · 집행위원회, 가죽 제외 제안', 'https://www.fern.org/publications-insight/article/commission-rules-out-re-opening-eudr-but-drops-leather-from-goods-covered-by-it/'], ['B', 'World Footwear · EUDR 품목 범위 개정', 'https://www.worldfootwear.com/news/eu-revises-product-scope-simplifies-deforestation-rules-ahead-of-2026-rollout-/11454.html']]},
 
- {'t': 'h', 'n': '06', 'eyebrow': 'MARKET PULSE · 근거 D', 'title': '국내 검색량 첫 기록', 'sub': 'NAVER · 최근 30일'},
- {'t': 'p', 'v': ['네이버에서 최근 30일 동안 검색된 횟수(PC와 모바일 합계)입니다. 오늘이 첫 기록이라 아직 늘었는지 줄었는지는 알 수 없습니다. 다음 주부터 같은 단어를 매주 다시 재서 변화를 보여드립니다.']},
- {'t': 'table', 'head': ['품목', '검색어', '최근 30일 검색수'], 'rows': [
-   row('뮬', '슈즈'), row('카드지갑', 'SLG'), row('키링', 'SLG'), row('로퍼', '슈즈'), row('스웨이드가방', '가방'), row('숄더백', '가방'), row('토트백', '가방'),
-   row('더비슈즈', '슈즈'), row('호보백', '가방'), row('메리제인', '슈즈'), row('볼링백', '가방'), row('위빙백', '가방'), row('발레리나플랫', '슈즈')],
-  'cap': '자료: 네이버 검색광고 키워드 도구, 2026년 10월 29일 조회. 검색수는 단어 하나의 값이며, 비슷한 표현(예: 라탄백)은 합치지 않았습니다.'},
- {'t': 'p', 'v': ['다음 주 Weekly Signal 02에서는 슈즈 신호를 공식 룩으로 다시 확인하고, 검색량의 첫 주간 변화를 정리합니다.']},
+ {'t': 'h', 'n': '06', 'eyebrow': 'MARKET PULSE · 근거 D', 'title': '관심도: 볼링백만 계절을 앞질렀다', 'sub': 'NAVER 관심도 · 지금 수요 확인용'},
+ {'t': 'p', 'v': ['관심도는 최근 12개월 중 가장 많이 검색된 달을 100으로 놓고, 최근 30일이 어디쯤인지 보여주는 숫자입니다. 검색은 이미 생긴 수요라서 기획의 출발점이 아니라 "지금 실제로 찾는지" 확인하는 용도로 씁니다. 기획은 소재 박람회(12~18개월 전)와 런웨이(6~9개월 전)에서 먼저 잡습니다.', '계절 대비는 같은 기간 해마다 반복되는 계절 변화를 빼고 남은 힘입니다. 가을에 더비슈즈 검색이 늘어난 건 매년 있는 일이라 계절 수준입니다. 볼링백은 계절 예상보다 52% 더 올랐고 12개월 중 최고치라, 01번 런웨이 신호와 국내 수요가 같은 방향입니다.']},
+ {'t': 'interest', 'rows': IROWS, 'cap': '자료: 블랙키위(네이버 검색 데이터), 2026년 10월 29일 조회. 흐름 = 2025년 10월~2026년 9월 월별 + 최근 30일(점). 3개월 변화 = 최근 30일 ÷ 7월. 계절 대비 = 3개월 변화를 해마다 반복되는 7월→10월 변화로 나눈 값. 숄더백·로퍼·호보백·메리제인·스웨이드가방·발레리나플랫은 조회 제한으로 다음 주에 추가합니다.'}, {'t': 'p', 'v': ['다음 주 Weekly Signal 02에서는 슈즈 신호를 공식 룩으로 다시 확인하고, 관심도의 첫 주간 변화를 정리합니다.']},
 ]
 posts = json.loads((C / 'journal_posts.json').read_text(encoding='utf-8'))
 posts[SLUG] = {'url': '', 'blocks': B}
