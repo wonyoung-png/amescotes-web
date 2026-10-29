@@ -29,9 +29,9 @@ B = [
  {'t': 'check', 'v': ['가로형은 입구 유효폭과 지퍼 길이부터 확인합니다. 길고 얕을수록 물건을 꺼내기 어렵습니다.', '볼링백은 물건을 넣었을 때 바닥이 처지는지, 손잡이 두 개가 서로 부딪히는지 샘플로 봅니다.']},
  {'t': 'links', 'v': [['A', 'Ferragamo SS27 쇼 공식 설명', 'https://www.ferragamo.com/shop/CoreMediaContentDisplay?catalogId=37054&externalSeoSegment=stories-ss27-show&langId=-1&storeId=31150&urlRequestType=Base'], ['B', 'Future Snoops SS27 가방 공개 요약', 'https://www.futuresnoops.com/en/report/bags-seasonal-takeaways-women-accessories-ss-27-runway-key-items'], ['B', 'Vogue Singapore SS27 가방 모음', 'https://vogue.sg/best-bags-spring-summer-2027/']]},
 
- {'t': 'h', 'n': '02', 'eyebrow': 'SHOES · 근거 C (확인 중)', 'title': '발레리나 플랫 다음은 더비와 브로그', 'sub': 'SS27 RUNWAY'},
+ {'t': 'h', 'n': '02', 'eyebrow': 'SHOES · 근거 C (확인 중)', 'title': '발레리나 플랫 다음은 더비와 브로그(BROGUE)', 'sub': 'SS27 RUNWAY'},
  {'t': 'img', 'v': [im('shoes')], 'cap': 'Ferragamo Tramezza 레이스업 · 사진: Ferragamo'},
- {'t': 'p', 'v': ['SS27 런웨이를 정리한 매체들은 브로그·더비·옥스퍼드 같은 끈 있는 단화가 발레리나 플랫의 자리를 넘보고 있다고 봤습니다. 반대편에서는 장식과 조형미가 강한 힐도 함께 나왔습니다. 아직 일반 매체 정리뿐이라, 다음 주에 공식 룩과 전문 매체로 다시 확인합니다.', '국내에서는 로퍼 검색이 더비슈즈보다 많고, 발레리나플랫이라는 말은 거의 쓰이지 않습니다. 더비슈즈의 가을 상승은 아래 06에서 계절 수준으로 나왔습니다.']},
+ {'t': 'p', 'v': ['SS27 런웨이를 정리한 매체들은 브로그(BROGUE)·더비·옥스퍼드 같은 끈 있는 단화가 발레리나 플랫의 자리를 넘보고 있다고 봤습니다. 반대편에서는 장식과 조형미가 강한 힐도 함께 나왔습니다. 아직 일반 매체 정리뿐이라, 다음 주에 공식 룩과 전문 매체로 다시 확인합니다.', '국내에서는 로퍼 검색이 더비슈즈보다 많고, 발레리나플랫이라는 말은 거의 쓰이지 않습니다. 더비슈즈의 가을 상승은 아래 06에서 계절 수준으로 나왔습니다.']},
  {'t': 'check', 'v': ['끈 있는 단화는 라스트(발틀)에서 앞코 볼륨과 등 높이가 인상을 좌우합니다. 기존 로퍼 라스트를 그대로 쓰면 둔해 보이기 쉽습니다.']},
  {'t': 'links', 'v': [['C', 'Who What Wear · Spring 2027 shoe trends', 'https://www.whowhatwear.com/fashion/runway/spring-summer-shoe-trends-2027'], ['C', 'Hypebae · SS27 runway footwear', 'https://hypebae.com/2026/9/best-footwear-fashion-week-ss27-spring-summer-2027-runways-sandy-liang-ugg-knwls-prada-mm6-maison-margiela-onitsuka-tiger-saint-laurent-chanel-info']]},
 
