@@ -52,7 +52,7 @@
 
 <section class="history" id="history">
   <h2 class="disp">{{ t.history.title }}</h2>
-  <div class="hl">{% for y in site.history_years %}<div><span class="mono">{{ y }}</span><p>{{ t.history['items'][loop.index0]|safe }}</p></div>{% endfor %}</div>
+  <div class="hl">{% for y in site.history_years %}<div><span class="mono">{{ y }}</span><ul>{% for x in t.history['items'][loop.index0].split('<br>') %}<li>{{ x|safe }}</li>{% endfor %}</ul></div>{% endfor %}</div>
 </section>
 
 <section class="vision" id="vision">
