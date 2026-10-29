@@ -930,13 +930,13 @@
       {
         "t": "p",
         "v": [
-          "이번 주부터 매주 월요일, 가방·슈즈·SLG와 소재, 업계 소식을 다섯 가지로 정리합니다. 항목마다 근거의 등급을 적었습니다. A는 공식 원문, B는 전문 매체, C는 일반 매체, D는 검색량 같은 수요 숫자입니다. C만 있는 내용은 \"더 확인할 신호\"로만 씁니다."
+          "이번 주부터 매주 월요일, 가방·슈즈·SLG와 소재, 업계 소식을 다섯 가지로 정리합니다."
         ]
       },
       {
         "t": "h",
         "n": "01",
-        "eyebrow": "BAGS · 근거 A·B",
+        "eyebrow": "BAGS",
         "title": "낮고 긴 숄더, 둥근 볼링백",
         "sub": "SS27 RUNWAY"
       },
@@ -1053,17 +1053,17 @@
         "t": "links",
         "v": [
           [
-            "A",
+            "",
             "Ferragamo SS27 쇼 공식 설명",
             "https://www.ferragamo.com/shop/CoreMediaContentDisplay?catalogId=37054&externalSeoSegment=stories-ss27-show&langId=-1&storeId=31150&urlRequestType=Base"
           ],
           [
-            "B",
+            "",
             "Future Snoops SS27 가방 공개 요약",
             "https://www.futuresnoops.com/en/report/bags-seasonal-takeaways-women-accessories-ss-27-runway-key-items"
           ],
           [
-            "B",
+            "",
             "Vogue Singapore SS27 가방 모음",
             "https://vogue.sg/best-bags-spring-summer-2027/"
           ]
@@ -1072,7 +1072,7 @@
       {
         "t": "h",
         "n": "02",
-        "eyebrow": "SHOES · 근거 C (확인 중)",
+        "eyebrow": "SHOES",
         "title": "발레리나 플랫 다음은 더비와 브로그(BROGUE)",
         "sub": "SS27 RUNWAY"
       },
@@ -1140,12 +1140,12 @@
         "t": "links",
         "v": [
           [
-            "C",
+            "",
             "Who What Wear · Spring 2027 shoe trends",
             "https://www.whowhatwear.com/fashion/runway/spring-summer-shoe-trends-2027"
           ],
           [
-            "C",
+            "",
             "Hypebae · SS27 runway footwear",
             "https://hypebae.com/2026/9/best-footwear-fashion-week-ss27-spring-summer-2027-runways-sandy-liang-ugg-knwls-prada-mm6-maison-margiela-onitsuka-tiger-saint-laurent-chanel-info"
           ]
@@ -1154,7 +1154,7 @@
       {
         "t": "h",
         "n": "03",
-        "eyebrow": "SLG · 근거 A·C",
+        "eyebrow": "SLG",
         "title": "작은 지갑이 브랜드의 입구가 된다",
         "sub": "SMALL LEATHER GOODS"
       },
@@ -1221,12 +1221,12 @@
         "t": "links",
         "v": [
           [
-            "A",
+            "",
             "Louis Vuitton · New in small leather goods",
             "https://uk.louisvuitton.com/eng-gb/men/wallets-and-small-leather-goods/new-in-small-leather-goods/_/N-t1ko2dbb"
           ],
           [
-            "C",
+            "",
             "Vogue Hong Kong · SLG 기사",
             "https://voguehk.com/?p=185799"
           ]
@@ -1235,7 +1235,7 @@
       {
         "t": "h",
         "n": "04",
-        "eyebrow": "MATERIAL · 근거 A",
+        "eyebrow": "MATERIAL",
         "title": "가죽 자체가 표현이 되는 시즌",
         "sub": "LINEAPELLE · PREMIÈRE VISION"
       },
@@ -1261,12 +1261,12 @@
         "t": "links",
         "v": [
           [
-            "A",
+            "",
             "Première Vision · SS27 Leather",
             "https://www.premierevision.com/articles/5ae7cea9-a205-f111-8333-000d3a2973d4/spring-summer-27-decodings-leather"
           ],
           [
-            "B",
+            "",
             "La Conceria · Lineapelle 9월 행사 미리보기",
             "https://www.laconceria.it/en/fairs/lineapelle-gears-up-what-to-expect-from-23-to-25-september"
           ]
@@ -1275,7 +1275,7 @@
       {
         "t": "h",
         "n": "05",
-        "eyebrow": "RULES · 근거 B (확정 전)",
+        "eyebrow": "RULES",
         "title": "EU 산림파괴방지 규정, 가죽은 빠질까",
         "sub": "EUDR · 12월 30일 시행"
       },
@@ -1290,12 +1290,12 @@
         "t": "links",
         "v": [
           [
-            "B",
+            "",
             "Fern · 집행위원회, 가죽 제외 제안",
             "https://www.fern.org/publications-insight/article/commission-rules-out-re-opening-eudr-but-drops-leather-from-goods-covered-by-it/"
           ],
           [
-            "B",
+            "",
             "World Footwear · EUDR 품목 범위 개정",
             "https://www.worldfootwear.com/news/eu-revises-product-scope-simplifies-deforestation-rules-ahead-of-2026-rollout-/11454.html"
           ]
@@ -1304,7 +1304,7 @@
       {
         "t": "h",
         "n": "06",
-        "eyebrow": "MARKET PULSE · 근거 D",
+        "eyebrow": "MARKET PULSE",
         "title": "26FW 관심도: 부츠·스웨이드는 오르는 중, 작년을 넘은 건 볼링백·버건디",
         "sub": "NAVER 관심도 · 지난달 대비 · 작년 대비"
       },
