@@ -31,14 +31,16 @@ B = [
 
  {'t': 'h', 'n': '02', 'eyebrow': 'SHOES · 근거 C (확인 중)', 'title': '발레리나 플랫 다음은 더비와 브로그(BROGUE)', 'sub': 'SS27 RUNWAY'},
  {'t': 'img', 'v': [im('shoes')], 'cap': 'Ferragamo Tramezza 레이스업 · 사진: Ferragamo'},
- {'t': 'set', 'v': [dict(im(f'ref{i}'), cap=f'핀터레스트 저장 {s:,}회') for i, s in enumerate([89368, 20318, 9969, 8362, 7173, 7156], 1)]},
- {'t': 'note', 'v': '레퍼런스: 핀터레스트에서 더비·브로그 착용 사진을 저장 수가 많은 순으로 골랐습니다(2026년 10월 29일 기준). 사진 저작권은 각 게시자에게 있습니다.'},
+ {'t': 'set', 'v': [dict(im(f'ref{i}'), cap=c) for i, c in enumerate(['', '', '', '', 'Church''s', ''], 1)]},
+ {'t': 'note', 'v': '레퍼런스: 핀터레스트에서 저장이 많은 브로그·더비 구두 사진. 저작권은 각 게시자에게 있습니다.'},
  {'t': 'p', 'v': ['SS27 런웨이를 정리한 매체들은 브로그(BROGUE)·더비·옥스퍼드 같은 끈 있는 단화가 발레리나 플랫의 자리를 넘보고 있다고 봤습니다. 반대편에서는 장식과 조형미가 강한 힐도 함께 나왔습니다. 아직 일반 매체 정리뿐이라, 다음 주에 공식 룩과 전문 매체로 다시 확인합니다.', '국내에서는 로퍼 검색이 더비슈즈보다 많고, 발레리나플랫이라는 말은 거의 쓰이지 않습니다. 더비슈즈의 가을 상승은 아래 06에서 계절 수준으로 나왔습니다.']},
  {'t': 'check', 'v': ['끈 있는 단화는 라스트(발틀)에서 앞코 볼륨과 등 높이가 인상을 좌우합니다. 기존 로퍼 라스트를 그대로 쓰면 둔해 보이기 쉽습니다.']},
  {'t': 'links', 'v': [['C', 'Who What Wear · Spring 2027 shoe trends', 'https://www.whowhatwear.com/fashion/runway/spring-summer-shoe-trends-2027'], ['C', 'Hypebae · SS27 runway footwear', 'https://hypebae.com/2026/9/best-footwear-fashion-week-ss27-spring-summer-2027-runways-sandy-liang-ugg-knwls-prada-mm6-maison-margiela-onitsuka-tiger-saint-laurent-chanel-info']]},
 
  {'t': 'h', 'n': '03', 'eyebrow': 'SLG · 근거 A·C', 'title': '작은 지갑이 브랜드의 입구가 된다', 'sub': 'SMALL LEATHER GOODS'},
  {'t': 'img', 'v': [im('slg')], 'cap': 'Bottega Veneta 인트레치아토 지갑 · 사진: Bottega Veneta'},
+ {'t': 'set', 'v': [dict(im(f'w{i}'), cap=c) for i, c in enumerate(['Chanel', 'Miu Miu', 'Loewe', 'Loewe', 'Prada', 'Chanel'], 1)]},
+ {'t': 'note', 'v': '레퍼런스: 핀터레스트에서 저장이 많은 명품 카드지갑·지갑 사진. 저작권은 각 브랜드와 게시자에게 있습니다.'},
  {'t': 'p', 'v': ['가방 가격이 해마다 오르면서 카드지갑 같은 작은 가죽 소품이 브랜드를 처음 사는 입구가 되고 있다는 분석이 나옵니다. 루이 비통도 이번 가을·겨울 남성 소품을 콤팩트 지갑, 카드홀더, 미니 백 중심으로 꾸렸습니다. 국내에서 카드지갑은 한 달 약 6만 회 검색되는 큰 단어지만, 관심도는 작년 같은 때보다 낮습니다(아래 06).']},
  {'t': 'check', 'v': ['카드 슬롯은 가죽을 얇게 깎는 피할 두께가 완성도를 정합니다. 겹치는 부분이 두꺼우면 카드가 빡빡해집니다.', '작은 제품일수록 엣지 마감이 눈에 잘 띕니다. 엣지 코트 횟수를 샘플 단계에서 정해 둡니다.']},
  {'t': 'links', 'v': [['A', 'Louis Vuitton · New in small leather goods', 'https://uk.louisvuitton.com/eng-gb/men/wallets-and-small-leather-goods/new-in-small-leather-goods/_/N-t1ko2dbb'], ['C', 'Vogue Hong Kong · SLG 기사', 'https://voguehk.com/?p=185799']]},

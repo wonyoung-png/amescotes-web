@@ -1011,45 +1011,45 @@
         "v": [
           {
             "src": "journal/weekly-01/ref1.jpg",
-            "w": 720,
-            "h": 900,
-            "cap": "핀터레스트 저장 89,368회"
+            "w": 600,
+            "h": 770,
+            "cap": ""
           },
           {
             "src": "journal/weekly-01/ref2.jpg",
             "w": 736,
-            "h": 1174,
-            "cap": "핀터레스트 저장 20,318회"
+            "h": 982,
+            "cap": ""
           },
           {
             "src": "journal/weekly-01/ref3.jpg",
-            "w": 540,
-            "h": 743,
-            "cap": "핀터레스트 저장 9,969회"
+            "w": 736,
+            "h": 1049,
+            "cap": ""
           },
           {
             "src": "journal/weekly-01/ref4.jpg",
             "w": 736,
-            "h": 887,
-            "cap": "핀터레스트 저장 8,362회"
+            "h": 1050,
+            "cap": ""
           },
           {
             "src": "journal/weekly-01/ref5.jpg",
-            "w": 675,
-            "h": 1200,
-            "cap": "핀터레스트 저장 7,173회"
+            "w": 736,
+            "h": 1308,
+            "cap": "Churchs"
           },
           {
             "src": "journal/weekly-01/ref6.jpg",
-            "w": 736,
-            "h": 1086,
-            "cap": "핀터레스트 저장 7,156회"
+            "w": 319,
+            "h": 463,
+            "cap": ""
           }
         ]
       },
       {
         "t": "note",
-        "v": "레퍼런스: 핀터레스트에서 더비·브로그 착용 사진을 저장 수가 많은 순으로 골랐습니다(2026년 10월 29일 기준). 사진 저작권은 각 게시자에게 있습니다."
+        "v": "레퍼런스: 핀터레스트에서 저장이 많은 브로그·더비 구두 사진. 저작권은 각 게시자에게 있습니다."
       },
       {
         "t": "p",
@@ -1096,6 +1096,51 @@
           }
         ],
         "cap": "Bottega Veneta 인트레치아토 지갑 · 사진: Bottega Veneta"
+      },
+      {
+        "t": "set",
+        "v": [
+          {
+            "src": "journal/weekly-01/w1.jpg",
+            "w": 736,
+            "h": 818,
+            "cap": "Chanel"
+          },
+          {
+            "src": "journal/weekly-01/w2.jpg",
+            "w": 736,
+            "h": 981,
+            "cap": "Miu Miu"
+          },
+          {
+            "src": "journal/weekly-01/w3.jpg",
+            "w": 736,
+            "h": 920,
+            "cap": "Loewe"
+          },
+          {
+            "src": "journal/weekly-01/w4.jpg",
+            "w": 736,
+            "h": 837,
+            "cap": "Loewe"
+          },
+          {
+            "src": "journal/weekly-01/w5.jpg",
+            "w": 736,
+            "h": 981,
+            "cap": "Prada"
+          },
+          {
+            "src": "journal/weekly-01/w6.jpg",
+            "w": 736,
+            "h": 734,
+            "cap": "Chanel"
+          }
+        ]
+      },
+      {
+        "t": "note",
+        "v": "레퍼런스: 핀터레스트에서 저장이 많은 명품 카드지갑·지갑 사진. 저작권은 각 브랜드와 게시자에게 있습니다."
       },
       {
         "t": "p",
