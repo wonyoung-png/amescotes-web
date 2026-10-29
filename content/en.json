@@ -193,7 +193,7 @@
   ],
   "global": {
     "title": "Made here,<br>sent there.",
-    "text": "Developed in Seoul, produced in Qingdao, shipped to Japan and Southeast Asia. Drag the globe to spin it.",
+    "text": "Developed in Seoul, produced in Qingdao, Dongguan, Guangzhou and Yiwu, shipped to Japan and Southeast Asia. Drag the globe to spin it.",
     "filters": [
       "All",
       "Make",
@@ -225,6 +225,31 @@
         "n": "Indonesia",
         "k": "Distribution · 2026",
         "p": "Distribution contract signed in Indonesia, 2026."
+      },
+      {
+        "n": "Shenzhen",
+        "k": "Office",
+        "p": "Our Shenzhen office."
+      },
+      {
+        "n": "Guangzhou Office",
+        "k": "Office",
+        "p": "Our Guangzhou office."
+      },
+      {
+        "n": "Dongguan",
+        "k": "Factory",
+        "p": "Production in Dongguan."
+      },
+      {
+        "n": "Guangzhou Factory",
+        "k": "Factory",
+        "p": "Production in Guangzhou."
+      },
+      {
+        "n": "Yiwu",
+        "k": "Factory",
+        "p": "Production in Yiwu."
       }
     ]
   },
