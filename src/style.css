@@ -127,9 +127,9 @@ body.drawer-closed .hero{padding-right:var(--gap)}
 .rg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6vh}
 .rg>div{border-top:1px solid var(--ink);padding-top:16px}
 .rg h3{color:var(--accent);margin-bottom:14px}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips span{font-size:15px;background:var(--fog);padding:7px 13px;border-radius:7px;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
-.chips span:hover{transform:translateY(-5px) rotate(4deg)}
+.chips{display:flex;flex-direction:column}
+.chips span{font-size:16px;padding:11px 0;border-bottom:1px solid var(--line)}
+
 
 /* 8 journal (press layout) */
 .journal{padding:14vh 28px;display:grid;grid-template-columns:1.1fr 1fr;gap:14px;align-items:start}
@@ -140,7 +140,7 @@ body.drawer-closed .hero{padding-right:var(--gap)}
 .journal h4{font:500 clamp(18px,1.5vw,22px)/1.4 'Pretendard Variable',Pretendard,sans-serif;margin:10px 0 6px}
 .journal .list a{display:grid;grid-template-columns:1fr 150px;gap:16px;background:#fff;border-radius:6px;padding:16px;margin-bottom:14px}
 .journal .list img{width:150px;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
-.tag{display:inline-block;background:var(--fog);padding:3px 7px}
+.tag{display:inline-block;color:var(--accent)}
 .journal a:hover h4{color:var(--accent)}
 
 /* 9 contact */
