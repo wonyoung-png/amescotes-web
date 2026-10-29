@@ -54,6 +54,16 @@
 .art .dt th{text-align:left;font-weight:600;font-size:12px;color:var(--stone);border-bottom:1px solid var(--ink);padding:8px 10px}
 .art .dt td{border-bottom:1px solid var(--line);padding:8px 10px}
 .art .it td{vertical-align:middle;white-space:nowrap}.art .it svg{display:block;color:var(--stone)}.art .it .up{color:var(--accent);font-weight:600}.art .it .dn{color:var(--stone)}
+.art .sl{margin:5vh 0 7vh}
+.art .sl-h{max-width:960px;margin:0 auto 14px;padding:0 28px;display:flex;justify-content:space-between;align-items:center}
+.art .sl-h .mono{color:var(--accent)}
+.art .sl-b{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--ink);cursor:pointer;margin-left:6px;font-size:15px}
+.art .sl-b:hover{border-color:var(--ink)}
+.art .sl-t{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 28px 8px;scrollbar-width:thin;scroll-padding:0 28px}
+.art .sl-t figure{flex:0 0 auto;width:clamp(220px,24vw,340px);scroll-snap-align:start;margin:0}
+.art .sl-t img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;display:block;background:#E2ECE5}
+.art .sl-note{max-width:720px;margin:10px auto 0;padding:0 28px}
+@media(max-width:820px){.art .sl-t{padding:0 16px 8px;scroll-padding:0 16px}.art .sl-t figure{width:68vw}.art .sl-h{padding:0 16px}}
 .art .mk{background:#fff;border-radius:10px;padding:16px 18px;margin:0 0 1.4em}
 .art .mk .mono{color:var(--accent)}
 .art .mk ul{margin:8px 0 0;padding-left:18px;font-size:15px;line-height:1.75}
@@ -93,6 +103,7 @@
     {% elif b.t == 'interest' %}<div class="col"><div class="tw"><table class="dt it"><thead><tr><th>검색어</th><th>12개월 흐름</th><th>관심도</th><th>지난달 대비</th><th>작년 대비</th></tr></thead><tbody>{% for r in b.rows %}<tr><td><b>{{ r.k }}</b><span class="mono"> {{ r.cat }}</span></td><td><svg viewBox="0 0 120 30" width="120" height="30" aria-hidden="true"><polyline points="{{ r.pts }}" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="{{ r.end[0] }}" cy="{{ r.end[1] }}" r="2.5" fill="var(--accent)"/></svg></td><td>{{ r.idx }}</td><td class="{{ r.mc }}">{{ r.mom }}</td><td class="{{ r.yc }}">{{ r.yoy }}</td></tr>{% endfor %}</tbody></table></div>{% if b.cap %}<p class="note">{{ b.cap }}</p>{% endif %}</div>
     {% elif b.t == 'check' %}<div class="col"><div class="mk"><span class="mono">만들 때 체크</span><ul>{% for x in b.v %}<li>{{ x }}</li>{% endfor %}</ul></div></div>
     {% elif b.t == 'colors' %}<div class="wide"><div class="colors">{% for g in b.groups %}<div class="cg2"><h3 class="mono">{{ g.label }}</h3><div class="sw">{% for c in g['items'] %}<figure><i style="background:{{ c[2] }}"></i><b>{{ c[0] }}</b><span class="mono">{{ c[1] }}</span></figure>{% endfor %}</div></div>{% endfor %}</div></div>
+    {% elif b.t == 'slide' %}<div class="sl">{% if b.get('label') %}<div class="sl-h"><span class="mono">{{ b.label }}</span><span class="sl-n"><button type="button" class="sl-b" data-d="-1" aria-label="이전">←</button><button type="button" class="sl-b" data-d="1" aria-label="다음">→</button></span></div>{% endif %}<div class="sl-t">{% for im in b.v %}<figure><img src="{{ im.src }}" width="{{ im.w }}" height="{{ im.h }}" alt="{{ im.get('cap') or b.get('label','') }}" loading="lazy">{% if im.get('cap') %}<figcaption>{{ im.cap }}</figcaption>{% endif %}</figure>{% endfor %}</div>{% if b.get('note') %}<p class="note sl-note">{{ b.note }}</p>{% endif %}</div>
     {% elif b.t == 'set' %}
       {% set L = b.v|length %}{% set n = 1 if L == 1 else (4 if L % 4 == 0 else (3 if L % 3 == 0 else (2 if L % 2 == 0 else 3))) %}
       <div class="wide"><div class="set{{ ' portrait' if n > 1 else ' one' }}" style="--n:{{ n }}">{% for im in b.v %}<figure><img src="{{ im.src }}" width="{{ im.w }}" height="{{ im.h }}" alt="{{ im.cap }}" loading="lazy">{% if im.cap %}<figcaption>{{ im.cap }}</figcaption>{% endif %}</figure>{% endfor %}</div></div>
@@ -111,6 +122,7 @@ const b=document.body;
 document.getElementById('handle').onclick=()=>b.classList.remove('drawer-closed');
 document.addEventListener('click',e=>{if(!e.target.closest('#drawer,#handle'))b.classList.add('drawer-closed')});
 const lg=document.querySelector('.logo-fixed'),ld=document.querySelector('.lead');
+document.querySelectorAll('.sl').forEach(s=>{const t=s.querySelector('.sl-t');s.querySelectorAll('.sl-b').forEach(x=>x.onclick=()=>t.scrollBy({left:x.dataset.d*t.clientWidth*.8,behavior:'smooth'}))});
 const tone=()=>{const r=ld.getBoundingClientRect();lg.classList.toggle('on-light',!(r.top<=28&&r.bottom>28))};addEventListener('scroll',tone,{passive:true});tone();
 </script>
 </body>
