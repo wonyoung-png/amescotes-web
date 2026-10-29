@@ -1,4 +1,4 @@
-"""Journal: Weekly Signal 01 (2026-10, week 5) — bags/shoes/SLG/material/industry/demand. Own photos only. Re-runnable."""
+"""Journal: Weekly Signal 01 (2026-10, week 5) — bags/shoes/SLG/material/industry/demand. Photos: brand runway/product images, credited. Re-runnable."""
 import json
 from pathlib import Path
 from PIL import Image
@@ -10,27 +10,28 @@ vol = json.loads(next((ROOT.parent / 'incoming' / 'research').glob('searchad_*.j
 def row(k, label): return [label, k, f"{vol[k]['total']:,}"]
 B = [
  {'t': 'p', 'v': ['이번 주부터 매주 월요일, 가방·슈즈·SLG와 소재, 업계 소식을 다섯 가지로 정리합니다. 항목마다 근거의 등급을 적었습니다. A는 공식 원문, B는 전문 매체, C는 일반 매체, D는 검색량 같은 수요 숫자입니다. C만 있는 내용은 "더 확인할 신호"로만 씁니다.']},
+ {'t': 'note', 'v': '맨 위 사진: Celine · Prada · Chanel SS27 (Vogue Singapore, Hypebae). 이미지 저작권은 각 브랜드와 매체에 있습니다.'},
 
  {'t': 'h', 'n': '01', 'eyebrow': 'BAGS · 근거 A·B', 'title': '낮고 긴 숄더, 둥근 볼링백', 'sub': 'SS27 RUNWAY'},
- {'t': 'img', 'v': [im('bag')], 'cap': 'AMESCOTES 제작 제품'},
+ {'t': 'img', 'v': [im('bag')], 'cap': 'Prada SS27 · 사진: Vogue Singapore'},
  {'t': 'p', 'v': ['SS27 쇼에서 가장 자주 반복된 형태는 가로로 길고 높이가 낮은 숄더백, 손잡이가 두 개인 소프트 볼링백, 몸에 붙는 유연한 대형 토트입니다. 페라가모는 대표 가방 Hug의 비례를 가로로 다시 잡았다고 공식 설명했고, 전문 리서치 기관도 볼링백을 이번 시즌 주요 형태로 꼽았습니다.']},
  {'t': 'check', 'v': ['가로형은 입구 유효폭과 지퍼 길이부터 확인합니다. 길고 얕을수록 물건을 꺼내기 어렵습니다.', '볼링백은 물건을 넣었을 때 바닥이 처지는지, 손잡이 두 개가 서로 부딪히는지 샘플로 봅니다.']},
  {'t': 'links', 'v': [['A', 'Ferragamo SS27 쇼 공식 설명', 'https://www.ferragamo.com/shop/CoreMediaContentDisplay?catalogId=37054&externalSeoSegment=stories-ss27-show&langId=-1&storeId=31150&urlRequestType=Base'], ['B', 'Future Snoops SS27 가방 공개 요약', 'https://www.futuresnoops.com/en/report/bags-seasonal-takeaways-women-accessories-ss-27-runway-key-items'], ['B', 'Vogue Singapore SS27 가방 모음', 'https://vogue.sg/best-bags-spring-summer-2027/']]},
 
  {'t': 'h', 'n': '02', 'eyebrow': 'SHOES · 근거 C (확인 중)', 'title': '발레리나 플랫 다음은 더비와 브로그', 'sub': 'SS27 RUNWAY'},
- {'t': 'img', 'v': [im('shoes')], 'cap': 'AMESCOTES 제작 제품'},
+ {'t': 'img', 'v': [im('shoes')], 'cap': 'Marni SS27 · 사진: Hypebae'},
  {'t': 'p', 'v': ['SS27 런웨이를 정리한 매체들은 브로그·더비·옥스퍼드 같은 끈 있는 단화가 발레리나 플랫의 자리를 넘보고 있다고 봤습니다. 반대편에서는 장식과 조형미가 강한 힐도 함께 나왔습니다. 아직 일반 매체 정리뿐이라, 다음 주에 공식 룩과 전문 매체로 다시 확인합니다.', '국내에서는 로퍼 검색이 더비슈즈보다 많고, 발레리나플랫이라는 말은 거의 쓰이지 않습니다. 아래 수요 표를 같이 보세요.']},
  {'t': 'check', 'v': ['끈 있는 단화는 라스트(발틀)에서 앞코 볼륨과 등 높이가 인상을 좌우합니다. 기존 로퍼 라스트를 그대로 쓰면 둔해 보이기 쉽습니다.']},
  {'t': 'links', 'v': [['C', 'Who What Wear · Spring 2027 shoe trends', 'https://www.whowhatwear.com/fashion/runway/spring-summer-shoe-trends-2027'], ['C', 'Hypebae · SS27 runway footwear', 'https://hypebae.com/2026/9/best-footwear-fashion-week-ss27-spring-summer-2027-runways-sandy-liang-ugg-knwls-prada-mm6-maison-margiela-onitsuka-tiger-saint-laurent-chanel-info']]},
 
  {'t': 'h', 'n': '03', 'eyebrow': 'SLG · 근거 A·C', 'title': '작은 지갑이 브랜드의 입구가 된다', 'sub': 'SMALL LEATHER GOODS'},
- {'t': 'img', 'v': [im('slg')], 'cap': 'AMESCOTES 제작 제품'},
+ {'t': 'img', 'v': [im('slg')], 'cap': 'Bottega Veneta 인트레치아토 지갑 · 사진: Bottega Veneta'},
  {'t': 'p', 'v': ['가방 가격이 해마다 오르면서 카드지갑 같은 작은 가죽 소품이 브랜드를 처음 사는 입구가 되고 있다는 분석이 나옵니다. 루이 비통도 이번 가을·겨울 남성 소품을 콤팩트 지갑, 카드홀더, 미니 백 중심으로 꾸렸습니다. 국내 검색량에서도 카드지갑이 이번 표의 가방·슈즈 단어 대부분보다 많았습니다.']},
  {'t': 'check', 'v': ['카드 슬롯은 가죽을 얇게 깎는 피할 두께가 완성도를 정합니다. 겹치는 부분이 두꺼우면 카드가 빡빡해집니다.', '작은 제품일수록 엣지 마감이 눈에 잘 띕니다. 엣지 코트 횟수를 샘플 단계에서 정해 둡니다.']},
  {'t': 'links', 'v': [['A', 'Louis Vuitton · New in small leather goods', 'https://uk.louisvuitton.com/eng-gb/men/wallets-and-small-leather-goods/new-in-small-leather-goods/_/N-t1ko2dbb'], ['C', 'Vogue Hong Kong · SLG 기사', 'https://voguehk.com/?p=185799']]},
 
  {'t': 'h', 'n': '04', 'eyebrow': 'MATERIAL · 근거 A', 'title': '가죽 자체가 표현이 되는 시즌', 'sub': 'LINEAPELLE · PREMIÈRE VISION'},
- {'t': 'img', 'v': [im('leather')], 'cap': 'AMESCOTES 소재 샘플'},
+ {'t': 'img', 'v': [im('leather')], 'cap': 'SS27 가죽 디코딩 · 사진: Première Vision'},
  {'t': 'p', 'v': ['프르미에르 비전은 SS27 가죽 전망에서 소재 자체가 하나의 표현이 된다고 정리했습니다. 누벅·미세 샌딩·스웨이드처럼 손에 닿는 표면이 중심입니다. 리네아펠레는 지난 2월 밀라노에서 2027년 여름을 미리 보여주는 샘플 2,000점 이상을 전시했고, 9월 행사는 다음 가을·겨울 소재를 중심으로 열렸습니다.', '국내 검색량에서도 스웨이드가방이 숄더백·토트백보다 많았습니다. 계절 영향이 있어 몇 주 더 지켜봅니다.']},
  {'t': 'check', 'v': ['스웨이드·누벅은 마찰 이염과 물 자국을 먼저 테스트합니다. 보강재를 붙인 뒤 촉감이 달라지지 않는지도 확인합니다.']},
  {'t': 'links', 'v': [['A', 'Première Vision · SS27 Leather', 'https://www.premierevision.com/articles/5ae7cea9-a205-f111-8333-000d3a2973d4/spring-summer-27-decodings-leather'], ['B', 'La Conceria · Lineapelle 9월 행사 미리보기', 'https://www.laconceria.it/en/fairs/lineapelle-gears-up-what-to-expect-from-23-to-25-september']]},

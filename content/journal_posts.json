@@ -934,6 +934,10 @@
         ]
       },
       {
+        "t": "note",
+        "v": "맨 위 사진: Celine · Prada · Chanel SS27 (Vogue Singapore, Hypebae). 이미지 저작권은 각 브랜드와 매체에 있습니다."
+      },
+      {
         "t": "h",
         "n": "01",
         "eyebrow": "BAGS · 근거 A·B",
@@ -946,10 +950,10 @@
           {
             "src": "journal/weekly-01/bag.jpg",
             "w": 800,
-            "h": 800
+            "h": 1200
           }
         ],
-        "cap": "AMESCOTES 제작 제품"
+        "cap": "Prada SS27 · 사진: Vogue Singapore"
       },
       {
         "t": "p",
@@ -996,11 +1000,11 @@
         "v": [
           {
             "src": "journal/weekly-01/shoes.jpg",
-            "w": 800,
-            "h": 800
+            "w": 745,
+            "h": 1118
           }
         ],
-        "cap": "AMESCOTES 제작 제품"
+        "cap": "Marni SS27 · 사진: Hypebae"
       },
       {
         "t": "p",
@@ -1042,11 +1046,11 @@
         "v": [
           {
             "src": "journal/weekly-01/slg.jpg",
-            "w": 800,
-            "h": 800
+            "w": 849,
+            "h": 1000
           }
         ],
-        "cap": "AMESCOTES 제작 제품"
+        "cap": "Bottega Veneta 인트레치아토 지갑 · 사진: Bottega Veneta"
       },
       {
         "t": "p",
@@ -1088,11 +1092,11 @@
         "v": [
           {
             "src": "journal/weekly-01/leather.jpg",
-            "w": 750,
-            "h": 750
+            "w": 1400,
+            "h": 787
           }
         ],
-        "cap": "AMESCOTES 소재 샘플"
+        "cap": "SS27 가죽 디코딩 · 사진: Première Vision"
       },
       {
         "t": "p",
