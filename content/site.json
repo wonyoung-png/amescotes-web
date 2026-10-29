@@ -266,6 +266,12 @@
   "journal": [
     {
       "url": "",
+      "image": "journal/weekly-01/cover.jpg",
+      "date": "2026.10.29",
+      "slug": "weekly-signal-01"
+    },
+    {
+      "url": "",
       "image": "journal/issue-00/cover.jpg",
       "date": "2026.10",
       "slug": "issue-00"
