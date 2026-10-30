@@ -120,7 +120,7 @@ body.drawer-closed .hero{padding-right:var(--gap)}
 /* 6 clients */
 .clients{padding:18vh 0 14vh;overflow:hidden}
 .clients .head{padding:0 28px 7vh;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
-.clients h2,.range h2,.journal h2{font-size:clamp(48px,6.4vw,108px)}
+.clients h2,.range h2,.journal h2,.faq h2{font-size:clamp(48px,6.4vw,108px)}
 
 /* 7 range */
 .range{padding:14vh 28px}
