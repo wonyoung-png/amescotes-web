@@ -81,7 +81,8 @@ const PLACES=C.site.places.map((p,i)=>({...p,...C.global.places[i]}));
   const size=()=>{const w=el.clientWidth,h=el.clientHeight;proj.scale(Math.min(w,h)*.46).translate([w*.55,h*.62])};
   function draw(){
     sphere.attr('d',path);grat.attr('d',path);lnd.attr('d',path);
-    const vis=PLACES.filter(p=>filter==='all'||p.f===filter),center=proj.invert(proj.translate());
+    // one marker per city name (Qingdao/Guangzhou are both make and office)
+    const vis=PLACES.filter(p=>filter==='all'||p.f===filter).filter((p,i,a)=>a.findIndex(q=>q.n===p.n)===i),center=proj.invert(proj.translate());
     arcs.selectAll('path').data(vis.filter(p=>p!==PLACES[0])).join('path')
       .attr('d',p=>path({type:'LineString',coordinates:[PLACES[0].c,p.c]})).attr('fill','none').attr('stroke','#fff').attr('stroke-opacity',.45).attr('stroke-dasharray','3 4');
     pts.selectAll('g').data(vis,d=>d.n).join(e=>{const q=e.append('g').style('cursor','pointer').on('click',(ev,d)=>pick(PLACES.indexOf(d)));q.append('circle').attr('class','halo');q.append('circle').attr('class','dot');q.append('text');return q})
