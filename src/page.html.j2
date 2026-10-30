@@ -89,7 +89,7 @@
 </section>
 
 <section class="map" id="map">
-  <div class="head"><h2 class="disp">{{ t.global.title|safe }}</h2><p>{{ t.global.text }}</p></div>
+  <div class="head"><h2 class="disp">{{ t.global.title|safe }}</h2></div>
   <svg id="globe" aria-label="map"></svg>
   <div class="card"><div class="k mono" id="mc-k"></div><h4 id="mc-h"></h4><p id="mc-p"></p></div>
   <div class="pills mono" id="map-tabs">{% for f in ['all','make','office','trade'] %}<button class="{{ 'on' if loop.first else '' }}" data-f="{{ f }}">{{ t.global.filters[loop.index0] }}</button>{% endfor %}</div>
