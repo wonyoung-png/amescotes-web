@@ -454,5 +454,50 @@
   "products": {
     "title": "Made by AMESCOTES.",
     "text": "A selection of products we have made with brands in Korea and abroad."
+  },
+  "faq": {
+    "title": "FAQ.",
+    "items": [
+      [
+        "What is your minimum order quantity (MOQ)?",
+        "From 50 pcs for production in Korea, and from 200 pcs per style in 2 colours for production in China."
+      ],
+      [
+        "How long does sampling take?",
+        "About two weeks. Our in-house development team in Seoul makes the patterns and samples themselves, with nothing outsourced."
+      ],
+      [
+        "Can I start without a tech pack or finished design?",
+        "Yes. An idea or a few reference images is enough. As an ODM partner we can propose the concept and design based on trend and material research."
+      ],
+      [
+        "What products do you make?",
+        "Bags, wallets, belts, keyrings, shoes and other small leather goods, plus living items such as trays and coasters, for luxury, premium, contemporary, wholesale and artist-merchandise lines."
+      ],
+      [
+        "Which materials do you work with?",
+        "Genuine leather, vegan leather, cotton, nylon, polyester, and special materials such as PVC."
+      ],
+      [
+        "Where is production done?",
+        "We develop in Seoul and produce in Korea, at our own factory in Qingdao, and with partner factories in Dongguan, Guangzhou and Yiwu. We recommend the location that fits your quantity, material and target cost."
+      ],
+      [
+        "How do you manage quality?",
+        "Production is managed to ISO 9001 and ISO 14001, inspected against our own standard, ASQ (Amescotes Standard Quality), and supported with after-sales service after delivery."
+      ],
+      [
+        "What do samples cost and what is the production lead time?",
+        "Both depend on the product and quantity, so we confirm them with your quote. Our PPS process fixes size and structure at the paper and toile stages, which cuts the number of samples and their cost."
+      ],
+      [
+        "Do you work with brands outside Korea?",
+        "Yes. We work with Japanese brands through our Japan subsidiary and supply distributors in China, Japan and Indonesia."
+      ],
+      [
+        "How do I get started?",
+        "Use the contact form below or email contact@amescotes.co.kr with the product you have in mind, the expected quantity and your preferred production location."
+      ]
+    ]
   }
 }

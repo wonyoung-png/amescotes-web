@@ -104,6 +104,7 @@ LLMS = '''# AMESCOTES, Inc. (주)아메스코테스
 - [Home (EN)]({url}/en/)
 - [Home (JA)]({url}/ja/)
 - [Gallery]({url}/gallery.html)
+- [FAQ — MOQ, sampling, materials, production]({url}/en/#faq)
 
 ## Journal
 {posts}

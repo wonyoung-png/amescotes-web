@@ -116,6 +116,12 @@
   <div class="rg">{% for g in t.range.groups %}<div><h3 class="mono">{{ g.label }}</h3><div class="chips">{% for it in g['items'] %}<span>{{ it }}</span>{% endfor %}</div></div>{% endfor %}</div>
 </section>
 
+<section class="faq" id="faq">
+  <h2 class="disp">{{ t.faq.title }}</h2>
+  <div class="fq">{% for q, a in t.faq['items'] %}<details{% if loop.first %} open{% endif %}><summary>{{ q }}</summary><p>{{ a }}</p></details>{% endfor %}</div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for q, a in t.faq['items'] %}{"@type":"Question","name":{{ q|tojson }},"acceptedAnswer":{"@type":"Answer","text":{{ a|tojson }}}}{{ "," if not loop.last }}{% endfor %}]}</script>
+</section>
+
 <section class="journal" id="journal">
   <h2 class="disp">{{ t.journal.title|safe }}</h2>
   {% set j = site.journal %}{% set p = t.journal.posts %}
