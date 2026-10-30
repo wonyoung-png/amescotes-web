@@ -436,7 +436,63 @@
     ],
     "new": "PPS",
     "old_note": "Every change means another sample, so time and cost keep growing.",
-    "new_note": "Decisions are locked in paper and prototype, so the final sample lands in one go."
+    "new_note": "Decisions are locked in paper and prototype, so the final sample lands in one go.",
+    "claim": "CAD instead of hand patterns, a paper mock-up before any sample. The final sample lands in one go.",
+    "why": [
+      [
+        "01",
+        "CAD pattern",
+        "Patterns are engineered in CAD, not drawn by hand.",
+        [
+          "Revisions and grading move fast",
+          "Precise measurements keep left-right and size-to-size errors low",
+          "Patterns are kept as files and reused for revisions and reorders"
+        ]
+      ],
+      [
+        "02",
+        "Paper mock-up",
+        "Before any sample, we build the bag at full size in paper.",
+        [
+          "You check size and proportion in your hands",
+          "Fixes happen before leather is cut, so fewer samples are remade",
+          "The first form is ready in about three days"
+        ]
+      ]
+    ],
+    "th": [
+      "",
+      "Industry standard",
+      "AMESCOTES PPS"
+    ],
+    "rows": [
+      [
+        "Pattern",
+        "Hand pattern",
+        "CAD pattern"
+      ],
+      [
+        "Revision & grading",
+        "Redrawn by hand",
+        "Edited directly in the file"
+      ],
+      [
+        "Size check",
+        "After the 1st sample",
+        "First, in a paper mock-up (3 days~)"
+      ],
+      [
+        "When changes are needed",
+        "A new sample is made (2 weeks~)",
+        "Fixed at the mock-up and prototype stage"
+      ],
+      [
+        "Time to final sample (example)",
+        "5+ weeks",
+        "About 3.5 weeks~"
+      ]
+    ],
+    "steps_label": "Steps"
   },
   "caps": {
     "title": "Categories &amp; capabilities.",

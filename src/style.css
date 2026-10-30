@@ -338,3 +338,27 @@ button,input,select,textarea{font-family:inherit}
 .mb li p{margin-top:1.4vh;color:var(--stone);line-height:1.75;max-width:420px;word-break:keep-all}
 .mb .mimg{display:none}
 @media(max-width:820px){.make{padding:10vh 16px 4vh}.mb{grid-template-columns:1fr}.mstick{display:none}.mb ol{padding:0}.mb li{min-height:auto;opacity:1;padding:4vh 0}.mb li .n{font-size:44px}.mb li h3{font-size:22px}.mb .mimg{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;margin-top:2.4vh}}
+/* PPS v2: strengths + comparison */
+.pps .claim{font-size:clamp(22px,2.4vw,36px);font-weight:600;letter-spacing:-.03em;line-height:1.35;max-width:900px;word-break:keep-all;margin-bottom:6vh}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wy{background:#fff;border-radius:14px;overflow:hidden;display:grid;grid-template-columns:44% 1fr}
+.wy img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.wy>div{padding:28px 26px}
+.wy .mono{color:var(--accent)}
+.wy h3{font-size:clamp(24px,2.2vw,32px);font-weight:600;letter-spacing:-.03em;margin:10px 0 8px}
+.wy p{color:var(--stone);line-height:1.7;word-break:keep-all}
+.wy ul{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line)}
+.wy li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.5;position:relative;word-break:keep-all}
+.wy li:before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:700}
+.ct{margin-top:8vh;overflow-x:auto}
+.ct table{width:100%;border-collapse:collapse;font-size:16px}
+.ct th,.ct td{text-align:left;padding:16px 14px;border-bottom:1px solid var(--line);word-break:keep-all;vertical-align:top}
+.ct thead th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);border-bottom:1px solid var(--ink)}
+.ct tbody th{font-weight:500;color:var(--stone);width:24%}
+.ct td{color:var(--stone)}
+.ct .us{color:var(--ink);font-weight:600;background:rgba(31,74,61,.06)}
+.ct thead .us{color:var(--accent);background:rgba(31,74,61,.06)}
+.ct .tot th,.ct .tot td{font-size:18px;border-bottom:1px solid var(--ink)}
+.ct .tot td.us{color:var(--accent)}
+.pps .steps-l{margin:10vh 0 2.4vh;color:var(--stone)}
+@media(max-width:820px){.why{grid-template-columns:1fr}.wy{grid-template-columns:1fr}.wy img{aspect-ratio:16/10}.wy>div{padding:22px 18px}.ct table{font-size:14px}.ct th,.ct td{padding:12px 8px}.ct .tot th,.ct .tot td{font-size:15px}}
