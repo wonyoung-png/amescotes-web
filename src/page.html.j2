@@ -82,8 +82,7 @@
 <section class="pps" id="pps">
   <div class="head"><h2 class="disp">{{ t.pps.title }}</h2><p>{{ t.pps.intro }}</p></div>
   <p class="claim">{{ t.pps.claim }}</p>
-  <div class="why">{% for w in t.pps.why %}<div class="wy"><img src="img/deck/pps{{ '%02d'|format(loop.index + 4) }}.jpg?v={{ ver }}" alt="{{ w[1] }}" loading="lazy"><div><span class="mono">{{ w[0] }}</span><h3>{{ w[1] }}</h3><p>{{ w[2] }}</p><ul>{% for x in w[3] %}<li>{{ x }}</li>{% endfor %}</ul></div></div>{% endfor %}</div>
-  <div class="ct"><table><thead><tr>{% for h in t.pps.th %}<th{% if loop.last %} class="us"{% endif %}>{{ h }}</th>{% endfor %}</tr></thead><tbody>{% for r in t.pps.rows %}<tr{% if loop.last %} class="tot"{% endif %}><th>{{ r[0] }}</th><td>{{ r[1] }}</td><td class="us">{{ r[2] }}</td></tr>{% endfor %}</tbody></table></div>
+  <div class="why">{% for w in t.pps.why %}<div class="wy"><img src="img/deck/pps{{ '%02d'|format(loop.index + 4) }}.jpg?v={{ ver }}" alt="{{ w[1] }}" loading="lazy"><div><span class="mono">{{ w[0] }}</span><h3>{{ w[1] }}</h3><p>{{ w[2] }}</p></div></div>{% endfor %}</div>
   {% set dur = ['CAD', '3 days~', '1 week~', '2 weeks~'] %}
   <h3 class="mono steps-l">{{ t.pps.steps_label }}</h3>
   <div class="pg">{% for s in t.pps.steps %}<figure><img src="img/deck/pps{{ '%02d'|format(loop.index + 4) }}.jpg?v={{ ver }}" alt="{{ s[0] }}" loading="lazy"><figcaption><span class="mono">{{ '%02d'|format(loop.index) }} · {{ dur[loop.index0] }}</span><b>{{ s[0] }}</b><p>{{ s[1] }}</p></figcaption></figure>{% endfor %}</div>

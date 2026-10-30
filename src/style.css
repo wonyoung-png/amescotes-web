@@ -362,3 +362,4 @@ button,input,select,textarea{font-family:inherit}
 .ct .tot td.us{color:var(--accent)}
 .pps .steps-l{margin:10vh 0 2.4vh;color:var(--stone)}
 @media(max-width:820px){.why{grid-template-columns:1fr}.wy{grid-template-columns:1fr}.wy img{aspect-ratio:16/10}.wy>div{padding:22px 18px}.ct table{font-size:14px}.ct th,.ct td{padding:12px 8px}.ct .tot th,.ct .tot td{font-size:15px}}
+.wy>div{display:flex;flex-direction:column;justify-content:center}.wy p{font-size:17px}
