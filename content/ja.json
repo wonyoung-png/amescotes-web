@@ -266,36 +266,36 @@
     "title": "Business range.",
     "groups": [
       {
-        "label": "Items",
+        "label": "Product range",
+        "key": "product",
         "items": [
           "Bags",
           "Belts",
-          "Wallets",
-          "Keyrings",
+          "SLGs",
           "Shoes",
-          "Small leather goods",
-          "トレー・コースターなどリビング"
+          "キーリング・リビングなど"
         ]
       },
       {
-        "label": "Lines",
+        "label": "Material range",
+        "key": "material",
+        "items": [
+          "本革",
+          "スプリットレザー",
+          "ヴィーガンレザー",
+          "ファブリック",
+          "PVCなどの特殊素材"
+        ]
+      },
+      {
+        "label": "Market range",
+        "key": "market",
         "items": [
           "Luxury",
           "Premium",
           "Contemporary",
           "Wholesale",
-          "Merchandise・アーティストグッズ"
-        ]
-      },
-      {
-        "label": "Materials",
-        "items": [
-          "Genuine leather",
-          "Vegan leather",
-          "Cotton",
-          "Nylon",
-          "Polyester",
-          "PVCなど特殊素材"
+          "アーティストグッズなど"
         ]
       }
     ]
@@ -602,7 +602,7 @@
       [
         "Production",
         "生産",
-        "韓国または青島のラインで量産します。"
+        "韓国または中国の生産ラインで量産します。"
       ],
       [
         "QC",

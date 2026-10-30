@@ -266,36 +266,36 @@
     "title": "Business range.",
     "groups": [
       {
-        "label": "Items",
+        "label": "Product range",
+        "key": "product",
         "items": [
           "Bags",
           "Belts",
-          "Wallets",
-          "Keyrings",
+          "SLGs",
           "Shoes",
-          "Small leather goods",
-          "Living: trays, coasters"
+          "Keyrings, living & more"
         ]
       },
       {
-        "label": "Lines",
+        "label": "Material range",
+        "key": "material",
+        "items": [
+          "Genuine leather",
+          "Split leather",
+          "Vegan leather",
+          "Fabric",
+          "PVC & special materials"
+        ]
+      },
+      {
+        "label": "Market range",
+        "key": "market",
         "items": [
           "Luxury",
           "Premium",
           "Contemporary",
           "Wholesale",
-          "Merchandise · artist goods"
-        ]
-      },
-      {
-        "label": "Materials",
-        "items": [
-          "Genuine leather",
-          "Vegan leather",
-          "Cotton",
-          "Nylon",
-          "Polyester",
-          "PVC and special materials"
+          "Artist merchandise & more"
         ]
       }
     ]
@@ -602,7 +602,7 @@
       [
         "Production",
         "Production",
-        "Volume production on our lines in Korea or Qingdao."
+        "Volume production on our lines in Korea or China."
       ],
       [
         "QC",

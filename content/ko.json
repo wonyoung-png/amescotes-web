@@ -266,36 +266,36 @@
     "title": "Business range.",
     "groups": [
       {
-        "label": "Items",
+        "label": "Product range",
+        "key": "product",
         "items": [
           "Bags",
           "Belts",
-          "Wallets",
-          "Keyrings",
+          "SLGs",
           "Shoes",
-          "Small leather goods",
-          "트레이 · 코스터 등 리빙"
+          "키링 · 리빙 등"
         ]
       },
       {
-        "label": "Lines",
+        "label": "Material range",
+        "key": "material",
+        "items": [
+          "천연가죽",
+          "스플릿 가죽",
+          "비건 레더",
+          "패브릭",
+          "PVC 등 특수 소재"
+        ]
+      },
+      {
+        "label": "Market range",
+        "key": "market",
         "items": [
           "Luxury",
           "Premium",
           "Contemporary",
           "Wholesale",
-          "Merchandise · 아티스트 굿즈"
-        ]
-      },
-      {
-        "label": "Materials",
-        "items": [
-          "Genuine leather",
-          "Vegan leather",
-          "Cotton",
-          "Nylon",
-          "Polyester",
-          "PVC 등 특수 소재"
+          "아티스트 굿즈 등"
         ]
       }
     ]
@@ -602,7 +602,7 @@
       [
         "Production",
         "생산",
-        "한국 또는 칭다오 라인에서 양산합니다."
+        "한국 또는 중국 생산 라인에서 양산합니다."
       ],
       [
         "QC",

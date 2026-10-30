@@ -82,7 +82,6 @@
 <section class="pps" id="pps">
   <div class="head"><h2 class="disp">{{ t.pps.title }}</h2><p>{{ t.pps.intro }}</p></div>
   <p class="claim">{{ t.pps.claim }}</p>
-  <div class="why">{% for w in t.pps.why %}<div class="wy"><img src="img/deck/pps{{ '%02d'|format(loop.index + 4) }}.jpg?v={{ ver }}" alt="{{ w[1] }}" loading="lazy"><div><span class="mono">{{ w[0] }}</span><h3>{{ w[1] }}</h3><p>{{ w[2] }}</p></div></div>{% endfor %}</div>
   {% set dur = ['CAD', '3 days~', '1 week~', '2 weeks~'] %}
   <h3 class="mono steps-l">{{ t.pps.steps_label }}</h3>
   <div class="pg">{% for s in t.pps.steps %}<figure><img src="img/deck/pps{{ '%02d'|format(loop.index + 4) }}.jpg?v={{ ver }}" alt="{{ s[0] }}" loading="lazy"><figcaption><span class="mono">{{ '%02d'|format(loop.index) }} · {{ dur[loop.index0] }}</span><b>{{ s[0] }}</b><p>{{ s[1] }}</p></figcaption></figure>{% endfor %}</div>
@@ -122,7 +121,7 @@
 
 <section class="range" id="range">
   <h2 class="disp">{{ t.range.title }}</h2>
-  <div class="rg">{% for g in t.range.groups %}<div><h3 class="mono">{{ g.label }}</h3><div class="chips">{% for it in g['items'] %}<span>{{ it }}</span>{% endfor %}</div></div>{% endfor %}</div>
+  <div class="rg2">{% for g in t.range.groups %}<div class="rr"><h3 class="mono">{{ g.label }}</h3><div class="ri">{% for it in g['items'] %}<figure><img src="img/range/{{ g.key }}{{ loop.index }}.jpg?v={{ ver }}" alt="{{ it }}" loading="lazy"><figcaption>{{ it }}</figcaption></figure>{% endfor %}</div></div>{% endfor %}</div>
 </section>
 
 <section class="faq" id="faq">

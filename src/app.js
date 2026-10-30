@@ -99,7 +99,7 @@ const PLACES=C.site.places.map((p,i)=>({...p,...C.global.places[i]}));
 })();
 
 // reveals + marquee speed
-gsap.utils.toArray('.clients h2,.range h2,.journal h2,.rg>div,.journal a,form').forEach(el=>gsap.from(el,{y:50,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
+gsap.utils.toArray('.clients h2,.range h2,.journal h2,.rg2 .rr,.journal a,form').forEach(el=>gsap.from(el,{y:50,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
 
 // footer odometer: CSS px -> metres (96px = 1 inch), stitches at 9 per inch
 let travelled=0,last=scrollY;

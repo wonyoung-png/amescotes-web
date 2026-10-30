@@ -363,3 +363,13 @@ button,input,select,textarea{font-family:inherit}
 .pps .steps-l{margin:10vh 0 2.4vh;color:var(--stone)}
 @media(max-width:820px){.why{grid-template-columns:1fr}.wy{grid-template-columns:1fr}.wy img{aspect-ratio:16/10}.wy>div{padding:22px 18px}.ct table{font-size:14px}.ct th,.ct td{padding:12px 8px}.ct .tot th,.ct .tot td{font-size:15px}}
 .wy>div{display:flex;flex-direction:column;justify-content:center}.wy p{font-size:17px}
+/* business range: one row per range, five photo tiles */
+.rg2{margin-top:6vh;display:grid;gap:5vh}
+.rr{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start;border-top:1px solid var(--ink);padding-top:18px}
+.rr h3{color:var(--accent)}
+.ri{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.ri figure{margin:0}
+.ri img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;display:block;background:#E2ECE5}
+.ri figcaption{margin-top:10px;font-size:15px;font-weight:500;word-break:keep-all}
+.pps .claim{margin-bottom:2vh}
+@media(max-width:820px){.rr{grid-template-columns:1fr;gap:12px}.ri{grid-template-columns:repeat(3,1fr);gap:10px}.ri figcaption{font-size:13px;margin-top:6px}}

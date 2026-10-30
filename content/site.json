@@ -84,7 +84,7 @@
   ],
   "chapters": [
     {
-      "image": "cut/b8.png",
+      "image": "cut/oem.png",
       "bg": "var(--dawn)",
       "dark": false,
       "hotspots": [
@@ -99,7 +99,7 @@
       ]
     },
     {
-      "image": "cut/b3.png",
+      "image": "cut/odm.png",
       "bg": "linear-gradient(180deg,#FBEBD8,#EEF4EF)",
       "dark": false,
       "hotspots": [
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "image": "cut/p19.png",
+      "image": "cut/process.png",
       "bg": "linear-gradient(180deg,#3E7A68,#1F4A3D)",
       "dark": true,
       "hotspots": [
@@ -306,7 +306,7 @@
       "slug": "bag-making-process"
     }
   ],
-  "footer_image": "cut/b8.png",
+  "footer_image": "cut/footer.png",
   "clients": [
     {
       "name": "BROWNYARD",
