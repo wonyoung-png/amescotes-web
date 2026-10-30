@@ -307,3 +307,12 @@ button,input,select,textarea{font-family:inherit}
 .faq details[open] summary:after{transform:rotate(45deg)}
 .faq details p{padding:0 40px 24px 0;font-size:16px;line-height:1.8;color:var(--stone);max-width:720px;word-break:keep-all}
 @media(max-width:820px){.faq{padding:10vh 16px}.faq .fq{margin-top:4vh}.faq details p{padding-right:0;font-size:15px}}
+/* history: one row per year, year left, events right */
+.hl{display:block;max-width:920px;margin:6vh 0 0 auto;border-bottom:1px solid var(--line)}
+.hl>div{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:baseline;border-top:1px solid var(--line);padding:22px 0}
+.hl>div:first-child{border-top-color:var(--ink)}
+.hl .mono{font:600 clamp(24px,2.2vw,32px)/1 'Pretendard Variable',Pretendard,sans-serif;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+.hl ul{margin:0;gap:6px}
+.hl li{padding-left:0;font-size:17px;line-height:1.6;word-break:keep-all}
+.hl li:before{display:none}
+@media(max-width:820px){.hl{margin-top:4vh}.hl>div{grid-template-columns:72px 1fr;gap:14px;padding:16px 0}.hl .mono{font-size:20px}.hl li{font-size:15px}}
