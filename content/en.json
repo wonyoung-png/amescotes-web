@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "AMESCOTES — Handbag & Leather Goods OEM / ODM",
-    "description": "A handbag and leather goods OEM/ODM partner managing every step from materials sourcing to pattern, sample and production. Seoul studio, Qingdao factory. From 50 pieces in Korea, 200 in China."
+    "description": "A handbag and leather goods OEM/ODM partner managing every step from materials sourcing to pattern, sample and production. Seoul studio, Qingdao factory. From 50 pieces in Korea, 150 in China."
   },
   "nav": {
     "home": "Home",
@@ -112,7 +112,7 @@
         ],
         [
           "MOQ · China",
-          "200 pcs~ / 2 col."
+          "150 pcs~"
         ]
       ]
     },
@@ -145,7 +145,7 @@
         ],
         [
           "Sample",
-          "≈ 2 weeks"
+          "≈ 2 weeks~"
         ],
         [
           "Production",
@@ -178,7 +178,7 @@
         ],
         [
           "Sample",
-          "≈ 2 weeks"
+          "≈ 2 weeks~"
         ],
         [
           "Production",
@@ -209,7 +209,7 @@
       {
         "n": "Qingdao",
         "k": "Factory · 2025",
-        "p": "Our factory in China, established 2025. Volume production from 200 pieces in 2 colours."
+        "p": "Our factory in China, established 2025. Volume production from 150 pieces."
       },
       {
         "n": "Japan",
@@ -232,7 +232,7 @@
         "p": "Our Shenzhen office."
       },
       {
-        "n": "Guangzhou Office",
+        "n": "Guangzhou",
         "k": "Office",
         "p": "Our Guangzhou office."
       },
@@ -242,7 +242,7 @@
         "p": "Production in Dongguan."
       },
       {
-        "n": "Guangzhou Factory",
+        "n": "Guangzhou",
         "k": "Factory",
         "p": "Production in Guangzhou."
       },
@@ -250,6 +250,11 @@
         "n": "Yiwu",
         "k": "Factory",
         "p": "Production in Yiwu."
+      },
+      {
+        "n": "Qingdao",
+        "k": "Office",
+        "p": "Our Qingdao office."
       }
     ]
   },
@@ -335,7 +340,7 @@
     "site_options": [
       "Not sure yet",
       "Korea (50 pcs~)",
-      "China (200 pcs~)"
+      "China (150 pcs~)"
     ],
     "qty": "Expected quantity",
     "qty_ph": "e.g. 100 pcs per style",
@@ -460,11 +465,11 @@
     "items": [
       [
         "What is your minimum order quantity (MOQ)?",
-        "From 50 pcs for production in Korea, and from 200 pcs per style in 2 colours for production in China."
+        "From 50 pcs for production in Korea, and from 150 pcs for production in China."
       ],
       [
         "How long does sampling take?",
-        "About two weeks. Our in-house development team in Seoul makes the patterns and samples themselves, with nothing outsourced."
+        "From about two weeks. Our in-house development team in Seoul makes the patterns and samples themselves, with nothing outsourced."
       ],
       [
         "Can I start without a tech pack or finished design?",

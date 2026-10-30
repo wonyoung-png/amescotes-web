@@ -20,7 +20,7 @@ img{display:block}
 /* drawer */
 #drawer{position:fixed;background:var(--paper);border:1px solid rgba(15,26,22,.08);box-shadow:0 24px 64px rgba(15,26,22,.30),0 6px 18px rgba(15,26,22,.16);top:var(--gap);right:var(--gap);bottom:var(--gap);width:var(--dw);z-index:80;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;transition:transform .7s cubic-bezier(.7,0,.2,1)}
 body.drawer-closed #drawer{transform:translateX(calc(100% + var(--gap)))}
-#drawer a{flex:1;display:flex;align-items:center;gap:10px;padding:0 18px;font:500 14px 'Pretendard Variable',Pretendard,sans-serif;border-bottom:1px solid rgba(0,0,0,.08);transition:padding .25s;cursor:pointer}
+#drawer a{flex:1;display:flex;align-items:center;gap:10px;padding:0 18px;font:500 17px 'Pretendard Variable',Pretendard,sans-serif;border-bottom:1px solid rgba(0,0,0,.08);transition:padding .25s;cursor:pointer}
 #drawer a:hover{padding-left:26px;background:#E2ECE5}
 #drawer a .mono{opacity:.55}
 #drawer a,#drawer .lang{background:var(--paper);color:var(--ink);border-color:rgba(15,26,22,.12)}
