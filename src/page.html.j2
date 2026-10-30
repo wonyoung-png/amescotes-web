@@ -68,6 +68,17 @@
 
 <section id="works"></section>
 
+<section class="make" id="make">
+  {% set m = t.make %}
+  <div class="mh"><h2 class="disp">{{ m.title }}</h2><div class="mtabs mono"><button class="on" data-k="b">{{ m.bags }}</button><button data-k="s">{{ m.shoes }}</button></div></div>
+  {% for k, pre in [('b', 'cb'), ('s', 'cs')] %}
+  <div class="mb{{ '' if k == 'b' else ' off' }}" data-k="{{ k }}">
+    <div class="mstick">{% for s in m[k] %}<img src="img/process/{{ pre }}_{{ loop.index }}.jpg?v={{ ver }}" class="{{ 'on' if loop.first }}" alt="{{ s[1] }}" loading="lazy">{% endfor %}<span class="mcap mono">01 · {{ m[k][0][0] }}</span></div>
+    <ol>{% for s in m[k] %}<li class="{{ 'on' if loop.first }}" data-i="{{ loop.index0 }}" data-en="{{ s[0] }}"><span class="n">{{ '%02d'|format(loop.index) }}</span><span class="mono">{{ s[0] }}</span><h3>{{ s[1] }}</h3><p>{{ s[2] }}</p><img class="mimg" src="img/process/{{ pre }}_{{ loop.index }}.jpg?v={{ ver }}" alt="" loading="lazy"></li>{% endfor %}</ol>
+  </div>
+  {% endfor %}
+</section>
+
 <section class="pps" id="pps">
   <div class="head"><h2 class="disp">{{ t.pps.title }}</h2><p>{{ t.pps.intro }}</p></div>
   {% set dur = ['CAD', '3 days~', '1 week~', '2 weeks~'] %}

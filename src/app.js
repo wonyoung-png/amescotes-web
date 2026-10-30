@@ -169,3 +169,10 @@ gsap.fromTo('.logo-fixed',{scale:()=>wide()?2.6:1.8},{scale:1,ease:'none',immedi
   scrollTrigger:{trigger:'.hero',start:'top top',end:()=>'+='+innerHeight*.45,scrub:.4,invalidateOnRefresh:true}});
 
 if(location.hash&&document.querySelector(location.hash))addEventListener('load',()=>setTimeout(()=>lenis.scrollTo(location.hash,{immediate:true}),300));
+// how it's made: tabs + the step in the middle of the screen drives the sticky photo
+(()=>{const s=document.getElementById('make');if(!s)return;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const li=e.target,b=li.closest('.mb'),i=+li.dataset.i;
+b.querySelectorAll('li').forEach((x,j)=>x.classList.toggle('on',j===i));b.querySelectorAll('.mstick img').forEach((x,j)=>x.classList.toggle('on',j===i));
+b.querySelector('.mcap').textContent=String(i+1).padStart(2,'0')+' · '+li.dataset.en}),{rootMargin:'-45% 0px -45% 0px'});
+s.querySelectorAll('.mb li').forEach(li=>io.observe(li));
+s.querySelectorAll('.mtabs button').forEach(bt=>bt.onclick=()=>{s.querySelectorAll('.mtabs button').forEach(x=>x.classList.toggle('on',x===bt));s.querySelectorAll('.mb').forEach(m=>m.classList.toggle('off',m.dataset.k!==bt.dataset.k))})})();

@@ -504,5 +504,94 @@
         "Use the contact form below or email contact@amescotes.co.kr with the product you have in mind, the expected quantity and your preferred production location."
       ]
     ]
+  },
+  "make": {
+    "title": "How it's made.",
+    "bags": "Bags",
+    "shoes": "Shoes",
+    "b": [
+      [
+        "Pattern",
+        "Pattern making",
+        "We draft a pattern for every style, matched to the design and the target cost."
+      ],
+      [
+        "Material",
+        "Material selection",
+        "Leather and trims are sourced through our network in Korea and abroad."
+      ],
+      [
+        "Cutting",
+        "Cutting",
+        "Leather is cut to the pattern and skived to the right thickness."
+      ],
+      [
+        "Sample",
+        "Sampling",
+        "Our in-house sample room builds and revises each sample directly."
+      ],
+      [
+        "Sewing",
+        "Sewing",
+        "An experienced sewing team sets the structure and the finish."
+      ],
+      [
+        "Production",
+        "Production",
+        "Volume production on our lines in Korea or Qingdao."
+      ],
+      [
+        "QC",
+        "Quality control",
+        "Every piece is checked against our own ASQ standard."
+      ],
+      [
+        "Packing",
+        "Packing & delivery",
+        "Carefully packed and shipped to Korea and overseas."
+      ]
+    ],
+    "s": [
+      [
+        "Design",
+        "Design & last",
+        "The last and the design set the silhouette and the fit."
+      ],
+      [
+        "Pattern",
+        "Pattern making",
+        "Upper patterns are graded size by size to the last."
+      ],
+      [
+        "Cutting",
+        "Cutting",
+        "Materials are cut to the pattern and sorted by part."
+      ],
+      [
+        "Upper",
+        "Upper",
+        "Pieces are stitched and reinforced to build the upper."
+      ],
+      [
+        "Assembly",
+        "Lasting",
+        "The upper is pulled over the last to take its shape."
+      ],
+      [
+        "Sole",
+        "Sole",
+        "The outsole is pressed and bonded on."
+      ],
+      [
+        "QC",
+        "Quality control",
+        "Symmetry and finish are checked pair by pair."
+      ],
+      [
+        "Packing",
+        "Packing & delivery",
+        "Boxed and shipped to Korea and overseas."
+      ]
+    ]
   }
 }
