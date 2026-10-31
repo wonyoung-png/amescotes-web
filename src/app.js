@@ -135,8 +135,12 @@ document.body.appendChild(lb);
 const gvis=()=>gItems.filter(it=>!it.classList.contains('hide')).map(it=>+it.dataset.i);  // lightbox browses the whole filtered set, not just the revealed batch
 function gshow(i){cur=i;const g=G[i];lbm.innerHTML=g.type==='photo'?`<img src="gallery/${g.id}.jpg" alt="">`:`<video src="gallery/${g.id}.mp4" autoplay muted loop playsinline controls></video>`;
   const v=gvis();$('#lbn').textContent=(v.indexOf(i)+1)+' / '+v.length;lb.classList.add('on');lenis.stop()}
-function gstep(d){const v=gvis();gshow(v[(v.indexOf(cur)+d+v.length)%v.length])}
-function gclose(){lb.classList.remove('on');lbm.innerHTML='';lenis.start()}
+// same lightbox for the factory photos under Global (ns = their src list while open)
+const nsImgs=$$('.net .ns img');let ns=null;
+function nshow(i){ns=nsImgs.map(m=>m.src);cur=i;lbm.innerHTML=`<img src="${ns[i]}" alt="">`;$('#lbn').textContent=(i+1)+' / '+ns.length;lb.classList.add('on');lenis.stop()}
+nsImgs.forEach((m,i)=>m.onclick=()=>nshow(i));
+function gstep(d){if(ns)return nshow((cur+d+ns.length)%ns.length);const v=gvis();gshow(v[(v.indexOf(cur)+d+v.length)%v.length])}
+function gclose(){lb.classList.remove('on');lbm.innerHTML='';ns=null;lenis.start()}
 gItems.forEach(it=>it.onclick=()=>gshow(+it.dataset.i));
 lb.querySelector('.x').onclick=gclose;lb.querySelector('.pv').onclick=()=>gstep(-1);lb.querySelector('.nx').onclick=()=>gstep(1);
 lb.onclick=e=>{if(e.target===lb||e.target===lbm)gclose()};
