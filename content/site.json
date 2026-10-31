@@ -1,6 +1,6 @@
 {
   "url": "https://www.amescotes.co.kr",
-  "noindex": true,
+  "noindex": false,
   "email": "contact@amescotes.co.kr",
   "form_endpoint": "https://formsubmit.co/ajax/contact@amescotes.co.kr",
   "hero_image": "img/work/hero.jpg",
