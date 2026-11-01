@@ -115,7 +115,7 @@ const form=$('#contact form');
 form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.querySelector('button'),fd=new FormData(form);
   fd.set('희망 생산지 / site',form.querySelector('.seg .on').textContent);fd.set('_subject','[홈페이지 문의] '+(fd.get('company')||''));fd.set('_template','table');fd.set('_captcha','false');fd.set('_cc','info@amescotes.co.kr');
   btn.disabled=true;btn.textContent=C.contact.sending;
-  try{const r=await fetch(C.site.form_endpoint,{method:'POST',headers:{Accept:'application/json'},body:fd});if(!r.ok)throw 0;window.gtag?.('event','generate_lead',{form_type:fd.get('type')||''});btn.textContent=C.contact.sent;form.reset()}
+  try{const r=await fetch(C.site.form_endpoint,{method:'POST',headers:{Accept:'application/json'},body:fd});const j=await r.json().catch(()=>({}));if(!r.ok||String(j.success)!=='true')throw 0;window.gtag?.('event','generate_lead',{form_type:fd.get('type')||''});btn.textContent=C.contact.sent;form.reset()}
   catch(_){btn.disabled=false;btn.textContent=C.contact.error}});
 
 // gallery: films play only on screen, filter, lightbox (arrows / keys / swipe)
