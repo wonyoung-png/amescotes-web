@@ -116,8 +116,13 @@ form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.query
   if(att&&att.size>5e6){alert(form.querySelector('[name=attachment]').parentNode.firstChild.textContent);return}if(att&&!att.size)fd.delete('attachment');
   fd.set('희망 생산지 / site',form.querySelector('.seg .on').textContent);fd.set('_subject','[홈페이지 문의] '+(fd.get('company')||''));fd.set('_template','table');fd.set('_captcha','false');fd.set('_cc','contact@amescotes.co.kr');
   btn.disabled=true;btn.textContent=C.contact.sending;
+  // FormSubmit's ajax endpoint drops files, so a form with an image goes as a normal post and comes back with ?sent=1
+  if(att&&att.size){fd.set('_next',location.origin+location.pathname+'?sent=1#contact');
+    for(const[k,v]of fd)if(typeof v==='string'&&!form.elements[k])form.insertAdjacentHTML('beforeend','<input type="hidden">'),Object.assign(form.lastChild,{name:k,value:v});
+    Object.assign(form,{action:C.site.form_endpoint.replace('/ajax/','/'),method:'post',enctype:'multipart/form-data'});return form.submit()}
   try{const r=await fetch(C.site.form_endpoint,{method:'POST',headers:{Accept:'application/json'},body:fd});const j=await r.json().catch(()=>({}));if(!r.ok||String(j.success)!=='true')throw 0;window.gtag?.('event','generate_lead',{form_type:fd.get('type')||''});btn.textContent=C.contact.sent;form.reset()}
   catch(_){btn.disabled=false;btn.textContent=C.contact.error}});
+if(new URLSearchParams(location.search).has('sent')){const btn=form.querySelector('button');btn.disabled=true;btn.textContent=C.contact.sent;window.gtag?.('event','generate_lead',{form_type:'attachment'});history.replaceState(null,'',location.pathname+'#contact')}
 
 // gallery: films play only on screen, filter, lightbox (arrows / keys / swipe)
 const gItems=$$('#gg .it');
