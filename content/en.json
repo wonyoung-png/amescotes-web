@@ -352,6 +352,7 @@
       "Other"
     ],
     "message": "Message",
+    "attach": "Reference image (optional · 1 file, up to 5MB)",
     "message_ph": "The product you want to make, references, timing",
     "consent": "I agree to the collection and use of my personal data.",
     "privacy": "Details",

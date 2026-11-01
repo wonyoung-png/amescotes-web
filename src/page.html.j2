@@ -163,6 +163,7 @@
       <label>{{ f.qty }}<input name="quantity" placeholder="{{ f.qty_ph }}"></label>
       <label>{{ f.type }}<select name="type">{% for o in f.type_options %}<option>{{ o }}</option>{% endfor %}</select></label>
       <label class="full">{{ f.message }}<textarea name="message" rows="4" placeholder="{{ f.message_ph }}" required></textarea></label>
+      <label class="full">{{ f.attach }}<input name="attachment" type="file" accept="image/*"></label>
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <label class="full" style="flex-direction:row;align-items:center;gap:8px"><input type="checkbox" required style="width:18px;height:18px">{{ f.consent }} <a href="{{ privacy_path }}" style="text-decoration:underline;opacity:.8">{{ f.privacy }}</a></label>
       <button type="submit">{{ f.submit }}</button>
