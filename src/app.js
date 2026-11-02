@@ -107,6 +107,9 @@ lenis.on('scroll',()=>{travelled+=Math.abs(scrollY-last);last=scrollY;const inch
   $('#odo-m').textContent=(inch*.0254).toFixed(1)+' m';$('#odo-s').textContent=Math.round(inch*9).toLocaleString('en-US')+' '+C.footer.unit});
 gsap.from('footer .bag',{yPercent:30,rotation:12,ease:'none',scrollTrigger:{trigger:'footer',start:'top bottom',end:'top top',scrub:true}});
 
+// remember a language picked from the menu so the home page stops auto-switching
+document.addEventListener('click',e=>{const a=e.target.closest('a[hreflang]');if(a)try{localStorage.setItem('lang',a.hreflang)}catch(_){}});
+
 // form segmented control
 $$('.seg span').forEach(s=>s.onclick=()=>{s.parentNode.querySelectorAll('span').forEach(x=>x.classList.remove('on'));s.classList.add('on')});
 

@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-{% if base %}<base href="{{ base }}">{% endif %}
+{% if lang == 'ko' %}<script>/* first visit to the home page: follow the browser language unless a language was picked before; crawlers stay put */(function(){if(!/^\/(index\.html)?$/.test(location.pathname)||/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)||navigator.webdriver)return;var s;try{s=localStorage.getItem('lang')}catch(e){}var l=s||((navigator.languages||[navigator.language||''])[0]||'').slice(0,2).toLowerCase();if(l==='ja')location.replace('/ja/'+location.hash);else if(l&&l!=='ko')location.replace('/en/'+location.hash)})()</script>
+{% endif %}{% if base %}<base href="{{ base }}">{% endif %}
 <title>{{ t.meta.title }}</title>
 {% if site.noindex %}<meta name="robots" content="noindex">{% endif %}
 <meta name="description" content="{{ t.meta.description }}">
