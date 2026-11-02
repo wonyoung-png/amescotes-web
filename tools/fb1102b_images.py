@@ -1,15 +1,16 @@
-"""Feedback 11/2 (2nd batch): replace product grid tiles pf28-30 (row 4, items 4-6 on PC) with the uploaded photos.
-Same pipeline as fb1102_images.py: BiRefNet cutout, uniform square S=1000 AREA=0.34, 800x800 webp q88."""
+"""Feedback 11/2 (2nd batch): row 2 items 5-7 -> pf13-15, row 5 item 3 -> pf35, row 5 items 5-6 -> pf37-38.
+Same uniform square as fb1030_images.py / cutout_products.py; BiRefNet keeps thin straps."""
 import shutil
 from pathlib import Path
 from PIL import Image
 from rembg import new_session, remove
 R = Path(__file__).resolve().parents[2]; SRC = R / 'incoming' / 'fb1102'; CUT = R / 'incoming' / 'cutouts'; A = R / 'web' / 'assets'
-UP = Path(r'C:\Users\이원영~1\AppData\Local\Temp\claude\C--Users-----AMES\ebd2b1d5-e6eb-4bc7-99ed-fa2035be87ad\scratchpad\artifact-files\4a548447-5593-4162-b847-8c739e36d49b')
-GRID = {'pf28': '2059af497cd877031582a67483248c35', 'pf29': '391855b83c7c4fb23abf485adef16304', 'pf30': '3d1c4955768483fb73e6dde0dde36137'}
+UP = Path(r'C:\Users\이원영~1\AppData\Local\Temp\claude\C--Users-----AMES\7bff7085-9466-4468-a921-83fdf8107b0e\scratchpad\artifact-files\4a548447-5593-4162-b847-8c739e36d49b')
+GRID = {'pf13': '0e89b130da0145603fe1f3e00abb5ca7', 'pf14': '3d3ad1409cf0fdf2f56b4938650d5691', 'pf15': '4e8f11436d18fd5f286241828a68ff66',
+        'pf35': 'e0fcf25ca921e7f760e11d665543f1f7', 'pf37': '79e1a13197006311ec3b6d4cadd73677', 'pf38': 'da42f9710fc81363ee2960f05aa5786a'}
 SRC.mkdir(parents=True, exist_ok=True)
 ses = new_session('birefnet-general')
-S, AREA = 1000, 0.34
+S, AREA = 1000, 0.34  # same as cutout_products.py
 for name, h in GRID.items():
     src = SRC / f'{h}.jpg'
     if not src.exists(): shutil.copy(UP / f'{h}.jpg', src)

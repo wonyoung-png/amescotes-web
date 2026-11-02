@@ -273,18 +273,18 @@
           "Belts",
           "SLGs",
           "Shoes",
-          "Keyrings, living & more"
+          "Etc."
         ]
       },
       {
         "label": "Material range",
         "key": "material",
         "items": [
-          "Genuine leather",
-          "Split leather",
-          "Vegan leather",
-          "Fabric",
-          "PVC & special materials"
+          "Genuine Leather",
+          "Split Leather",
+          "Artificial Leather",
+          "Textile Fabric",
+          "Technical Material"
         ]
       },
       {
@@ -295,7 +295,7 @@
           "Premium",
           "Contemporary",
           "Wholesale",
-          "Artist merchandise & more"
+          "Etc."
         ]
       }
     ]

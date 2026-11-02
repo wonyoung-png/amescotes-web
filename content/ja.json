@@ -273,18 +273,18 @@
           "Belts",
           "SLGs",
           "Shoes",
-          "キーリング・リビングなど"
+          "Etc."
         ]
       },
       {
         "label": "Material range",
         "key": "material",
         "items": [
-          "本革",
-          "スプリットレザー",
-          "ヴィーガンレザー",
-          "ファブリック",
-          "PVCなどの特殊素材"
+          "Genuine Leather",
+          "Split Leather",
+          "Artificial Leather",
+          "Textile Fabric",
+          "Technical Material"
         ]
       },
       {
@@ -295,7 +295,7 @@
           "Premium",
           "Contemporary",
           "Wholesale",
-          "アーティストグッズなど"
+          "Etc."
         ]
       }
     ]

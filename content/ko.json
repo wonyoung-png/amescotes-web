@@ -273,18 +273,18 @@
           "Belts",
           "SLGs",
           "Shoes",
-          "키링 · 리빙 등"
+          "Etc."
         ]
       },
       {
         "label": "Material range",
         "key": "material",
         "items": [
-          "천연가죽",
-          "스플릿 가죽",
-          "비건 레더",
-          "패브릭",
-          "PVC 등 특수 소재"
+          "Genuine Leather",
+          "Split Leather",
+          "Artificial Leather",
+          "Textile Fabric",
+          "Technical Material"
         ]
       },
       {
@@ -295,7 +295,7 @@
           "Premium",
           "Contemporary",
           "Wholesale",
-          "아티스트 굿즈 등"
+          "Etc."
         ]
       }
     ]
