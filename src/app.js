@@ -114,13 +114,19 @@ $$('.seg span').forEach(s=>s.onclick=()=>{s.parentNode.querySelectorAll('span').
 const form=$('#contact form');
 form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.querySelector('button'),fd=new FormData(form),att=fd.get('attachment');
   if(att&&att.size>5e6){alert(form.querySelector('[name=attachment]').parentNode.firstChild.textContent);return}if(att&&!att.size)fd.delete('attachment');
-  fd.set('희망 생산지 / site',form.querySelector('.seg .on').textContent);fd.set('_subject','[홈페이지 문의] '+(fd.get('company')||''));fd.set('_template','table');fd.set('_captcha','false');fd.set('_cc','contact@amescotes.co.kr');
+  // email shows fields under the page's own labels, so a Korean page sends Korean names and en/ja pages their own
+  const lab=el=>el.closest('label').firstChild.textContent.trim(),out=new FormData();
+  for(const[k,v]of fd)out.append(k==='attachment'||k[0]==='_'?k:lab(form.elements[k]),v);
+  out.set(lab(form.querySelector('.seg')),form.querySelector('.seg .on').textContent);
+  out.set('_subject',`[${{ko:'홈페이지 문의',en:'Website Inquiry',ja:'お問い合わせ'}[document.documentElement.lang]}] ${fd.get('company')}`);
+  out.set('_replyto',fd.get('email'));out.set('_template','table');out.set('_captcha','false');out.set('_cc','contact@amescotes.co.kr');
   btn.disabled=true;btn.textContent=C.contact.sending;
   // FormSubmit's ajax endpoint drops files, so a form with an image goes as a normal post and comes back with ?sent=1
-  if(att&&att.size){fd.set('_next',location.origin+location.pathname+'?sent=1#contact');
-    for(const[k,v]of fd)if(typeof v==='string'&&!form.elements[k])form.insertAdjacentHTML('beforeend','<input type="hidden">'),Object.assign(form.lastChild,{name:k,value:v});
+  if(att&&att.size){out.set('_next',location.origin+location.pathname+'?sent=1#contact');
+    for(const el of form.elements)if(el.name&&el.name!=='attachment')el.disabled=true;
+    for(const[k,v]of out)if(typeof v==='string')form.insertAdjacentHTML('beforeend','<input type="hidden">'),Object.assign(form.lastChild,{name:k,value:v});
     Object.assign(form,{action:C.site.form_endpoint.replace('/ajax/','/'),method:'post',enctype:'multipart/form-data'});return form.submit()}
-  try{const r=await fetch(C.site.form_endpoint,{method:'POST',headers:{Accept:'application/json'},body:fd});const j=await r.json().catch(()=>({}));if(!r.ok||String(j.success)!=='true')throw 0;window.gtag?.('event','generate_lead',{form_type:fd.get('type')||''});btn.textContent=C.contact.sent;form.reset()}
+  try{const r=await fetch(C.site.form_endpoint,{method:'POST',headers:{Accept:'application/json'},body:out});const j=await r.json().catch(()=>({}));if(!r.ok||String(j.success)!=='true')throw 0;window.gtag?.('event','generate_lead',{form_type:fd.get('type')||''});btn.textContent=C.contact.sent;form.reset()}
   catch(_){btn.disabled=false;btn.textContent=C.contact.error}});
 if(new URLSearchParams(location.search).has('sent')){const btn=form.querySelector('button');btn.disabled=true;btn.textContent=C.contact.sent;window.gtag?.('event','generate_lead',{form_type:'attachment'});history.replaceState(null,'',location.pathname+'#contact')}
 
