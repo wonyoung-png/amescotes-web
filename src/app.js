@@ -119,7 +119,7 @@ form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.query
   for(const[k,v]of fd)out.append(k==='attachment'||k[0]==='_'?k:lab(form.elements[k]),v);
   out.set(lab(form.querySelector('.seg')),form.querySelector('.seg .on').textContent);
   out.set('_subject',`[${{ko:'홈페이지 문의',en:'Website Inquiry',ja:'お問い合わせ'}[document.documentElement.lang]}] ${fd.get('company')}`);
-  out.set('_replyto',fd.get('email'));out.set('_template','table');out.set('_captcha','false');out.set('_cc','contact@amescotes.co.kr');
+  out.set('_replyto',fd.get('email'));out.set('_template','table');out.set('_captcha','false');out.set('_cc','info@amescotes.co.kr');
   btn.disabled=true;btn.textContent=C.contact.sending;
   // FormSubmit's ajax endpoint drops files, so a form with an image goes as a normal post and comes back with ?sent=1
   if(att&&att.size){out.set('_next',location.origin+location.pathname+'?sent=1#contact');
