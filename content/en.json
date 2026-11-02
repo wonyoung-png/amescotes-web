@@ -255,6 +255,21 @@
         "n": "Qingdao",
         "k": "Office",
         "p": "Our Qingdao office."
+      },
+      {
+        "n": "Tokyo",
+        "k": "Trade",
+        "p": "Trading with partners in Tokyo."
+      },
+      {
+        "n": "Singapore",
+        "k": "Trade",
+        "p": "Trading with partners in Singapore."
+      },
+      {
+        "n": "Hong Kong",
+        "k": "Trade",
+        "p": "Trading with partners in Hong Kong."
       }
     ]
   },
